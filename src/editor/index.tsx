@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { BareProps } from 'types';
 import '@sunmao-ui/editor/dist/index.css';
 import runtimeConfig from 'config/runtime';
+import { DEFAULT_APP } from 'config/constants';
 
 export interface Props extends BareProps {
   number: string;
@@ -15,8 +16,14 @@ const StyledABC123 = styled.div`
 `;
 
 const ABC123: React.FC<BareProps> = ({ className }) => {
-  const { Editor } = initSunmaoUIEditor({runtimeProps: runtimeConfig});
-  return <StyledABC123><Editor /></StyledABC123>;
+  const { Editor } = initSunmaoUIEditor({
+    defaultApplication: DEFAULT_APP,
+    runtimeProps: runtimeConfig
+  });
+
+  return (<StyledABC123>
+    <Editor />
+  </StyledABC123>);
 };
 
 export default ABC123;

@@ -1,8 +1,8 @@
 import { type SunmaoUIRuntimeProps } from '@sunmao-ui/runtime';
-import Font from 'injectComp/Font';
+import { Font, Table } from 'injectComp';
 
 const libs = [{
-  components: [Font],
+  components: [Font, Table],
 }];
 
 export default {
