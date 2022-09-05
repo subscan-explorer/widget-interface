@@ -5,6 +5,15 @@ import { ThemeProvider } from 'styled-components';
 import { light } from 'ui/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from 'ui/chakraTheme';
+import BigNumber from 'bignumber.js';
+
+// This config is required for number formatting
+// https://mikemcl.github.io/bignumber.js/#toS
+BigNumber.config({
+  EXPONENTIAL_AT: 1000,
+  DECIMAL_PLACES: 80,
+  ROUNDING_MODE: 1
+});
 
 function App() {
   return (
