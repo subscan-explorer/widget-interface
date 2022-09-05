@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledFont14 = styled.p`
+export const StyledFont14 = styled.span<{color?: string}>`
   /* 14 */
   font-family: 'Eina 01';
   font-style: normal;
@@ -10,11 +10,11 @@ export const StyledFont14 = styled.p`
   /* identical to box height, or 143% */
 
   /* Black */
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme, color }) => theme.colors[color || 'primary']};
 `;
 
 
-export const StyledFont12 = styled.p<{nowrap?: boolean}>`
+export const StyledFont12 = styled.span<{nowrap?: boolean}>`
   /* 14 */
   font-family: 'Eina 01';
   font-style: normal;
@@ -28,7 +28,7 @@ export const StyledFont12 = styled.p<{nowrap?: boolean}>`
   white-space: ${({ nowrap }) => nowrap ? 'nowrap' : 'normal'};
 `;
 
-export const StyledFont14Bold = styled.p`
+export const StyledFont14Bold = styled.span`
   /* 14 */
   font-family: 'Eina 01';
   font-style: normal;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Type, Static } from '@sinclair/typebox';
 import { implementRuntimeComponent } from '@sunmao-ui/runtime';
-import { Link, Status, Text, Time } from 'components';
+import { Balance, Link, Status, Text, Time, EllipsisText } from 'components';
 import { CATEGORY, Category, VERSION } from 'config/constants';
 import { StyledFont12, StyledFont14Bold, StyledModuleBox } from 'ui/common';
 import { StyledTable, StyledTd, StyledTh, StyledTr } from './styled';
@@ -17,7 +17,6 @@ export const ColumnSpec = Type.Object({
   type: Type.KeyOf(
     Type.Object({
       text: Type.String(),
-      ellipsisText: Type.String(),
       link: Type.String(),
       transactionStatus: Type.String(),
       balance: Type.String(),
@@ -53,11 +52,36 @@ export const ColumnSpec = Type.Object({
   }),
   ellipsis: Type.Boolean({
     title: 'Ellipsis',
-
+    conditions: [
+      {
+        or: [
+          {
+            key: 'type',
+            value: 'link',
+          },
+          {
+            key: 'type',
+            value: 'text',
+          }
+        ]
+      }
+    ]
+  }),
+  decimals: Type.Number({
+    title: 'Token Decimals',
     conditions: [
       {
         key: 'type',
-        value: 'link',
+        value: 'balance',
+      }
+    ]
+  }),
+  symbol: Type.String({
+    title: 'Token Symbol',
+    conditions: [
+      {
+        key: 'type',
+        value: 'balance',
       }
     ]
   }),
@@ -86,11 +110,6 @@ const StateSpec = Type.Object({
   value: Type.String(),
 });
 
-// const PropsSpec = Type.Object({
-//   value: TextPropertySpec,
-// });
-
-
 export interface ColumnValueProps extends Static<typeof ColumnSpec> {
   value: string;
 };
@@ -98,14 +117,14 @@ export interface ColumnValueProps extends Static<typeof ColumnSpec> {
 const RenderColumnValue: React.FC<ColumnValueProps> = ({ type, value, transformer, ...rest }) => {
   // eslint-disable-next-line no-new-func
   const transformerValue = transformer ? new Function('value', transformer)(value?.toString()) : value;
+  const { ellipsis = true, prePath = '', decimals = 0, symbol } = rest;
 
   switch (type) {
     case 'text':
-      return <Text>{transformerValue?.toString()}</Text>;
+      return <>{ellipsis ? <EllipsisText ellipsis={ellipsis} text={transformerValue} /> : <Text>{transformerValue?.toString()}</Text>}</>;
     case 'transactionStatus':
       return <Status type={transformerValue as StatusType} />;
     case 'link':
-      const { ellipsis = true, prePath = '' } = rest;
       const to = prePath ? `${prePath}/${transformerValue}` : `/${transformerValue}`;
       const displayName = ellipsis ? toShortString(transformerValue) : transformerValue;
 
@@ -117,6 +136,8 @@ const RenderColumnValue: React.FC<ColumnValueProps> = ({ type, value, transforme
       </>);
     case 'time':
       return <Time second={parseInt(transformerValue)} />;
+    case 'balance':
+      return <Balance value={transformerValue} decimals={decimals} symbol={symbol} />;
     default:
       return <Text>{transformerValue?.toString()}</Text>;
   }

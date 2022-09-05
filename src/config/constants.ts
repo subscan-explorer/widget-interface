@@ -69,9 +69,11 @@ export const DEFAULT_APP: Application = {
             },
             {
               "title": "Value",
-              "type": "text",
+              "type": "balance",
               "width": "",
-              "dataKey": "amount",
+              "dataKey": "amount_v2",
+              "decimals": 9,
+              "symbol": 'RING',
             },
             {
               "title": "Result",
@@ -86,7 +88,7 @@ export const DEFAULT_APP: Application = {
               "width": "",
               "dataKey": "hash",
               "prePath": "/extrinsic"
-            },
+            }
           ]
         },
         "traits": []
