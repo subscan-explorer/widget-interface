@@ -3,7 +3,7 @@ import { Type, Static } from '@sinclair/typebox';
 import { implementRuntimeComponent } from '@sunmao-ui/runtime';
 import { Balance, Link, Status, Text, Time, EllipsisText } from 'components';
 import { CATEGORY, Category, VERSION } from 'config/constants';
-import { StyledFont12, StyledFont14Bold, StyledModuleBox } from 'ui/common';
+import { StyledFont12, StyledFont14Bold, StyledModuleBox, StyledScrollX } from 'ui/common';
 import { StyledTable, StyledTd, StyledTh, StyledTr } from './styled';
 import { StatusType } from 'components/Status/Status';
 import { toShortString } from 'utils';
@@ -166,38 +166,39 @@ export default implementRuntimeComponent({
   },
 })(({ data, columns, elementRef }) => {
   return (<StyledModuleBox>
+    <StyledScrollX>
+      <StyledTable ref={elementRef}>
+        <thead>
+          <tr>
+            {columns.map((thData, tdIndex) => {
+              return (
+                <StyledTh key={`${thData.title}${tdIndex}`}>
+                  <StyledFont14Bold>{thData.title}</StyledFont14Bold>
+                </StyledTh>
+              );
+            })}
 
-    <StyledTable ref={elementRef}>
-      <thead>
-        <tr>
-          {columns.map((thData, tdIndex) => {
+          </tr>
+        </thead>
+        <tbody>
+          {data?.map((trData, trIndex) => {
             return (
-              <StyledTh key={`${thData.title}${tdIndex}`}>
-                <StyledFont14Bold>{thData.title}</StyledFont14Bold>
-              </StyledTh>
-            );
+              <StyledTr key={`${trIndex}`}>
+
+                {columns.map((column, tdIndex) => {
+                  return (
+                    <StyledTd key={`${trData.title}${tdIndex}`}>
+                      <RenderColumnValue value={trData[column.dataKey]} {...column} />
+                      {/* <StyledFont14>{trData[column.dataKey].toString()}</StyledFont14> */}
+                    </StyledTd>
+                  );
+                })}
+
+              </StyledTr>);
           })}
-
-        </tr>
-      </thead>
-      <tbody>
-        {data?.map((trData, trIndex) => {
-          return (
-            <StyledTr key={`${trIndex}`}>
-
-              {columns.map((column, tdIndex) => {
-                return (
-                  <StyledTd key={`${trData.title}${tdIndex}`}>
-                    <RenderColumnValue value={trData[column.dataKey]} {...column} />
-                    {/* <StyledFont14>{trData[column.dataKey].toString()}</StyledFont14> */}
-                  </StyledTd>
-                );
-              })}
-
-            </StyledTr>);
-        })}
-      </tbody>
-    </StyledTable>
+        </tbody>
+      </StyledTable>
+    </StyledScrollX>
   </StyledModuleBox>);
 });
 

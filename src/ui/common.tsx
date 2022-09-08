@@ -46,5 +46,9 @@ export const StyledModuleBox = styled.div`
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   padding: 10px 20px;
-  overflow: auto;
+  
+`;
+
+export const StyledScrollX = styled.div`
+  overflow-x: auto;
 `;
