@@ -1,7 +1,8 @@
 {
-  "name": "subscan-low-code",
-  "version": "0.1.0",
-  "private": true,
+  "name": "testlowcode",
+  "version": "0.1.2",
+  "private": false,
+  "main": "./dist/main.js",
   "dependencies": {
     "@sunmao-ui/editor": "0.7.5-alpha.4",
     "@sunmao-ui/runtime": "0.7.4-alpha.3",
@@ -31,13 +32,17 @@
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.25.1"
+    "eslint-plugin-react": "^7.25.1",
+    "tsup": "6.2.3",
+    "@swc/core": "^1.2.247"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:sdk": "npx tsup src/main.ts --clean",
+    "publish": "npm publish"
   },
   "browserslist": {
     "production": [
