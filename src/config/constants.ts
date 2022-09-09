@@ -37,7 +37,8 @@ export const DEFAULT_APP: Application = {
               "width": "",
               "dataKey": "extrinsic_index",
               "prePath": "/extrinsic",
-              "ellipsis": false
+              "ellipsis": false,
+              "sort": "disabled"
             },
             {
               "title": "Block",
@@ -80,14 +81,17 @@ export const DEFAULT_APP: Application = {
               "type": "transactionStatus",
               "width": "",
               "dataKey": "success",
-              "transformer": "return value == 'true' ? 'normal' : 'error'"
+              "transformer": "return value == 'true' ? 'normal' : 'error'",
+              "sort": "disabled"
             },
             {
               "title": "Hash",
               "type": "link",
               "width": "",
               "dataKey": "hash",
-              "prePath": "/extrinsic"
+              "prePath": "/extrinsic",
+              "ellipsis": true,
+              "sort": "disabled"
             }
           ]
         },

@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Type, Static } from '@sinclair/typebox';
 import { implementRuntimeComponent } from '@sunmao-ui/runtime';
 import { Balance, Link, Status, Text, Time, EllipsisText } from 'components';
 import { CATEGORY, Category, VERSION } from 'config/constants';
 import { StyledFont12, StyledFont14Bold, StyledModuleBox, StyledScrollX } from 'ui/common';
-import { StyledTable, StyledTd, StyledTh, StyledTr } from './styled';
+import { StyledSortAsc, StyledSortBox, StyledSortDesc, StyledTable, StyledTd, StyledTh, StyledTr } from './styled';
 import { StatusType } from 'components/Status/Status';
 import { toShortString } from 'utils';
 import { Tooltip, Box } from '@chakra-ui/react';
+import { useStateValue } from 'hooks/useStateValue';
 
 export const ColumnSpec = Type.Object({
   title: Type.String({
@@ -85,6 +86,18 @@ export const ColumnSpec = Type.Object({
       }
     ]
   }),
+  sort: Type.KeyOf(
+    Type.Object({
+      disabled: Type.String(),
+      default: Type.String(),
+      desc: Type.String(),
+      asc: Type.String(),
+    }),
+    {
+      title: 'Sort',
+      category: Category.Basic,
+    }
+  ),
 });
 
 const PropsSpec = Type.Object({
@@ -107,11 +120,48 @@ const PropsSpec = Type.Object({
 });
 
 const StateSpec = Type.Object({
-  value: Type.String(),
+  currentSortKey: Type.String(),
+  currentSortValue: Type.String()
 });
 
 export interface ColumnValueProps extends Static<typeof ColumnSpec> {
   value: string;
+};
+
+type StateType = { key: string, sort: (Static<typeof ColumnSpec>)["sort"] };
+
+const RenderSort: React.FC<{ dataKey: string, sort: (Static<typeof ColumnSpec>)["sort"], cb?: (o: StateType) => void }> = ({ sort, dataKey, cb }) => {
+  const [currentSort, setCurrentSortSort] = useState(sort || 'default');
+
+  useEffect(() => {
+    setCurrentSortSort(sort);
+  }, [sort]);
+
+  const handleClick = useCallback(() => {
+    let _sort: (Static<typeof ColumnSpec>)["sort"] = 'default';
+    if (currentSort === 'asc') {
+      _sort = 'desc';
+    }
+
+    if (currentSort === 'default' || !currentSort) {
+      _sort = 'asc';
+    }
+
+    if (currentSort === 'desc') {
+      _sort = 'default';
+    }
+    const stats = { key: dataKey, sort: _sort };
+    cb && cb(stats);
+  }, [cb, currentSort, dataKey]);
+
+  if (currentSort === 'disabled') {
+    return null;
+  }
+
+  return (<StyledSortBox onClick={handleClick}>
+    <StyledSortAsc className={currentSort === 'asc' ? 'active' : ''} />
+    <StyledSortDesc className={currentSort === 'desc' ? 'active' : ''} />
+  </StyledSortBox>);
 };
 
 const RenderColumnValue: React.FC<ColumnValueProps> = ({ type, value, transformer, ...rest }) => {
@@ -164,7 +214,21 @@ export default implementRuntimeComponent({
     styleSlots: ['content'],
     events: [],
   },
-})(({ data, columns, elementRef }) => {
+})(({ data, columns, elementRef, mergeState }) => {
+  const [currentSortKey, setCurrentSortKey] = useStateValue(
+    '' as string,
+    mergeState,
+    true,
+    'currentSortKey'
+  );
+
+  const [currentSortValue, setCurrentSortValue] = useStateValue(
+    '' as string,
+    mergeState,
+    true,
+    'currentSortValue'
+  );
+
   return (<StyledModuleBox>
     <StyledScrollX>
       <StyledTable ref={elementRef}>
@@ -174,10 +238,14 @@ export default implementRuntimeComponent({
               return (
                 <StyledTh key={`${thData.title}${tdIndex}`}>
                   <StyledFont14Bold>{thData.title}</StyledFont14Bold>
+                  <RenderSort cb={({ key, sort }) => {
+                    setCurrentSortKey(key);
+                    setCurrentSortValue(sort);
+                    mergeState({ currentSortKey: key, currentSortValue: sort });
+                  }} dataKey={thData.dataKey} sort={currentSortKey === thData.dataKey ? currentSortValue as (Static<typeof ColumnSpec>)["sort"] : thData.sort} />
                 </StyledTh>
               );
             })}
-
           </tr>
         </thead>
         <tbody>
