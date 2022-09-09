@@ -1,6 +1,6 @@
 {
   "name": "testlowcode",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "private": false,
   "main": "./dist/main.js",
   "dependencies": {
@@ -42,7 +42,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:sdk": "npx tsup src/main.ts --clean",
-    "publish": "npm publish"
+    "publish:sdk": "npm publish"
   },
   "browserslist": {
     "production": [

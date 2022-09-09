@@ -18,10 +18,10 @@ export const enum CATEGORY {
 }
 
 export const DEFAULT_APP: Application = {
-  version: 'template/v1',
-  kind: 'Application',
-  metadata: {
-    name: 'Polkadot',
+  "version": "sunmao/v1",
+  "kind": "Application",
+  "metadata": {
+    "name": "some App"
   },
   "spec": {
     "components": [

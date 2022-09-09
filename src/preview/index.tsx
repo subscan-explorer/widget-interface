@@ -6,8 +6,8 @@ import { theme } from 'ui/chakraTheme';
 import BigNumber from 'bignumber.js';
 import { initSunmaoUI } from '@sunmao-ui/runtime';
 import runtimeConfig from 'config/runtime';
-import { DEFAULT_APP } from 'config/constants';
 import { type Application } from '@sunmao-ui/core';
+import "@arco-design/web-react/dist/css/arco.css";
 
 // This config is required for number formatting
 // https://mikemcl.github.io/bignumber.js/#toS
@@ -17,12 +17,12 @@ BigNumber.config({
   ROUNDING_MODE: 1
 });
 
-const Preview: React.FC<Application> = (options: Application) => {
+const Preview: React.FC<{ options: Application }> = ({ options }) => {
   const { App, registry } = initSunmaoUI(runtimeConfig);
 
   return (<ChakraProvider theme={theme}>
     <ThemeProvider theme={light}>
-      <App options={options} />
+      {options && <App options={options} />}
     </ThemeProvider>
   </ChakraProvider>);
 };
