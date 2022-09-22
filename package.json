@@ -1,11 +1,11 @@
 {
   "name": "testlowcode",
-  "version": "0.1.6",
+  "version": "0.1.13",
   "private": false,
   "main": "./dist/main.js",
   "dependencies": {
-    "@sunmao-ui-fork-fork/editor": "0.7.4",
-    "@sunmao-ui-fork-fork/runtime": "0.7.3",
+    "@sunmao-ui-fork/editor": "0.7.6",
+    "@sunmao-ui-fork/runtime": "0.7.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -22,7 +22,8 @@
     "styled-system": "^5.1.5",
     "typescript": "4.6.3",
     "web-vitals": "^2.1.4",
-    "bignumber.js": "9.1.0"
+    "bignumber.js": "9.1.0",
+    "graphql-ws": "5.11.2"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
@@ -41,7 +42,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:sdk": "npx tsup src/main.ts --clean",
+    "build:sdk": "npx tsup src/main.ts --target es5 --env.NODE_ENV production --clean",
+    "prepublish": "npx tsup src/main.ts --target es5 --env.NODE_ENV production --clean",
     "publish:sdk": "npm publish"
   },
   "browserslist": {

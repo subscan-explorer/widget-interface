@@ -20,9 +20,11 @@ BigNumber.config({
 const Preview: React.FC<{ options: Application }> = ({ options }) => {
   const { App, registry } = initSunmaoUI(runtimeConfig);
 
-  return (<ChakraProvider theme={theme}>
+  return (<ChakraProvider theme={theme} resetCSS={false}>
     <ThemeProvider theme={light}>
-      {options && <App options={options} />}
+      <div className="chakraCSSReset">
+        {options && <App options={options} />}
+      </div>
     </ThemeProvider>
   </ChakraProvider>);
 };

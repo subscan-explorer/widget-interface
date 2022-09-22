@@ -29,9 +29,9 @@ const EditorUI: React.FC<BareProps> = ({ className }) => {
     runtimeProps: runtimeConfig
   });
 
-  return (<ChakraProvider theme={theme}>
+  return (<ChakraProvider resetCSS={false} theme={theme}>
     <ThemeProvider theme={light}>
-      <StyledContainer>
+      <StyledContainer className="chakraCSSReset">
         <Editor />
       </StyledContainer>
     </ThemeProvider>
