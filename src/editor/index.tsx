@@ -1,8 +1,8 @@
-import { initSunmaoUIEditor } from '@sunmao-ui/editor';
+import { initSunmaoUIEditor } from '@sunmao-ui-fork/editor';
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { BareProps } from 'types';
-import '@sunmao-ui/editor/dist/index.css';
+import '@sunmao-ui-fork/editor/dist/index.css';
 import runtimeConfig from 'config/runtime';
 import { DEFAULT_APP } from 'config/constants';
 import { light } from 'ui/theme';

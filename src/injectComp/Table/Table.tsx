@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Type, Static } from '@sinclair/typebox';
-import { implementRuntimeComponent } from '@sunmao-ui/runtime';
+import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
 import { Balance, Link, Status, Text, Time, EllipsisText } from 'components';
 import { CATEGORY, Category, VERSION } from 'config/constants';
 import { StyledFont12, StyledFont14Bold, StyledModuleBox, StyledScrollX } from 'ui/common';

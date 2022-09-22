@@ -4,8 +4,8 @@
   "private": false,
   "main": "./dist/main.js",
   "dependencies": {
-    "@sunmao-ui/editor": "0.7.5-alpha.4",
-    "@sunmao-ui/runtime": "0.7.4-alpha.3",
+    "@sunmao-ui-fork-fork/editor": "0.7.4",
+    "@sunmao-ui-fork-fork/runtime": "0.7.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",

@@ -1,4 +1,4 @@
-import { type Application } from '@sunmao-ui/core';
+import { type Application } from '@sunmao-ui-fork/core';
 
 export const enum Category {
   Data = 'Data',

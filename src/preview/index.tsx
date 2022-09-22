@@ -4,9 +4,9 @@ import { light } from 'ui/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from 'ui/chakraTheme';
 import BigNumber from 'bignumber.js';
-import { initSunmaoUI } from '@sunmao-ui/runtime';
+import { initSunmaoUI } from '@sunmao-ui-fork/runtime';
 import runtimeConfig from 'config/runtime';
-import { type Application } from '@sunmao-ui/core';
+import { type Application } from '@sunmao-ui-fork/core';
 import "@arco-design/web-react/dist/css/arco.css";
 
 // This config is required for number formatting

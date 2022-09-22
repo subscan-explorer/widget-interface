@@ -1,9 +1,9 @@
-// move to @sunmao-ui/runtime in the future?
+// move to @sunmao-ui-fork/runtime in the future?
 
-import { ComponentMetadata } from '@sunmao-ui/core/lib/metadata';
-import { ComponentImplProps } from '@sunmao-ui/runtime';
+import { ComponentMetadata } from '@sunmao-ui-fork/core/lib/metadata';
+import { ComponentImplProps } from '@sunmao-ui-fork/runtime';
 import { TLiteral, Type } from '@sinclair/typebox';
-import { SlotSpec } from '@sunmao-ui/core';
+import { SlotSpec } from '@sunmao-ui-fork/core';
 
 export type IntoStringUnion<T> = {
   [K in keyof T]: T[K] extends string ? TLiteral<T[K]> : never;
