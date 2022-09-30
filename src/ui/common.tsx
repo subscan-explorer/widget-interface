@@ -4,7 +4,8 @@ interface FontProps {
   bold?: boolean; 
   color?: string;
   block?: boolean;
-  nowrap?: boolean
+  nowrap?: boolean;
+  wordbreak?: string;
 }
 
 export const StyledFont14 = styled.span<FontProps>`
@@ -20,6 +21,7 @@ export const StyledFont14 = styled.span<FontProps>`
   /* Black */
   color: ${({ theme, color }) => theme.colors[color || 'primary']};
   white-space: ${({ nowrap }) => nowrap ? 'nowrap' : 'normal'};
+  word-break: ${({ wordbreak }) => wordbreak || 'normal'};
 `;
 
 export const StyledFont12 = styled.span<FontProps>`
@@ -35,6 +37,7 @@ export const StyledFont12 = styled.span<FontProps>`
   /* Black */
   color: ${({ theme, color }) => theme.colors[color || 'primary']};
   white-space: ${({ nowrap }) => nowrap ? 'nowrap' : 'normal'};
+  word-break: ${({ wordbreak }) => wordbreak || 'normal'};
 `;
 
 export const StyledModuleBox = styled.div`
