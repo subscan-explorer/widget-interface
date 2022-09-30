@@ -24,7 +24,7 @@ const Balance: React.FC<Props> = ({ className, value, decimals = 0, symbol = '' 
 
   return (<StyledContainer className={className}>
     <StyledFont14>{splitValue[0]}</StyledFont14>
-    {splitValue[1] ? <StyledFont14 color='background02'>.{splitValue[1]}</StyledFont14> : null}{symbol && <StyledFont14> {symbol}</StyledFont14>}
+    {splitValue[1] ? <StyledFont14 color='background02'>.{splitValue[1]}</StyledFont14> : null} {symbol && <StyledFont14> {symbol}</StyledFont14>}
   </StyledContainer>);
 };
 
