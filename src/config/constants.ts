@@ -329,6 +329,18 @@ export const DEFAULT_APP: Application = {
               "ellipsis": false,
               "decimals": 0,
               "symbol": "DOT"
+            },
+            {
+              "title": "Signature",
+              "width": "",
+              "dataKey": "signature",
+              "transformer": "",
+              "type": "code",
+              "prePath": "",
+              "ellipsis": false,
+              "decimals": 0,
+              "tagstyle": "primary",
+              "symbol": ""
             }
           ]
         },

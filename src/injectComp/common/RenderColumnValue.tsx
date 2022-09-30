@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Type, Static } from '@sinclair/typebox';
-import { Balance, Link, Status, Text, Time, EllipsisText, Tag } from 'components';
+import { Balance, Link, Status, Text, Time, EllipsisText, Tag, Code } from 'components';
 import { Category } from 'config/constants';
 import { StyledFont12 } from 'ui/common';
 import { StatusType } from 'components/Status/Status';
@@ -22,6 +22,7 @@ export const BaseColumnSpecObject = {
       balance: Type.String(),
       time: Type.String(),
       tag: Type.String(),
+      code: Type.String(),
     }),
     {
       title: 'Type',
@@ -118,6 +119,8 @@ export const RenderColumnValue: React.FC<BaseColumnValueProps> = ({ type, value,
       return <Balance value={transformerValue} decimals={decimals} symbol={symbol} />;
     case 'tag':
       return <Tag text={transformerValue} variant={tagstyle} />;
+    case 'code':
+      return <Code code={transformerValue} />;
     default:
       return <Text>{transformerValue?.toString()}</Text>;
   }
