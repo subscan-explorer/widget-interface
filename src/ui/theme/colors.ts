@@ -1,8 +1,7 @@
 
 export const lightColors = {
-  white: '#FFF',
-  black: '#FFF',
   primary: '#302B3C',
+  contrast: '#ffffff',
   background: '#FBFBFD',
   background02: '#9D9D9D',
   background03: '#D8D8D8',
@@ -14,9 +13,8 @@ export const lightColors = {
 };
 
 export const darkColors = {
-  white: '#000',
-  black: '#FFF',
   primary: '#302B3C',
+  contrast: '#ffffff',
   background: '#FBFBFD',
   background02: '#9D9D9D',
   background03: '#D8D8D8',
