@@ -3,16 +3,25 @@ import { Type, Static } from '@sinclair/typebox';
 import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
 import { Balance, Link, Status, Text, Time, EllipsisText } from 'components';
 import { CATEGORY, Category, VERSION } from 'config/constants';
-import { StyledFont12, StyledFont14, StyledModuleBox, StyledScrollX } from 'ui/common';
-import { StyledSortAsc, StyledSortBox, StyledSortDesc, StyledTable, StyledTd, StyledTh, StyledTr } from './styled';
+import { StyledFont12, StyledFont14, StyledModuleBox } from 'ui/common';
 import { StatusType } from 'components/Status/Status';
 import { toShortString } from 'utils';
 import { Tooltip, Box } from '@chakra-ui/react';
-import { useStateValue } from 'hooks/useStateValue';
 import { css } from '@emotion/css';
+import styled from 'styled-components';
 
 const CssBox = css`
   padding: 10px 20px;
+`;
+
+const StyledColumn = styled.div`
+  display: flex;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.background04};
+  padding: 15px 10px;
+`;
+
+const StyledColumnHeader = styled.div`
+  width: 180px;
 `;
 
 export const ColumnSpec = Type.Object({
@@ -106,7 +115,7 @@ export const ColumnSpec = Type.Object({
 });
 
 const PropsSpec = Type.Object({
-  data: Type.Array(Type.Any(), {
+  data: Type.Object(Type.Any(), {
     title: 'Data',
     category: Category.Data,
     weight: 0,
@@ -131,42 +140,6 @@ const StateSpec = Type.Object({
 
 export interface ColumnValueProps extends Static<typeof ColumnSpec> {
   value: string;
-};
-
-type StateType = { key: string, sort: (Static<typeof ColumnSpec>)["sort"] };
-
-const RenderSort: React.FC<{ dataKey: string, sort: (Static<typeof ColumnSpec>)["sort"], cb?: (o: StateType) => void }> = ({ sort, dataKey, cb }) => {
-  const [currentSort, setCurrentSortSort] = useState(sort || 'default');
-
-  useEffect(() => {
-    setCurrentSortSort(sort);
-  }, [sort]);
-
-  const handleClick = useCallback(() => {
-    let _sort: (Static<typeof ColumnSpec>)["sort"] = 'default';
-    if (currentSort === 'asc') {
-      _sort = 'desc';
-    }
-
-    if (currentSort === 'default' || !currentSort) {
-      _sort = 'asc';
-    }
-
-    if (currentSort === 'desc') {
-      _sort = 'default';
-    }
-    const stats = { key: dataKey, sort: _sort };
-    cb && cb(stats);
-  }, [cb, currentSort, dataKey]);
-
-  if (currentSort === 'disabled') {
-    return null;
-  }
-
-  return (<StyledSortBox onClick={handleClick}>
-    <StyledSortAsc className={currentSort === 'asc' ? 'active' : ''} />
-    <StyledSortDesc className={currentSort === 'desc' ? 'active' : ''} />
-  </StyledSortBox>);
 };
 
 const RenderColumnValue: React.FC<ColumnValueProps> = ({ type, value, transformer, ...rest }) => {
@@ -201,14 +174,11 @@ const RenderColumnValue: React.FC<ColumnValueProps> = ({ type, value, transforme
 export default implementRuntimeComponent({
   version: VERSION.Core,
   metadata: {
-    name: 'table',
-    displayName: 'Table',
-    description: 'Table Components',
+    name: 'constraintlist',
+    displayName: 'Constraint List',
+    description: 'Constraint List Components',
     exampleProperties: {
-      data: [
-        { "from": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f", "to": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N", "extrinsic_index": "10426613-1", "success": false, "hash": "0x4b786c3d4740fcb90bfa593c1335a65fc2ff425114b3060ae377b6981c50e3d8", "block_num": 10426613, "block_timestamp": 1664176458, "module": "balances", "amount": "86.13245", "amount_v2": "86132450000", "fee": "114600000", "nonce": 7, "asset_symbol": "", "asset_type": "", "from_account_display": { "address": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f" }, "to_account_display": { "address": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N", "display": "0x245b4775082c144c22a4874b0fba8c70c510c5ae" }, "event_idx": 1 },
-        { "from": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f", "to": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N", "extrinsic_index": "10426613-1", "success": false, "hash": "0x4b786c3d4740fcb90bfa593c1335a65fc2ff425114b3060ae377b6981c50e3d8", "block_num": 10426613, "block_timestamp": 1664176458, "module": "balances", "amount": "86.13245", "amount_v2": "86132450000", "fee": "114600000", "nonce": 7, "asset_symbol": "", "asset_type": "", "from_account_display": { "address": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f" }, "to_account_display": { "address": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N", "display": "0x245b4775082c144c22a4874b0fba8c70c510c5ae" }, "event_idx": 1 }
-      ],
+      data: { "from": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f", "to": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N", "extrinsic_index": "10426613-1", "success": false, "hash": "0x4b786c3d4740fcb90bfa593c1335a65fc2ff425114b3060ae377b6981c50e3d8", "block_num": 10426613, "block_timestamp": 1664176458, "module": "balances", "amount": "86.13245", "amount_v2": "86132450000", "fee": "114600000", "nonce": 7, "asset_symbol": "", "asset_type": "", "from_account_display": { "address": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f" }, "to_account_display": { "address": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N", "display": "0x245b4775082c144c22a4874b0fba8c70c510c5ae" }, "event_idx": 1 },
       columns: [
         {
           "title": "Extrinsic ID",
@@ -239,6 +209,38 @@ export default implementRuntimeComponent({
           "width": "",
           "dataKey": "from",
           "prePath": "/account"
+        },
+        {
+          "title": "To",
+          "type": "link",
+          "width": "",
+          "dataKey": "to",
+          "prePath": "/account"
+        },
+        {
+          "title": "Value",
+          "type": "balance",
+          "width": "",
+          "dataKey": "amount_v2",
+          "decimals": 9,
+          "symbol": "RING"
+        },
+        {
+          "title": "Result",
+          "type": "transactionStatus",
+          "width": "",
+          "dataKey": "success",
+          "transformer": "return value == 'true' ? 'normal' : 'error'",
+          "sort": "disabled"
+        },
+        {
+          "title": "Hash",
+          "type": "link",
+          "width": "",
+          "dataKey": "hash",
+          "prePath": "/extrinsic",
+          "ellipsis": true,
+          "sort": "disabled"
         }
       ]
     },
@@ -255,58 +257,17 @@ export default implementRuntimeComponent({
     events: [],
   },
 })(({ data, columns, elementRef, mergeState }) => {
-  const [currentSortKey, setCurrentSortKey] = useStateValue(
-    '' as string,
-    mergeState,
-    true,
-    'currentSortKey'
-  );
-
-  const [currentSortValue, setCurrentSortValue] = useStateValue(
-    '' as string,
-    mergeState,
-    true,
-    'currentSortValue'
-  );
-
-  return (<StyledModuleBox className={CssBox} >
-    <StyledScrollX>
-      <StyledTable ref={elementRef}>
-        <thead>
-          <tr>
-            {columns?.map((thData, tdIndex) => {
-              return (
-                <StyledTh key={`${thData.title}${tdIndex}`}>
-                  <StyledFont14 bold>{thData.title}</StyledFont14>
-                  <RenderSort cb={({ key, sort }) => {
-                    setCurrentSortKey(key);
-                    setCurrentSortValue(sort);
-                    mergeState({ currentSortKey: key, currentSortValue: sort });
-                  }} dataKey={thData.dataKey} sort={currentSortKey === thData.dataKey ? currentSortValue as (Static<typeof ColumnSpec>)["sort"] : thData.sort} />
-                </StyledTh>
-              );
-            })}
-          </tr>
-        </thead>
-        <tbody>
-          {data?.map((trData, trIndex) => {
-            return (
-              <StyledTr key={`${trIndex}`}>
-
-                {columns.map((column, tdIndex) => {
-                  return (
-                    <StyledTd key={`${trData.title}${tdIndex}`}>
-                      <RenderColumnValue value={trData[column.dataKey]} {...column} />
-                      {/* <StyledFont14>{trData[column.dataKey].toString()}</StyledFont14> */}
-                    </StyledTd>
-                  );
-                })}
-
-              </StyledTr>);
-          })}
-        </tbody>
-      </StyledTable>
-    </StyledScrollX>
+  return (<StyledModuleBox className={CssBox} ref={elementRef} >
+    {columns?.map((column, index) => {
+      return (<StyledColumn key={`${column.title}${index}`}>
+        <StyledColumnHeader>
+          <StyledFont14 bold>{column.title}</StyledFont14>
+        </StyledColumnHeader>
+        <div>
+          <RenderColumnValue value={data[column.dataKey]} {...column} />
+        </div>
+      </StyledColumn>);
+    })}
   </StyledModuleBox>);
 });
 
