@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import { Type, Static } from '@sinclair/typebox';
 import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
 import { CATEGORY, Category, VERSION } from 'config/constants';
@@ -19,6 +19,7 @@ const StyledColumn = styled.div`
 
 const StyledColumnHeader = styled.div`
   width: 180px;
+  flex-shrink: 0;
 `;
 
 export const ColumnSpec = Type.Object({
@@ -35,18 +36,6 @@ export const ColumnSpec = Type.Object({
     description:
       'The key corresponding to the column data in the data item is used to display the value',
   }),
-  sort: Type.KeyOf(
-    Type.Object({
-      disabled: Type.String(),
-      default: Type.String(),
-      desc: Type.String(),
-      asc: Type.String(),
-    }),
-    {
-      title: 'Sort',
-      category: Category.Basic,
-    }
-  ),
   ...BaseColumnSpecObject
 });
 
@@ -90,7 +79,6 @@ export default implementRuntimeComponent({
           "dataKey": "extrinsic_index",
           "prePath": "/extrinsic",
           "ellipsis": false,
-          "sort": "disabled"
         },
         {
           "title": "Block",
@@ -134,7 +122,6 @@ export default implementRuntimeComponent({
           "width": "",
           "dataKey": "success",
           "transformer": "return value == 'true' ? 'normal' : 'error'",
-          "sort": "disabled"
         },
         {
           "title": "Hash",
@@ -143,8 +130,7 @@ export default implementRuntimeComponent({
           "dataKey": "hash",
           "prePath": "/extrinsic",
           "ellipsis": true,
-          "sort": "disabled"
-        }
+        },
       ]
     },
     annotations: {

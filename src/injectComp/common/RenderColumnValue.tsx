@@ -1,7 +1,7 @@
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import { Type, Static } from '@sinclair/typebox';
-import { Balance, Link, Status, Text, Time, EllipsisText } from 'components';
+import { Balance, Link, Status, Text, Time, EllipsisText, Tag } from 'components';
 import { Category } from 'config/constants';
 import { StyledFont12 } from 'ui/common';
 import { StatusType } from 'components/Status/Status';
@@ -9,6 +9,11 @@ import { toShortString } from 'utils';
 import { Tooltip, Box } from '@chakra-ui/react';
 
 export const BaseColumnSpecObject = {
+  transformer: Type.String({
+    title: 'Transformer',
+    description:
+      'return value + \'test\'',
+  }),
   type: Type.KeyOf(
     Type.Object({
       text: Type.String(),
@@ -16,17 +21,13 @@ export const BaseColumnSpecObject = {
       transactionStatus: Type.String(),
       balance: Type.String(),
       time: Type.String(),
+      tag: Type.String(),
     }),
     {
       title: 'Type',
       category: Category.Basic,
     }
   ),
-  transformer: Type.String({
-    title: 'Transformer',
-    description:
-      'return value + \'test\'',
-  }),
   prePath: Type.String({
     title: 'URL prefix',
     conditions: [
@@ -62,6 +63,18 @@ export const BaseColumnSpecObject = {
       }
     ]
   }),
+  tagstyle: Type.KeyOf(Type.Object({
+    primary: Type.String(),
+    secondary: Type.String(),
+  }),{
+    title: 'Tag Style',
+    conditions: [
+      {
+        key: 'type',
+        value: 'tag',
+      }
+    ]
+  }),
   symbol: Type.String({
     title: 'Token Symbol',
     conditions: [
@@ -81,8 +94,8 @@ export interface BaseColumnValueProps extends Static<typeof BaseColumnSpec> {
 
 export const RenderColumnValue: React.FC<BaseColumnValueProps> = ({ type, value, transformer, ...rest }) => {
   // eslint-disable-next-line no-new-func
-  const transformerValue = transformer ? new Function('value', transformer)(value?.toString()) : value;
-  const { ellipsis = true, prePath = '', decimals = 0, symbol } = rest;
+  const transformerValue = transformer ? new Function('value', transformer)(value) : value;
+  const { ellipsis = true, prePath = '', decimals = 0, symbol, tagstyle } = rest;
 
   switch (type) {
     case 'text':
@@ -103,6 +116,8 @@ export const RenderColumnValue: React.FC<BaseColumnValueProps> = ({ type, value,
       return <Time second={parseInt(transformerValue)} />;
     case 'balance':
       return <Balance value={transformerValue} decimals={decimals} symbol={symbol} />;
+    case 'tag':
+      return <Tag text={transformerValue} variant={tagstyle} />;
     default:
       return <Text>{transformerValue?.toString()}</Text>;
   }

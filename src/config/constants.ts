@@ -253,7 +253,7 @@ export const DEFAULT_APP: Application = {
         "id": "constraintlist3",
         "type": "core/v1/constraintlist",
         "properties": {
-          "data": "{{{\n  \"from\": \"2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f\",\n  \"to\": \"2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N\",\n  \"extrinsic_index\": \"10426613-1\",\n  \"success\": false,\n  \"hash\": \"0x4b786c3d4740fcb90bfa593c1335a65fc2ff425114b3060ae377b6981c50e3d8\",\n  \"block_num\": 10426613,\n  \"block_timestamp\": 1664176458,\n  \"module\": \"balances\",\n  \"amount\": \"86.13245\",\n  \"amount_v2\": \"86132450000\",\n  \"fee\": \"114600000\",\n  \"nonce\": 7,\n  \"asset_symbol\": \"\",\n  \"asset_type\": \"\",\n  \"from_account_display\": {\n    \"address\": \"2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f\"\n  },\n  \"to_account_display\": {\n    \"address\": \"2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N\",\n    \"display\": \"0x245b4775082c144c22a4874b0fba8c70c510c5ae\"\n  },\n  \"event_idx\": 1\n}}}",
+          "data": "{{{\n        \"block_timestamp\": 1664508078,\n        \"block_num\": 10481467,\n        \"extrinsic_index\": \"10481467-1\",\n        \"call_module_function\": \"transfer_keep_alive\",\n        \"call_module\": \"balances\",\n        \"account_id\": \"2tFM9MAB2Mv1Kfy59vPwpVf6YyRyceCZybfAjfcnbLCer7N1\",\n        \"signature\": \"0x20e3af8c47489dcd4b28cb6d76881aa515d41b26f8bbb571853ef1f0a70b62520b523544a29410d2e3fca50bd0b8a28d8737ad74bcb8e1daf414e43d89d63b84\",\n        \"nonce\": 5887,\n        \"extrinsic_hash\": \"0x9d8b7bc9d3479c9f1e0099e3b288a90d8caf906bf60abdc035791684c0f09e87\",\n        \"success\": true,\"transfer\": {\n            \"from\": \"2tFM9MAB2Mv1Kfy59vPwpVf6YyRyceCZybfAjfcnbLCer7N1\",\n            \"to\": \"2qkk5ZzztYpEyyPFgciphiqk294HFobKTPP43vAkHjePhm5y\",\n            \"module\": \"balances\",\n            \"amount\": \"100\",\n            \"hash\": \"0x9d8b7bc9d3479c9f1e0099e3b288a90d8caf906bf60abdc035791684c0f09e87\",\n            \"success\": true,\n            \"asset_symbol\": \"\",\n            \"to_account_display\": {\n                \"address\": \"2qkk5ZzztYpEyyPFgciphiqk294HFobKTPP43vAkHjePhm5y\"\n            }\n        },}}}",
           "columns": [
             {
               "title": "Extrinsic ID",
@@ -280,17 +280,55 @@ export const DEFAULT_APP: Application = {
             },
             {
               "title": "From",
-              "type": "link",
+              "type": "text",
               "width": "",
-              "dataKey": "from",
-              "prePath": "/account"
-            },{
+              "dataKey": "transfer",
+              "prePath": "/account",
+              "transformer": "return value.from",
+              "ellipsis": false
+            },
+            {
               "title": "Extrinsic Hash",
               "type": "text",
               "width": "",
-              "dataKey": "hash",
+              "dataKey": "extrinsic_hash",
               "prePath": "",
               "ellipsis": false
+            },
+            {
+              "title": "Module",
+              "width": "",
+              "dataKey": "call_module",
+              "sort": "disabled",
+              "type": "tag",
+              "transformer": "",
+              "prePath": "",
+              "ellipsis": false,
+              "decimals": 0,
+              "symbol": ""
+            },
+            {
+              "title": "Call",
+              "width": "",
+              "dataKey": "call_module_function",
+              "type": "tag",
+              "transformer": "",
+              "prePath": "",
+              "ellipsis": false,
+              "decimals": 0,
+              "symbol": "",
+              "tagstyle": "secondary"
+            },
+            {
+              "title": "Value",
+              "width": "",
+              "dataKey": "transfer",
+              "type": "balance",
+              "transformer": "return value.amount",
+              "prePath": "",
+              "ellipsis": false,
+              "decimals": 0,
+              "symbol": "DOT"
             }
           ]
         },

@@ -1,4 +1,7 @@
+
 export const lightColors = {
+  white: '#FFF',
+  black: '#FFF',
   primary: '#302B3C',
   background: '#FBFBFD',
   background02: '#9D9D9D',
@@ -11,6 +14,8 @@ export const lightColors = {
 };
 
 export const darkColors = {
+  white: '#000',
+  black: '#FFF',
   primary: '#302B3C',
   background: '#FBFBFD',
   background02: '#9D9D9D',
@@ -21,3 +26,5 @@ export const darkColors = {
   error: '#FF475D',
   warning: '#FFB600',
 };
+
+
