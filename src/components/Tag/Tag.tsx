@@ -19,7 +19,7 @@ export type Variant = typeof variants[keyof typeof variants];
 const styleVariants = {
   [variants.PRIMARY]: css`
     background-color: ${({ theme }) => theme.chain.color};
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.contrast};
     border: 1px solid ${({ theme }) => theme.chain.color};
   `,
   [variants.SECONDARY]: css`
