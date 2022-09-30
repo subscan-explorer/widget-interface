@@ -284,6 +284,13 @@ export const DEFAULT_APP: Application = {
               "width": "",
               "dataKey": "from",
               "prePath": "/account"
+            },{
+              "title": "Extrinsic Hash",
+              "type": "text",
+              "width": "",
+              "dataKey": "hash",
+              "prePath": "",
+              "ellipsis": false
             }
           ]
         },

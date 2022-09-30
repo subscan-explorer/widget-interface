@@ -1,15 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Type, Static } from '@sinclair/typebox';
 import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
-import { Balance, Link, Status, Text, Time, EllipsisText } from 'components';
 import { CATEGORY, Category, VERSION } from 'config/constants';
-import { StyledFont12, StyledFont14, StyledModuleBox, StyledScrollX } from 'ui/common';
+import { StyledFont14, StyledModuleBox, StyledScrollX } from 'ui/common';
 import { StyledSortAsc, StyledSortBox, StyledSortDesc, StyledTable, StyledTd, StyledTh, StyledTr } from './styled';
-import { StatusType } from 'components/Status/Status';
-import { toShortString } from 'utils';
-import { Tooltip, Box } from '@chakra-ui/react';
 import { useStateValue } from 'hooks/useStateValue';
 import { css } from '@emotion/css';
+import { BaseColumnSpecObject, RenderColumnValue } from '../common/RenderColumnValue';
 
 const CssBox = css`
   padding: 10px 20px;
@@ -20,76 +17,14 @@ export const ColumnSpec = Type.Object({
     title: 'Title',
     category: Category.Basic,
   }),
-  type: Type.KeyOf(
-    Type.Object({
-      text: Type.String(),
-      link: Type.String(),
-      transactionStatus: Type.String(),
-      balance: Type.String(),
-      time: Type.String(),
-    }),
-    {
-      title: 'Type',
-      category: Category.Basic,
-    }
-  ),
   width: Type.String({
     title: 'Width',
-  }),
-  transformer: Type.String({
-    title: 'Transformer',
-    description:
-      'return value + \'test\'',
   }),
   dataKey: Type.String({
     title: 'Key',
     category: Category.Basic,
     description:
       'The key corresponding to the column data in the data item is used to display the value',
-  }),
-  prePath: Type.String({
-    title: 'URL prefix',
-    conditions: [
-      {
-        key: 'type',
-        value: 'link',
-      }
-    ]
-  }),
-  ellipsis: Type.Boolean({
-    title: 'Ellipsis',
-    conditions: [
-      {
-        or: [
-          {
-            key: 'type',
-            value: 'link',
-          },
-          {
-            key: 'type',
-            value: 'text',
-          }
-        ]
-      }
-    ]
-  }),
-  decimals: Type.Number({
-    title: 'Token Decimals',
-    conditions: [
-      {
-        key: 'type',
-        value: 'balance',
-      }
-    ]
-  }),
-  symbol: Type.String({
-    title: 'Token Symbol',
-    conditions: [
-      {
-        key: 'type',
-        value: 'balance',
-      }
-    ]
   }),
   sort: Type.KeyOf(
     Type.Object({
@@ -103,6 +38,7 @@ export const ColumnSpec = Type.Object({
       category: Category.Basic,
     }
   ),
+  ...BaseColumnSpecObject
 });
 
 const PropsSpec = Type.Object({
@@ -167,35 +103,6 @@ const RenderSort: React.FC<{ dataKey: string, sort: (Static<typeof ColumnSpec>)[
     <StyledSortAsc className={currentSort === 'asc' ? 'active' : ''} />
     <StyledSortDesc className={currentSort === 'desc' ? 'active' : ''} />
   </StyledSortBox>);
-};
-
-const RenderColumnValue: React.FC<ColumnValueProps> = ({ type, value, transformer, ...rest }) => {
-  // eslint-disable-next-line no-new-func
-  const transformerValue = transformer ? new Function('value', transformer)(value?.toString()) : value;
-  const { ellipsis = true, prePath = '', decimals = 0, symbol } = rest;
-
-  switch (type) {
-    case 'text':
-      return <>{ellipsis ? <EllipsisText ellipsis={ellipsis} text={transformerValue} /> : <Text>{transformerValue?.toString()}</Text>}</>;
-    case 'transactionStatus':
-      return <Status type={transformerValue as StatusType} />;
-    case 'link':
-      const to = prePath ? `${prePath}/${transformerValue}` : `/${transformerValue}`;
-      const displayName = ellipsis ? toShortString(transformerValue) : transformerValue;
-
-      return (<>{ellipsis ? <Link href={to}>
-        <Tooltip hasArrow bg='#fff' placement="top" label={<Box p="2"><StyledFont12>{transformerValue}</StyledFont12></Box>}>
-          {displayName}
-        </Tooltip>
-      </Link> : <Link href={to}>{displayName}</Link>}
-      </>);
-    case 'time':
-      return <Time second={parseInt(transformerValue)} />;
-    case 'balance':
-      return <Balance value={transformerValue} decimals={decimals} symbol={symbol} />;
-    default:
-      return <Text>{transformerValue?.toString()}</Text>;
-  }
 };
 
 export default implementRuntimeComponent({
@@ -297,7 +204,6 @@ export default implementRuntimeComponent({
                   return (
                     <StyledTd key={`${trData.title}${tdIndex}`}>
                       <RenderColumnValue value={trData[column.dataKey]} {...column} />
-                      {/* <StyledFont14>{trData[column.dataKey].toString()}</StyledFont14> */}
                     </StyledTd>
                   );
                 })}
