@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { Colors } from "./theme/colors";
 
 interface FontProps {
   bold?: boolean; 
-  color?: string;
+  fontColor?: keyof Colors;
   block?: boolean;
   nowrap?: boolean;
   wordbreak?: string;
@@ -19,7 +20,7 @@ export const StyledFont14 = styled.span<FontProps>`
   /* identical to box height, or 143% */
 
   /* Black */
-  color: ${({ theme, color }) => theme.colors[color || 'primary']};
+  color: ${({ theme, fontColor }) => theme.colors[fontColor || 'primary']};
   white-space: ${({ nowrap }) => nowrap ? 'nowrap' : 'normal'};
   word-break: ${({ wordbreak }) => wordbreak || 'normal'};
 `;
@@ -35,7 +36,7 @@ export const StyledFont12 = styled.span<FontProps>`
   /* identical to box height, or 143% */
 
   /* Black */
-  color: ${({ theme, color }) => theme.colors[color || 'primary']};
+  color: ${({ theme, fontColor }) => theme.colors[fontColor || 'primary']};
   white-space: ${({ nowrap }) => nowrap ? 'nowrap' : 'normal'};
   word-break: ${({ wordbreak }) => wordbreak || 'normal'};
 `;

@@ -1,5 +1,19 @@
 
-export const lightColors = {
+export type Colors = {
+  primary: string;
+  contrast: string;
+  background: string;
+  background02: string;
+  background03: string;
+  background04: string;
+  background05: string;
+  link: string;
+  success: string;
+  error: string;
+  warning: string;
+}
+
+export const lightColors: Colors = {
   primary: '#302B3C',
   contrast: '#ffffff',
   background: '#FBFBFD',
@@ -13,7 +27,7 @@ export const lightColors = {
   warning: '#FFB600',
 };
 
-export const darkColors = {
+export const darkColors: Colors = {
   primary: '#302B3C',
   contrast: '#ffffff',
   background: '#FBFBFD',

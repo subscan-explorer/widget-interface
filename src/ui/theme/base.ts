@@ -14,7 +14,15 @@ export const radii = {
   circle: "50%",
 };
 
-export const chain = {
+export type ChainColors = {
+  color: string;
+  borderRadius: string;
+}
+
+export const chain: {
+  dark: ChainColors;
+  light: ChainColors;
+} = {
   dark: {
     color: '#FF0083',
     borderRadius: '4px',
@@ -23,6 +31,5 @@ export const chain = {
     color: '#FF0083',
     borderRadius: '4px',
   }
-
 };
 
