@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Type, Static } from '@sinclair/typebox';
 import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
-import { CATEGORY, Category, VERSION } from 'config/constants';
+import { Category, VERSION } from 'config/constants';
 import { StyledFont14, StyledModuleBox, StyledScrollX } from 'ui/common';
 import { StyledSortAsc, StyledSortBox, StyledSortDesc, StyledTable, StyledTd, StyledTh, StyledTr } from './styled';
 import { useStateValue } from 'hooks/useStateValue';
@@ -150,7 +150,7 @@ export default implementRuntimeComponent({
       ]
     },
     annotations: {
-      category: CATEGORY.Display,
+      category: Category.Display,
     },
   },
   spec: {

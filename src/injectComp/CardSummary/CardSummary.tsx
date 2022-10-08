@@ -90,7 +90,7 @@ export default implementRuntimeComponent({
           return (<StyledcColumn key={`${column.title}${index}`}>
             <IconComponent width="20" />
             <StyledValue>
-              <StyledFont12 block color="background02">{column.title}</StyledFont12>
+              <StyledFont12 block fontColor="background02">{column.title}</StyledFont12>
               <StyledFont14 block bold>{column.value}</StyledFont14>
             </StyledValue>
           </StyledcColumn>);

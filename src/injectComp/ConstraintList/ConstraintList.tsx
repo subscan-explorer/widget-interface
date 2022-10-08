@@ -1,7 +1,7 @@
 import React from 'react';
 import { Type, Static } from '@sinclair/typebox';
 import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
-import { CATEGORY, Category, VERSION } from 'config/constants';
+import { Category, VERSION } from 'config/constants';
 import { StyledFont14, StyledModuleBox } from 'ui/common';
 import { css } from '@emotion/css';
 import styled from 'styled-components';
@@ -134,7 +134,7 @@ export default implementRuntimeComponent({
       ]
     },
     annotations: {
-      category: CATEGORY.Display,
+      category: Category.Display,
     },
   },
   spec: {

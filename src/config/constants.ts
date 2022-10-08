@@ -7,14 +7,11 @@ export const enum Category {
   Behavior = 'Behavior',
   Layout = 'Layout',
   Style = 'Style',
+  Display = 'display'
 }
 
 export const enum VERSION {
   Core = 'core/v1'
-}
-
-export const enum CATEGORY {
-  Display = 'display'
 }
 
 export const DEFAULT_APP: Application = {
@@ -185,6 +182,65 @@ export const DEFAULT_APP: Application = {
       //     }
       //   ]
       // },
+      {
+        "id": "tabs4",
+        "type": "core/v1/tabs",
+        "properties": {
+          "tabNames": [
+            "Tab1",
+            "Tab2",
+            "Tab3",
+            "Tab4",
+            "Tab5"
+          ],
+          "initialSelectedTabIndex": 0
+        },
+        "traits": []
+      },
+      {
+        "id": "text5",
+        "type": "core/v1/text",
+        "properties": {
+          "value": {
+            "raw": "Tab content 1",
+            "format": "plain"
+          }
+        },
+        "traits": [
+          {
+            "type": "core/v1/slot",
+            "properties": {
+              "container": {
+                "id": "tabs4",
+                "slot": "content"
+              },
+              "ifCondition": "{{$slot.tabIndex === 0}}"
+            }
+          }
+        ]
+      },
+      {
+        "id": "text6",
+        "type": "core/v1/text",
+        "properties": {
+          "value": {
+            "raw": "Tab content 2",
+            "format": "plain"
+          }
+        },
+        "traits": [
+          {
+            "type": "core/v1/slot",
+            "properties": {
+              "container": {
+                "id": "tabs4",
+                "slot": "content"
+              },
+              "ifCondition": "{{$slot.tabIndex === 1}}"
+            }
+          }
+        ]
+      },
       {
         "id": "title2",
         "type": "core/v1/title",
