@@ -76,7 +76,7 @@ export default implementRuntimeComponent({
   } = props;
   const [selectedTabIndex, setSelectedTabIndex] = useState(initialSelectedTabIndex ?? 0);
   const theme = useTheme();
-  console.log(1111, theme.chain.color);
+
   useEffect(() => {
     mergeState({ selectedTabIndex });
   }, [mergeState, selectedTabIndex]);
