@@ -9,6 +9,7 @@ import {
   ConstraintList,
   Tabs,
   TimeLine,
+  Chart
 } from "injectComp";
 
 const libs = [
@@ -23,6 +24,7 @@ const libs = [
       ConstraintList,
       Tabs,
       TimeLine,
+      Chart
     ],
   },
 ];

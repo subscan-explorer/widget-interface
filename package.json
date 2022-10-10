@@ -23,7 +23,8 @@
     "typescript": "4.6.3",
     "web-vitals": "^2.1.4",
     "bignumber.js": "9.1.0",
-    "graphql-ws": "5.11.2"
+    "graphql-ws": "5.11.2",
+    "echarts": "5.4.0"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
