@@ -3,11 +3,12 @@ import { css } from '@emotion/css';
 import { Type, Static } from '@sinclair/typebox';
 import { FALLBACK_METADATA, getComponentProps } from 'utils/sunmao-helper';
 import { Category, VERSION } from 'config/constants';
-import { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import './Init';
 import * as echarts from 'echarts/core';
 import { getAreaChartOptions } from './options';
 import { useTheme } from 'styled-components';
+import { ElementResizeListener } from 'components';
 
 const ButtonPropsSpec = Type.Object({
   data: Type.Array(Type.Array(Type.Any()), {
@@ -43,8 +44,15 @@ export const Chart = implementRuntimeComponent({
   },
 })(props => {
   const { elementRef, customStyle, data, callbackMap } = props;
+  const [chart, SetChart] = useState<echarts.ECharts>();
   const { ...cProps } = getComponentProps(props);
   const theme = useTheme();
+
+  const adaptResize = useCallback(() => {
+    if (chart) {
+      chart.resize();
+    }
+  }, [chart]);
 
   useEffect(() => {
     if (!elementRef) return;
@@ -55,18 +63,21 @@ export const Chart = implementRuntimeComponent({
     const valueList = data.map(function (item) {
       return item[1];
     });
-
     const options = getAreaChartOptions(theme, dateList, valueList);
     myChart.setOption(options);
+    SetChart(myChart);
   }, [data, elementRef, theme]);
 
   return (
-    <div
-      style={{ width: '100%', height: '400px' }}
-      ref={elementRef}
-      className={css(customStyle?.content)}
-      onClick={callbackMap?.onClick}
-      {...cProps}
-    />
+    <>
+      <ElementResizeListener onResize={adaptResize} />
+      <div
+        style={{ width: '100%', height: '400px' }}
+        ref={elementRef}
+        className={css(customStyle?.content)}
+        onClick={callbackMap?.onClick}
+        {...cProps}
+      />
+    </>
   );
 });
