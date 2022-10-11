@@ -40,10 +40,10 @@ export const ColumnSpec = Type.Object({
 });
 
 const PropsSpec = Type.Object({
-  data: Type.Object(Type.Any(), {
+  data: Type.Record(Type.String(), Type.Any(), {
     title: 'Data',
     category: Category.Data,
-    weight: 0,
+    weight: 1,
     widget: 'core/v1/expression',
   }),
   columns: Type.Array(ColumnSpec, {
