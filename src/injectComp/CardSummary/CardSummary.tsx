@@ -18,7 +18,7 @@ const StyledGrid = styled.div`
   grid-row-gap: 20px;
 `;
 
-const StyledcColumn = styled.div`
+const StyledColumn = styled.div`
   display: flex;
 `;
 
@@ -87,13 +87,13 @@ export default implementRuntimeComponent({
       <StyledGrid>
         {columns.map((column, index) => {
           const IconComponent = Icons[column.icon];
-          return (<StyledcColumn key={`${column.title}${index}`}>
+          return (<StyledColumn key={`${column.title}${index}`}>
             <IconComponent width="20" />
             <StyledValue>
               <StyledFont12 block fontColor="background02">{column.title}</StyledFont12>
               <StyledFont14 block bold>{column.value}</StyledFont14>
             </StyledValue>
-          </StyledcColumn>);
+          </StyledColumn>);
         })}
       </StyledGrid>
     </StyledModuleBox>
