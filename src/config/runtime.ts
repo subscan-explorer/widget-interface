@@ -1,6 +1,5 @@
 import { type SunmaoUIRuntimeProps } from "@sunmao-ui-fork/runtime";
 import {
-  Font,
   Table,
   Pagination,
   Title,
@@ -9,13 +8,12 @@ import {
   ConstraintList,
   Tabs,
   TimeLine,
-  Chart
+  Chart,
 } from "injectComp";
 
 const libs = [
   {
     components: [
-      Font,
       Table,
       Pagination,
       Title,
@@ -24,7 +22,7 @@ const libs = [
       ConstraintList,
       Tabs,
       TimeLine,
-      Chart
+      Chart,
     ],
   },
 ];

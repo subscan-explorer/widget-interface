@@ -1,10 +1,9 @@
-export {default as Font} from './Font';
 export { Table } from './Table';
 export { CardSummary } from './CardSummary';
 export { Pagination } from './Pagination';
 export { ConstraintList } from './ConstraintList';
-export { default as Title } from './Title';
-export { default as Icon } from './Icon';
-export { default as Tabs } from './Tabs';
+export { Title } from './Title';
+export { Icon } from './Icon';
+export { Tabs } from './Tabs';
 export { TimeLine } from './TimeLine';
 export { Chart } from './Chart';

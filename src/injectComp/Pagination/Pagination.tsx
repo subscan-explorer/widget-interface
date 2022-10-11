@@ -2,12 +2,60 @@ import { Pagination as BasePagination } from '@arco-design/web-react';
 import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
 import { css, cx } from '@emotion/css';
 import { Type, Static } from '@sinclair/typebox';
-import { FALLBACK_METADATA, getComponentProps } from 'utils/sunmao-helper';
-import { PaginationPropsSpec as BasePaginationPropsSpec } from './types/Pagination';
+import { FALLBACK_METADATA, getComponentProps, StringUnion } from 'utils/sunmao-helper';
 import { useStateValue } from 'hooks/useStateValue';
-import { VERSION } from 'config/constants';
+import { VERSION, Category } from 'config/constants';
+
+export const BasePaginationPropsSpec = {
+  defaultCurrent: Type.Number({
+    title: 'Default Page',
+    category: Category.Basic,
+  }),
+  pageSize: Type.Number({
+    title: 'Page Size',
+    category: Category.Basic,
+  }),
+  total: Type.Number({
+    title: 'Total',
+    category: Category.Basic,
+  }),
+  updateWhenDefaultValueChanges: Type.Boolean({
+    title: 'Update When Default Value Changes',
+    category: Category.Basic,
+  }),
+  disabled: Type.Boolean({
+    title: 'Disabled',
+    category: Category.Behavior,
+  }),
+  hideOnSinglePage: Type.Boolean({
+    title: 'Hide On Single Page',
+    category: Category.Behavior,
+  }),
+  size: StringUnion(['mini', 'small', 'default', 'large'], {
+    title: 'Size',
+    category: Category.Style,
+  }),
+  sizeCanChange: Type.Boolean({
+    title: 'Size Can Change',
+    category: Category.Behavior,
+  }),
+  simple: Type.Boolean({
+    title: 'Simple',
+    category: Category.Behavior,
+  }),
+  showJumper: Type.Boolean({
+    title: 'Show Jumper',
+    category: Category.Behavior,
+    description: 'Whether to display quick jump',
+  }),
+  showTotal: Type.Boolean({
+    title: 'Show Total',
+    category: Category.Behavior,
+  }),
+};
 
 const PaginationPropsSpec = Type.Object(BasePaginationPropsSpec);
+
 const PaginationStateSpec = Type.Object({
   currentPage: Type.Number(),
 });
@@ -26,7 +74,7 @@ const exampleProperties: Static<typeof PaginationPropsSpec> = {
   updateWhenDefaultValueChanges: false,
 };
 
-export const Pagination = implementRuntimeComponent({
+export default implementRuntimeComponent({
   version: VERSION.Core,
   metadata: {
     ...FALLBACK_METADATA,
