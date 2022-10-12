@@ -4,12 +4,12 @@ import styled, { ThemeProvider } from 'styled-components';
 import { BareProps } from 'types';
 import '@sunmao-ui-fork/editor/dist/index.css';
 import runtimeConfig from 'config/runtime';
-import { DEFAULT_APP } from 'config/constants';
 import { light } from 'ui/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from 'ui/chakraTheme';
 import BigNumber from 'bignumber.js';
 import "@arco-design/web-react/dist/css/arco.css";
+import { LocalStorageManager } from './LocalStorageManager';
 
 // This config is required for number formatting
 // https://mikemcl.github.io/bignumber.js/#toS
@@ -24,9 +24,20 @@ const StyledContainer = styled.div`
 `;
 
 const EditorUI: React.FC<BareProps> = ({ className }) => {
+  const lsManager = new LocalStorageManager();
+
   const { Editor } = initSunmaoUIEditor({
-    defaultApplication: DEFAULT_APP,
-    runtimeProps: runtimeConfig
+    defaultApplication: lsManager.getAppFromLS(),
+    defaultModules: lsManager.getModulesFromLS(),
+    runtimeProps: runtimeConfig,
+    storageHandler: {
+      onSaveApp(app) {
+        lsManager.saveAppInLS(app);
+      },
+      onSaveModules(modules) {
+        lsManager.saveModulesInLS(modules);
+      },
+    },
   });
 
   return (<ChakraProvider resetCSS={false} theme={theme}>

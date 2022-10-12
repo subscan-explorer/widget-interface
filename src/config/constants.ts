@@ -190,178 +190,178 @@ export const DEFAULT_APP: Application = {
         },
         "traits": []
       },
-      {
-        "id": "timeline7",
-        "type": "core/v1/timeline",
-        "properties": {
-          "data": [
-            {
-              "from": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f",
-              "to": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N",
-              "extrinsic_index": "10426613-1"
-            },
-            {
-              "from": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f",
-              "to": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N",
-              "extrinsic_index": "10426613-2"
-            },
-            {
-              "from": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f",
-              "to": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N",
-              "extrinsic_index": "10426613-3"
-            }
-          ],
-          "columns": [
-            {
-              "title": "From",
-              "type": "text",
-              "width": "",
-              "dataKey": "from",
-              "prePath": "/account",
-              "ellipsis": true
-            },
-            {
-              "title": "To",
-              "type": "text",
-              "width": "",
-              "dataKey": "to",
-              "prePath": "/account",
-              "ellipsis": true
-            },
-            {
-              "title": "Extrinsic Index",
-              "type": "link",
-              "width": "",
-              "dataKey": "extrinsic_index",
-              "prePath": "/extrinsic"
-            }
-          ]
-        },
-        "traits": []
-      },
-      {
-        "id": "tabs4",
-        "type": "core/v1/tabs",
-        "properties": {
-          "tabNames": [
-            "Tab1",
-            "Tab2",
-            "Tab3",
-            "Tab4",
-            "Tab5"
-          ],
-          "initialSelectedTabIndex": 0
-        },
-        "traits": []
-      },
-      {
-        "id": "text5",
-        "type": "core/v1/text",
-        "properties": {
-          "value": {
-            "raw": "Tab content 1",
-            "format": "plain"
-          }
-        },
-        "traits": [
-          {
-            "type": "core/v1/slot",
-            "properties": {
-              "container": {
-                "id": "tabs4",
-                "slot": "content"
-              },
-              "ifCondition": "{{$slot.tabIndex === 0}}"
-            }
-          }
-        ]
-      },
-      {
-        "id": "text6",
-        "type": "core/v1/text",
-        "properties": {
-          "value": {
-            "raw": "Tab content 2",
-            "format": "plain"
-          }
-        },
-        "traits": [
-          {
-            "type": "core/v1/slot",
-            "properties": {
-              "container": {
-                "id": "tabs4",
-                "slot": "content"
-              },
-              "ifCondition": "{{$slot.tabIndex === 1}}"
-            }
-          }
-        ]
-      },
-      {
-        "id": "title2",
-        "type": "core/v1/title",
-        "properties": {
-          "text": "Subscan Title"
-        },
-        "traits": []
-      },
-      {
-        "id": "icon3",
-        "type": "core/v1/icon",
-        "properties": {
-          "name": "barchart",
-          "spin": false
-        },
-        "traits": [
-          {
-            "type": "core/v1/slot",
-            "properties": {
-              "container": {
-                "id": "title2",
-                "slot": "prefix"
-              },
-              "ifCondition": true
-            }
-          }
-        ]
-      },
-      {
-        "id": "cardsummary2",
-        "type": "core/v1/cardsummary",
-        "properties": {
-          "name": "barchart",
-          "spin": false,
-          "columns": [
-            {
-              "title": "Finalized Block",
-              "value": "145,431",
-              "icon": "barchart"
-            },
-            {
-              "title": "Signed Extrinsics",
-              "value": "54,541,324",
-              "icon": "barchart"
-            },
-            {
-              "title": "Signed Extrinsics",
-              "value": "54,541,324",
-              "icon": "barchart"
-            },
-            {
-              "title": "Signed Extrinsics",
-              "value": "54,541,324",
-              "icon": "barchart"
-            },
-            {
-              "title": "Signed Extrinsics",
-              "value": "54,541,324",
-              "icon": "barchart"
-            }
-          ]
-        },
-        "traits": []
-      },
+      // {
+      //   "id": "timeline7",
+      //   "type": "core/v1/timeline",
+      //   "properties": {
+      //     "data": [
+      //       {
+      //         "from": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f",
+      //         "to": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N",
+      //         "extrinsic_index": "10426613-1"
+      //       },
+      //       {
+      //         "from": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f",
+      //         "to": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N",
+      //         "extrinsic_index": "10426613-2"
+      //       },
+      //       {
+      //         "from": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f",
+      //         "to": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N",
+      //         "extrinsic_index": "10426613-3"
+      //       }
+      //     ],
+      //     "columns": [
+      //       {
+      //         "title": "From",
+      //         "type": "text",
+      //         "width": "",
+      //         "dataKey": "from",
+      //         "prePath": "/account",
+      //         "ellipsis": true
+      //       },
+      //       {
+      //         "title": "To",
+      //         "type": "text",
+      //         "width": "",
+      //         "dataKey": "to",
+      //         "prePath": "/account",
+      //         "ellipsis": true
+      //       },
+      //       {
+      //         "title": "Extrinsic Index",
+      //         "type": "link",
+      //         "width": "",
+      //         "dataKey": "extrinsic_index",
+      //         "prePath": "/extrinsic"
+      //       }
+      //     ]
+      //   },
+      //   "traits": []
+      // },
+      // {
+      //   "id": "tabs4",
+      //   "type": "core/v1/tabs",
+      //   "properties": {
+      //     "tabNames": [
+      //       "Tab1",
+      //       "Tab2",
+      //       "Tab3",
+      //       "Tab4",
+      //       "Tab5"
+      //     ],
+      //     "initialSelectedTabIndex": 0
+      //   },
+      //   "traits": []
+      // },
+      // {
+      //   "id": "text5",
+      //   "type": "core/v1/text",
+      //   "properties": {
+      //     "value": {
+      //       "raw": "Tab content 1",
+      //       "format": "plain"
+      //     }
+      //   },
+      //   "traits": [
+      //     {
+      //       "type": "core/v1/slot",
+      //       "properties": {
+      //         "container": {
+      //           "id": "tabs4",
+      //           "slot": "content"
+      //         },
+      //         "ifCondition": "{{$slot.tabIndex === 0}}"
+      //       }
+      //     }
+      //   ]
+      // },
+      // {
+      //   "id": "text6",
+      //   "type": "core/v1/text",
+      //   "properties": {
+      //     "value": {
+      //       "raw": "Tab content 2",
+      //       "format": "plain"
+      //     }
+      //   },
+      //   "traits": [
+      //     {
+      //       "type": "core/v1/slot",
+      //       "properties": {
+      //         "container": {
+      //           "id": "tabs4",
+      //           "slot": "content"
+      //         },
+      //         "ifCondition": "{{$slot.tabIndex === 1}}"
+      //       }
+      //     }
+      //   ]
+      // },
+      // {
+      //   "id": "title2",
+      //   "type": "core/v1/title",
+      //   "properties": {
+      //     "text": "Subscan Title"
+      //   },
+      //   "traits": []
+      // },
+      // {
+      //   "id": "icon3",
+      //   "type": "core/v1/icon",
+      //   "properties": {
+      //     "name": "barchart",
+      //     "spin": false
+      //   },
+      //   "traits": [
+      //     {
+      //       "type": "core/v1/slot",
+      //       "properties": {
+      //         "container": {
+      //           "id": "title2",
+      //           "slot": "prefix"
+      //         },
+      //         "ifCondition": true
+      //       }
+      //     }
+      //   ]
+      // },
+      // {
+      //   "id": "cardsummary2",
+      //   "type": "core/v1/cardsummary",
+      //   "properties": {
+      //     "name": "barchart",
+      //     "spin": false,
+      //     "columns": [
+      //       {
+      //         "title": "Finalized Block",
+      //         "value": "145,431",
+      //         "icon": "barchart"
+      //       },
+      //       {
+      //         "title": "Signed Extrinsics",
+      //         "value": "54,541,324",
+      //         "icon": "barchart"
+      //       },
+      //       {
+      //         "title": "Signed Extrinsics",
+      //         "value": "54,541,324",
+      //         "icon": "barchart"
+      //       },
+      //       {
+      //         "title": "Signed Extrinsics",
+      //         "value": "54,541,324",
+      //         "icon": "barchart"
+      //       },
+      //       {
+      //         "title": "Signed Extrinsics",
+      //         "value": "54,541,324",
+      //         "icon": "barchart"
+      //       }
+      //     ]
+      //   },
+      //   "traits": []
+      // },
       {
         "id": "constraintlist3",
         "type": "core/v1/constraintlist",
