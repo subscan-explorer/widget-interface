@@ -9,7 +9,7 @@ import {
   Tabs,
   TimeLine,
   Chart,
-} from "injectComp";
+} from "sunmao/components";
 
 const libs = [
   {
