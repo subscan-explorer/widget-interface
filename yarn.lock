@@ -3087,24 +3087,24 @@
     "@styled-system/core" "^5.1.2"
     "@styled-system/css" "^5.1.5"
 
-"@sunmao-ui-fork/arco-lib@^0.3.6":
-  version "0.3.6"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/arco-lib/-/arco-lib-0.3.6.tgz#87b358c6607f26c406934e6c97c0162f31818f69"
-  integrity sha512-xCDz3XfMZPlXwN+l5qFaWFg9JPkv8V3BmMxeq/0DFiczfSgShkJgOjw63GCmESU3cXA66+OLokGfi9+CQ4jRCQ==
+"@sunmao-ui-fork/arco-lib@^0.3.9":
+  version "0.3.9"
+  resolved "https://registry.npmjs.org/@sunmao-ui-fork/arco-lib/-/arco-lib-0.3.9.tgz#e2b1c7aeccd31286a813ad4b1f31a46fb5d72271"
+  integrity sha512-ThWEx4PgnM+qu4yTyAsY50+Iar91hUFt0gi7X03ZX1oYmboIMJp1I12k00g2JybvS3UNrYfXZOtkTJS3sbVaJA==
   dependencies:
     "@arco-design/web-react" "^2.34.0"
-    "@sunmao-ui-fork/editor-sdk" "^0.3.6"
-    "@sunmao-ui-fork/shared" "^0.2.5"
+    "@sunmao-ui-fork/editor-sdk" "^0.3.9"
+    "@sunmao-ui-fork/shared" "^0.2.6"
     react-resizable "^3.0.4"
 
-"@sunmao-ui-fork/chakra-ui-lib@^0.5.6":
-  version "0.5.6"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/chakra-ui-lib/-/chakra-ui-lib-0.5.6.tgz#f04dcb20558579ea5e51bb2d975a2529d529d636"
-  integrity sha512-qJyHbbPGhDf53LmoHfjUZkbH3Wsxh9D9T6Uuu6/JS4M5JA5Vs1t/OVbTOUHzl4Zg7QCHo9vu+nun/z4fl/e4Mw==
+"@sunmao-ui-fork/chakra-ui-lib@^0.5.9":
+  version "0.5.9"
+  resolved "https://registry.npmjs.org/@sunmao-ui-fork/chakra-ui-lib/-/chakra-ui-lib-0.5.9.tgz#5302d32d877005c310a302b85da2c8325db95cbf"
+  integrity sha512-Ybn1Ij2/GpTo1EmsqPDTorQ4xnVK7R9XUKefo14RJZJmnMBbJ5z4+w/+xSnX+p4L7mHc576DGh1Mn70qrQTkwQ==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
-    "@sunmao-ui-fork/editor-sdk" "^0.3.6"
+    "@sunmao-ui-fork/editor-sdk" "^0.3.9"
     chakra-react-select "^1.3.2"
     framer-motion "^3.10.6"
 
@@ -3113,18 +3113,19 @@
   resolved "https://registry.npmjs.org/@sunmao-ui-fork/core/-/core-0.7.5.tgz#1d55e6fbda21b565b303fc3b452816b4e647058b"
   integrity sha512-YIl13fnFb5fJBF1emAlfinYhdIZLm+wvxqNZEkQTE8cFcC0AIf65WnF8oXaWeHbr/CXRHE43QWedVPqaIkkRIQ==
 
-"@sunmao-ui-fork/editor-sdk@^0.3.6":
-  version "0.3.6"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/editor-sdk/-/editor-sdk-0.3.6.tgz#6941f2544122251ecdbf3bd37721ee7b85d8b342"
-  integrity sha512-vh05hynRco5xzTBHpguF+Kv9GGlfZ8NkYhaLCkUj0vUbR6LpP+PHDjxJc1ggkhyqHwp1FjhXxU1YkNcquG6m1w==
+"@sunmao-ui-fork/editor-sdk@^0.3.9":
+  version "0.3.9"
+  resolved "https://registry.npmjs.org/@sunmao-ui-fork/editor-sdk/-/editor-sdk-0.3.9.tgz#0a9543404c1151640b7d7278bda6b5f3e9fc1c0f"
+  integrity sha512-xtz/n7ejAuavNGhQFhHV7SAftPIiXAHTKDtkWUdHT7R+2knMvOytIk+2ujj080oBEXaDV9PGYD1goL7XGAvLMg==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
     "@emotion/css" "^11.7.1"
     "@sinclair/typebox" "^0.21.2"
     "@sunmao-ui-fork/core" "^0.7.5"
-    "@sunmao-ui-fork/runtime" "^0.7.5"
-    "@sunmao-ui-fork/shared" "^0.2.5"
+    "@sunmao-ui-fork/runtime" "^0.7.6"
+    "@sunmao-ui-fork/shared" "^0.2.6"
+    ajv "^8.8.2"
     codemirror "^5.63.3"
     formik "^2.2.9"
     framer-motion "^3.10.6"
@@ -3136,10 +3137,10 @@
     rc-select "^14.1.5"
     react-color "^2.19.3"
 
-"@sunmao-ui-fork/editor@0.7.6":
-  version "0.7.6"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/editor/-/editor-0.7.6.tgz#f1e5b593a5f7125e5ae59156074ecf3d4c12a3c1"
-  integrity sha512-skNehGklGbCPPGqDsFAIyMQ7tD3rRYAyRTdRppati6MHfilIMVi3XQSgt7eIY5UtwZDzDqgMqE1f0sLEU1OGIQ==
+"@sunmao-ui-fork/editor@0.7.9":
+  version "0.7.9"
+  resolved "https://registry.npmjs.org/@sunmao-ui-fork/editor/-/editor-0.7.9.tgz#c803a53246e563febf3f74639833ebb46b970e8d"
+  integrity sha512-lAa6a3sfGZ9I4dJMJA6bUqpXVjNaGd4NMpXZX8gjbA/5j370O1vsUG7GK3XEND2dr9/cOf4MQzZaQDkor2aQ8w==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
@@ -3149,12 +3150,12 @@
     "@graphiql/toolkit" "^0.6.1"
     "@optum/json-schema-editor" "^2.1.0"
     "@sinclair/typebox" "^0.21.2"
-    "@sunmao-ui-fork/arco-lib" "^0.3.6"
-    "@sunmao-ui-fork/chakra-ui-lib" "^0.5.6"
+    "@sunmao-ui-fork/arco-lib" "^0.3.9"
+    "@sunmao-ui-fork/chakra-ui-lib" "^0.5.9"
     "@sunmao-ui-fork/core" "^0.7.5"
-    "@sunmao-ui-fork/editor-sdk" "^0.3.6"
-    "@sunmao-ui-fork/runtime" "^0.7.5"
-    "@sunmao-ui-fork/shared" "^0.2.5"
+    "@sunmao-ui-fork/editor-sdk" "^0.3.9"
+    "@sunmao-ui-fork/runtime" "^0.7.6"
+    "@sunmao-ui-fork/shared" "^0.2.6"
     acorn "^8.7.0"
     acorn-loose "^8.3.0"
     acorn-walk "^8.2.0"
@@ -3179,15 +3180,15 @@
     scroll-into-view "^1.16.2"
     tern "^0.24.3"
 
-"@sunmao-ui-fork/runtime@0.7.5", "@sunmao-ui-fork/runtime@^0.7.5":
-  version "0.7.5"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/runtime/-/runtime-0.7.5.tgz#b4a4ee7021b7334be59c636467af715ca8b675ea"
-  integrity sha512-EMvlyuAm6LAAnRrxb+03xGDAf9jpayqWpsTWEOWAr/k15Ieetv41GuYXFb0ZciO/YS7wJRlBDKV6iUXg8VYNQA==
+"@sunmao-ui-fork/runtime@0.7.6", "@sunmao-ui-fork/runtime@^0.7.6":
+  version "0.7.6"
+  resolved "https://registry.npmjs.org/@sunmao-ui-fork/runtime/-/runtime-0.7.6.tgz#281d754059647b6453e1bb5a6b83066890241387"
+  integrity sha512-mC98Jf0bz6emrV6DL7LE+0ObE9yb3SwKbv175vUpQVxjiUYlStEYOL4F+eE6d6kgJyP3yGssXyzgN4HqXwKOyQ==
   dependencies:
     "@emotion/css" "^11.7.1"
     "@sinclair/typebox" "^0.21.2"
     "@sunmao-ui-fork/core" "^0.7.5"
-    "@sunmao-ui-fork/shared" "^0.2.5"
+    "@sunmao-ui-fork/shared" "^0.2.6"
     "@vue/reactivity" "^3.1.5"
     "@vue/shared" "^3.2.20"
     copy-to-clipboard "^3.3.1"
@@ -3201,12 +3202,13 @@
     use-deep-compare "^1.1.0"
     wouter "^2.7.4"
 
-"@sunmao-ui-fork/shared@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/shared/-/shared-0.2.5.tgz#79c2a4785b5feddece3440bbe0b62278adca7694"
-  integrity sha512-469jVCKLqI6Lr7ssxkuwTnUM+o1RmCVZp403lfmQUWeHi2mUrVWSDQng+DcDMQ0h2lXOxQpoMtLX2zTgtr7j5Q==
+"@sunmao-ui-fork/shared@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.npmjs.org/@sunmao-ui-fork/shared/-/shared-0.2.6.tgz#0fb8b2e85a349fc5f157c75a00174d788512cd53"
+  integrity sha512-eeug5wXOlitv6lxygR6j8qt5qluRN2Ik68hd6vusW7RF84PZM04Gw7xo73Pam9PRvGLS0vD7pzIyU4VcqzEZNw==
   dependencies:
     "@sinclair/typebox" "^0.21.2"
+    ajv "^8.8.2"
 
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
   version "2.2.3"
