@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Type, Static } from '@sinclair/typebox';
 import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
-import { Category, VERSION } from 'config/constants';
+import { COMPONENTS_CATEGORY, PRESET_PROPERTY_CATEGORY, VERSION } from 'config/constants';
 import { StyledFont14, StyledModuleBox, StyledScrollX } from 'ui/common';
 import { StyledSortAsc, StyledSortBox, StyledSortDesc, StyledTable, StyledTd, StyledTh, StyledTr } from './styled';
 import { useStateValue } from 'hooks/useStateValue';
@@ -15,14 +15,15 @@ const CssBox = css`
 export const ColumnSpec = Type.Object({
   title: Type.String({
     title: 'Title',
-    category: Category.Basic,
+    category: PRESET_PROPERTY_CATEGORY.Basic,
   }),
   width: Type.String({
     title: 'Width',
+    category: PRESET_PROPERTY_CATEGORY.Basic,
   }),
   dataKey: Type.String({
     title: 'Key',
-    category: Category.Basic,
+    category: PRESET_PROPERTY_CATEGORY.Basic,
     description:
       'The key corresponding to the column data in the data item is used to display the value',
   }),
@@ -35,7 +36,7 @@ export const ColumnSpec = Type.Object({
     }),
     {
       title: 'Sort',
-      category: Category.Basic,
+      category: PRESET_PROPERTY_CATEGORY.Basic,
     }
   ),
   ...BaseColumnSpecObject
@@ -44,14 +45,14 @@ export const ColumnSpec = Type.Object({
 const PropsSpec = Type.Object({
   data: Type.Array(Type.Any(), {
     title: 'Data',
-    category: Category.Data,
+    category: PRESET_PROPERTY_CATEGORY.Data,
     weight: 0,
     widget: 'core/v1/expression',
   }),
   columns: Type.Array(ColumnSpec, {
     title: 'Columns',
     description: '',
-    category: Category.Columns,
+    category: PRESET_PROPERTY_CATEGORY.Columns,
     widget: 'core/v1/array',
     widgetOptions: {
       displayedKeys: ['title'],
@@ -150,7 +151,7 @@ export default implementRuntimeComponent({
       ]
     },
     annotations: {
-      category: Category.Display,
+      category: COMPONENTS_CATEGORY.Display,
     },
   },
   spec: {
@@ -176,9 +177,9 @@ export default implementRuntimeComponent({
     'currentSortValue'
   );
 
-  return (<StyledModuleBox className={CssBox} >
+  return (<StyledModuleBox className={CssBox} ref={elementRef}>
     <StyledScrollX>
-      <StyledTable ref={elementRef}>
+      <StyledTable>
         <thead>
           <tr>
             {columns?.map((thData, tdIndex) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Type, Static } from '@sinclair/typebox';
 import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
-import { Category, VERSION } from 'config/constants';
+import { COMPONENTS_CATEGORY, PRESET_PROPERTY_CATEGORY, VERSION } from 'config/constants';
 import { StyledFont14, StyledModuleBox } from 'ui/common';
 import { css } from '@emotion/css';
 import styled from 'styled-components';
@@ -25,14 +25,14 @@ const StyledColumnHeader = styled.div`
 export const ColumnSpec = Type.Object({
   title: Type.String({
     title: 'Title',
-    category: Category.Basic,
+    category: PRESET_PROPERTY_CATEGORY.Basic,
   }),
   width: Type.String({
     title: 'Width',
   }),
   dataKey: Type.String({
     title: 'Key',
-    category: Category.Basic,
+    category: PRESET_PROPERTY_CATEGORY.Basic,
     description:
       'The key corresponding to the column data in the data item is used to display the value',
   }),
@@ -42,14 +42,14 @@ export const ColumnSpec = Type.Object({
 const PropsSpec = Type.Object({
   data: Type.Record(Type.String(), Type.Any(), {
     title: 'Data',
-    category: Category.Data,
+    category: PRESET_PROPERTY_CATEGORY.Data,
     weight: 1,
     widget: 'core/v1/expression',
   }),
   columns: Type.Array(ColumnSpec, {
     title: 'Columns',
     description: '',
-    category: Category.Columns,
+    category: PRESET_PROPERTY_CATEGORY.Columns,
     widget: 'core/v1/array',
     widgetOptions: {
       displayedKeys: ['title'],
@@ -134,7 +134,7 @@ export default implementRuntimeComponent({
       ]
     },
     annotations: {
-      category: Category.Display,
+      category: COMPONENTS_CATEGORY.Display,
     },
   },
   spec: {

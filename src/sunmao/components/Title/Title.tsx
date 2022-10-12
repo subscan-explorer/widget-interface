@@ -43,7 +43,7 @@ export default implementRuntimeComponent({
     styleSlots: ['content'],
     events: ['onClick'],
   },
-})(({ text, customStyle, callbackMap, slotsElements, mergeState }) => {
+})(({ text, elementRef, customStyle, callbackMap, slotsElements, mergeState }) => {
   const onMouseEnter = () => {
     mergeState({
       isHover: true,
@@ -60,6 +60,7 @@ export default implementRuntimeComponent({
 
   return (
     <div className={cx(css(customStyle?.content), flexStyle)}
+      ref={elementRef}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onClick={onClick}>

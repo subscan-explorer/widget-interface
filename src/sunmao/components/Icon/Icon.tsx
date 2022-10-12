@@ -6,7 +6,6 @@ import { VERSION } from 'config/constants';
 import { FALLBACK_METADATA } from 'utils/sunmao-helper';
 import { Icons, IconName } from 'components/Svg/Icons';
 
-
 type ObjectIconName = {
   [k in IconName]: any
 }

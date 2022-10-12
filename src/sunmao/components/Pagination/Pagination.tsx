@@ -4,53 +4,53 @@ import { css, cx } from '@emotion/css';
 import { Type, Static } from '@sinclair/typebox';
 import { FALLBACK_METADATA, getComponentProps, StringUnion } from 'utils/sunmao-helper';
 import { useStateValue } from 'hooks/useStateValue';
-import { VERSION, Category } from 'config/constants';
+import { VERSION, PRESET_PROPERTY_CATEGORY, COMPONENTS_CATEGORY } from 'config/constants';
 
 export const BasePaginationPropsSpec = {
   defaultCurrent: Type.Number({
     title: 'Default Page',
-    category: Category.Basic,
+    category: PRESET_PROPERTY_CATEGORY.Basic,
   }),
   pageSize: Type.Number({
     title: 'Page Size',
-    category: Category.Basic,
+    category: PRESET_PROPERTY_CATEGORY.Basic,
   }),
   total: Type.Number({
     title: 'Total',
-    category: Category.Basic,
+    category: PRESET_PROPERTY_CATEGORY.Basic,
   }),
   updateWhenDefaultValueChanges: Type.Boolean({
     title: 'Update When Default Value Changes',
-    category: Category.Basic,
+    category: PRESET_PROPERTY_CATEGORY.Basic,
   }),
   disabled: Type.Boolean({
     title: 'Disabled',
-    category: Category.Behavior,
+    category: PRESET_PROPERTY_CATEGORY.Behavior,
   }),
   hideOnSinglePage: Type.Boolean({
     title: 'Hide On Single Page',
-    category: Category.Behavior,
+    category: PRESET_PROPERTY_CATEGORY.Behavior,
   }),
   size: StringUnion(['mini', 'small', 'default', 'large'], {
     title: 'Size',
-    category: Category.Style,
+    category: PRESET_PROPERTY_CATEGORY.Style,
   }),
   sizeCanChange: Type.Boolean({
     title: 'Size Can Change',
-    category: Category.Behavior,
+    category: PRESET_PROPERTY_CATEGORY.Behavior,
   }),
   simple: Type.Boolean({
     title: 'Simple',
-    category: Category.Behavior,
+    category: PRESET_PROPERTY_CATEGORY.Behavior,
   }),
   showJumper: Type.Boolean({
     title: 'Show Jumper',
-    category: Category.Behavior,
+    category: PRESET_PROPERTY_CATEGORY.Behavior,
     description: 'Whether to display quick jump',
   }),
   showTotal: Type.Boolean({
     title: 'Show Total',
-    category: Category.Behavior,
+    category: PRESET_PROPERTY_CATEGORY.Behavior,
   }),
 };
 
@@ -82,7 +82,7 @@ export default implementRuntimeComponent({
     displayName: 'Pagination',
     exampleProperties,
     annotations: {
-      category: 'Navigation',
+      category: COMPONENTS_CATEGORY.Display
     },
   },
   spec: {

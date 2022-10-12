@@ -2,7 +2,7 @@
 import React from 'react';
 import { Type, Static } from '@sinclair/typebox';
 import { Balance, Link, Status, Text, Time, EllipsisText, Tag, Code } from 'components';
-import { Category } from 'config/constants';
+import { PRESET_PROPERTY_CATEGORY } from 'config/constants';
 import { StyledFont12 } from 'ui/common';
 import { StatusType } from 'components/Status/Status';
 import { toShortString } from 'utils';
@@ -26,7 +26,7 @@ export const BaseColumnSpecObject = {
     }),
     {
       title: 'Type',
-      category: Category.Basic,
+      category: PRESET_PROPERTY_CATEGORY.Basic,
     }
   ),
   prePath: Type.String({

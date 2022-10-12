@@ -2,7 +2,7 @@ import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
 import { Type } from '@sinclair/typebox';
 import { PRESET_PROPERTY_CATEGORY } from '@sunmao-ui-fork/shared';
 import { css, cx } from '@emotion/css';
-import { Category, VERSION } from 'config/constants';
+import { COMPONENTS_CATEGORY, VERSION } from 'config/constants';
 import { FALLBACK_METADATA } from 'utils/sunmao-helper';
 import { StyledFont12, StyledFont14, StyledModuleBox } from 'ui/common';
 import { Icons, IconName } from 'components/Svg/Icons';
@@ -33,11 +33,11 @@ const CssBox = css`
 export const ColumnSpec = Type.Object({
   title: Type.String({
     title: 'Title',
-    category: Category.Basic,
+    category: PRESET_PROPERTY_CATEGORY.Basic,
   }),
   value: Type.String({
     title: 'Value',
-    category: Category.Basic,
+    category: PRESET_PROPERTY_CATEGORY.Basic,
   }),
   icon: Type.KeyOf(Type.Object(Icons as ObjectIconName), {
     title: 'Icon Name',
@@ -81,7 +81,7 @@ export default implementRuntimeComponent({
       ]
     },
     annotations: {
-      category: PRESET_PROPERTY_CATEGORY.Basic,
+      category: COMPONENTS_CATEGORY.Display,
     },
   },
   spec: {
@@ -89,7 +89,7 @@ export default implementRuntimeComponent({
       columns: Type.Array(ColumnSpec, {
         title: 'Columns',
         description: '',
-        category: Category.Columns,
+        category: PRESET_PROPERTY_CATEGORY.Columns,
         widget: 'core/v1/array',
         widgetOptions: {
           displayedKeys: ['title'],

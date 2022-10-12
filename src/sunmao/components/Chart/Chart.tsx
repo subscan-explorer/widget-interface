@@ -2,7 +2,7 @@ import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
 import { css } from '@emotion/css';
 import { Type, Static } from '@sinclair/typebox';
 import { FALLBACK_METADATA, getComponentProps } from 'utils/sunmao-helper';
-import { Category, VERSION } from 'config/constants';
+import { COMPONENTS_CATEGORY, PRESET_PROPERTY_CATEGORY, VERSION } from 'config/constants';
 import { useCallback, useEffect, useState } from 'react';
 import './Init';
 import * as echarts from 'echarts/core';
@@ -13,7 +13,7 @@ import { ElementResizeListener } from 'components';
 const ButtonPropsSpec = Type.Object({
   data: Type.Array(Type.Array(Type.Any()), {
     title: 'Data',
-    category: Category.Data,
+    category: PRESET_PROPERTY_CATEGORY.Data,
     weight: 0,
     widget: 'core/v1/expression',
   }),
@@ -31,7 +31,7 @@ export const Chart = implementRuntimeComponent({
     displayName: 'Chart',
     exampleProperties,
     annotations: {
-      category: 'General',
+      category: COMPONENTS_CATEGORY.Display,
     },
   },
   spec: {

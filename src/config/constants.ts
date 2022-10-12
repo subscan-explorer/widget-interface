@@ -1,13 +1,18 @@
 import { type Application } from '@sunmao-ui-fork/core';
 
-export const enum Category {
+export const enum PRESET_PROPERTY_CATEGORY {
   Data = 'Data',
   Columns = 'Columns',
   Basic = 'Basic',
   Behavior = 'Behavior',
   Layout = 'Layout',
   Style = 'Style',
-  Display = 'display'
+  Display = 'Display'
+}
+
+export const enum COMPONENTS_CATEGORY {
+  General = 'General',
+  Display = 'Display'
 }
 
 export const enum VERSION {

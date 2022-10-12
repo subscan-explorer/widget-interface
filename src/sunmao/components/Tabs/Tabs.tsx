@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { Type } from '@sinclair/typebox';
 import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
-import { Category, VERSION } from 'config/constants';
+import { PRESET_PROPERTY_CATEGORY, COMPONENTS_CATEGORY, VERSION } from 'config/constants';
 import { StyledFont14 } from 'ui/common';
 import styled, { useTheme } from 'styled-components';
 
@@ -21,11 +21,11 @@ const StateSpec = Type.Object({
 const PropsSpec = Type.Object({
   tabNames: Type.Array(Type.String(), {
     title: 'Tab Names',
-    category: Category.Basic,
+    category: PRESET_PROPERTY_CATEGORY.Basic,
   }),
   initialSelectedTabIndex: Type.Number({
     title: 'Default Selected Tab Index',
-    category: Category.Basic,
+    category: PRESET_PROPERTY_CATEGORY.Basic,
   }),
 });
 
@@ -47,7 +47,7 @@ export default implementRuntimeComponent({
       initialSelectedTabIndex: 0,
     },
     annotations: {
-      category: Category.Display,
+      category: COMPONENTS_CATEGORY.Display,
     },
   },
   spec: {
