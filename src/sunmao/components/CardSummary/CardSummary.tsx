@@ -52,8 +52,33 @@ export default implementRuntimeComponent({
     displayName: 'Card Summary',
     description: 'Card Summary',
     exampleProperties: {
-      name: 'barchart',
-      spin: false,
+      columns: [
+        {
+          "title": "Finalized Block",
+          "value": "145,431",
+          "icon": "barchart"
+        },
+        {
+          "title": "Signed Extrinsics",
+          "value": "54,541,324",
+          "icon": "barchart"
+        },
+        {
+          "title": "Signed Extrinsics",
+          "value": "54,541,324",
+          "icon": "barchart"
+        },
+        {
+          "title": "Signed Extrinsics",
+          "value": "54,541,324",
+          "icon": "barchart"
+        },
+        {
+          "title": "Signed Extrinsics",
+          "value": "54,541,324",
+          "icon": "barchart"
+        }
+      ]
     },
     annotations: {
       category: PRESET_PROPERTY_CATEGORY.Basic,
