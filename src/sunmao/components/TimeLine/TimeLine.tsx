@@ -17,7 +17,6 @@ const TimeLineSymbolPointer = styled.div`
   height: 10px;
   width: 10px;
   background-color: ${({ theme }) => theme.chain.color};
-
 `;
 
 const TimeLineSymbolLine = styled.div`
@@ -136,7 +135,7 @@ export default implementRuntimeComponent({
             {columns?.map((thData, tdIndex) => {
               return (
                 <StyledTh key={`${thData.title}${tdIndex}`}>
-                  <StyledFont14 bold>{thData.title}</StyledFont14>
+                  <StyledFont14 nowrap bold>{thData.title}</StyledFont14>
                 </StyledTh>
               );
             })}

@@ -12,7 +12,7 @@ export interface Props extends BareProps {
 
 const Time: React.FC<Props> = ({ className, second }) => {
   return (<Tooltip hasArrow bg='#fff' placement="top" label={<Box p="2"><StyledFont12>{parseTimeToUtc(second)}</StyledFont12></Box>}>
-    <StyledFont14 className={className}>{timeAgo(second)}</StyledFont14>
+    <StyledFont14 nowrap className={className}>{timeAgo(second)}</StyledFont14>
   </Tooltip>);
 };
 

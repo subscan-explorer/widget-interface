@@ -188,7 +188,7 @@ export default implementRuntimeComponent({
             {columns?.map((thData, tdIndex) => {
               return (
                 <StyledTh key={`${thData.title}${tdIndex}`}>
-                  <StyledFont14 bold>{thData.title}</StyledFont14>
+                  <StyledFont14 bold nowrap>{thData.title}</StyledFont14>
                   <RenderSort cb={({ key, sort }) => {
                     setCurrentSortKey(key);
                     setCurrentSortValue(sort);
