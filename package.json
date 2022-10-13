@@ -46,7 +46,10 @@
     "eject": "react-scripts eject",
     "build:sdk": "npx tsup src/main.ts --target es5 --env.NODE_ENV production --clean",
     "prepublish": "npx tsup src/main.ts --target es5 --env.NODE_ENV production --clean",
-    "publish:sdk": "npm publish"
+    "publish:sdk": "npm publish",
+    "add:component": "node ./scripts/component.js",
+    "add:trait": "node ./scripts/trait.js",
+    "add:utilMethod": "node ./scripts/utilMethod.js"
   },
   "browserslist": {
     "production": [
