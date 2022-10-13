@@ -38,6 +38,7 @@ const EditorUI: React.FC<BareProps> = ({ className }) => {
         lsManager.saveModulesInLS(modules);
       },
     },
+    registerCoreComponent: false
   });
 
   return (<ChakraProvider resetCSS={false} theme={theme}>
