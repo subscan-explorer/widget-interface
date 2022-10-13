@@ -9,11 +9,11 @@ import { toShortString } from 'utils';
 import { Tooltip, Box } from '@chakra-ui/react';
 
 export const BaseColumnSpecObject = {
-  transformer: Type.String({
+  transformer: Type.Optional(Type.String({
     title: 'Transformer',
     description:
       'return value + \'test\'',
-  }),
+  })),
   type: Type.KeyOf(
     Type.Object({
       text: Type.String(),
@@ -29,7 +29,7 @@ export const BaseColumnSpecObject = {
       category: PRESET_PROPERTY_CATEGORY.Basic,
     }
   ),
-  prePath: Type.String({
+  prePath: Type.Optional(Type.String({
     title: 'URL prefix',
     conditions: [
       {
@@ -37,8 +37,8 @@ export const BaseColumnSpecObject = {
         value: 'link',
       }
     ]
-  }),
-  ellipsis: Type.Boolean({
+  })),
+  ellipsis: Type.Optional(Type.Boolean({
     title: 'Ellipsis',
     conditions: [
       {
@@ -54,8 +54,8 @@ export const BaseColumnSpecObject = {
         ]
       }
     ]
-  }),
-  decimals: Type.Number({
+  })),
+  decimals: Type.Optional(Type.Number({
     title: 'Token Decimals',
     conditions: [
       {
@@ -63,8 +63,8 @@ export const BaseColumnSpecObject = {
         value: 'balance',
       }
     ]
-  }),
-  tagstyle: Type.KeyOf(Type.Object({
+  })),
+  tagstyle: Type.Optional(Type.KeyOf(Type.Object({
     primary: Type.String(),
     secondary: Type.String(),
   }),{
@@ -75,8 +75,8 @@ export const BaseColumnSpecObject = {
         value: 'tag',
       }
     ]
-  }),
-  symbol: Type.String({
+  })),
+  symbol: Type.Optional(Type.String({
     title: 'Token Symbol',
     conditions: [
       {
@@ -84,7 +84,7 @@ export const BaseColumnSpecObject = {
         value: 'balance',
       }
     ]
-  })
+  }))
 };
 
 export const BaseColumnSpec = Type.Object(BaseColumnSpecObject);

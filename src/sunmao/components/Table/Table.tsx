@@ -133,20 +133,23 @@ export default implementRuntimeComponent({
           "width": "",
           "dataKey": "block_num",
           "prePath": "/block",
-          "ellipsis": false
+          "ellipsis": false,
+          "sort": "disabled"
         },
         {
           "title": "Time",
           "type": "time",
           "width": "",
-          "dataKey": "block_timestamp"
+          "dataKey": "block_timestamp",
+          "sort": "disabled"
         },
         {
           "title": "From",
           "type": "link",
           "width": "",
           "dataKey": "from",
-          "prePath": "/account"
+          "prePath": "/account",
+          "sort": "disabled"
         }
       ]
     },
