@@ -1,15 +1,17 @@
 import { initSunmaoUIEditor } from '@sunmao-ui-fork/editor';
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import { BareProps } from 'types';
+import styled from 'styled-components';
+import { BareProps, ProApiConfig } from 'types';
 import '@sunmao-ui-fork/editor/dist/index.css';
 import runtimeConfig from 'config/runtime';
-import { light } from 'ui/theme';
-import { ChakraProvider } from '@chakra-ui/react';
-import { theme } from 'ui/chakraTheme';
 import BigNumber from 'bignumber.js';
 import "@arco-design/web-react/dist/css/arco.css";
 import { LocalStorageManager } from './LocalStorageManager';
+import {
+  useRouteLoaderData,
+} from "react-router-dom";
+import { saveConfig } from './services';
+export { default as Record } from './Record';
 
 // This config is required for number formatting
 // https://mikemcl.github.io/bignumber.js/#toS
@@ -23,16 +25,22 @@ const StyledContainer = styled.div`
   height: 100%;
 `;
 
-const EditorUI: React.FC<BareProps> = ({ className }) => {
+export const Editor: React.FC<BareProps> = ({ className }) => {
   const lsManager = new LocalStorageManager();
+  const config = useRouteLoaderData('editor') as ProApiConfig;
+  console.log('useRouteLoaderData', config);
 
   const { Editor } = initSunmaoUIEditor({
-    defaultApplication: lsManager.getAppFromLS(),
+    defaultApplication: config.application,
     defaultModules: lsManager.getModulesFromLS(),
     runtimeProps: runtimeConfig,
     storageHandler: {
       onSaveApp(app) {
-        lsManager.saveAppInLS(app);
+        saveConfig(JSON.stringify({
+          name: config.name,
+          payload: JSON.stringify(app),
+          id: config.id
+        }));
       },
       onSaveModules(modules) {
         lsManager.saveModulesInLS(modules);
@@ -41,13 +49,8 @@ const EditorUI: React.FC<BareProps> = ({ className }) => {
     registerCoreComponent: false
   });
 
-  return (<ChakraProvider resetCSS={false} theme={theme}>
-    <ThemeProvider theme={light}>
-      <StyledContainer className="chakraCSSReset">
-        <Editor />
-      </StyledContainer>
-    </ThemeProvider>
-  </ChakraProvider>);
+  return (<StyledContainer className="chakraCSSReset">
+    <Editor />
+  </StyledContainer>);
 };
 
-export default EditorUI;

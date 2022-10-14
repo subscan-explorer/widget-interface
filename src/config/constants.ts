@@ -19,6 +19,14 @@ export const enum VERSION {
   Core = 'core/v1'
 }
 
+
+export const DEFAULT_APP_TEMPLATE = {
+  "kind": "Application",
+  "version": "custom/v1",
+  "metadata": { "name": "appName" },
+  "spec": { "components": [] }
+};
+
 export const DEFAULT_APP: Application = {
   "version": "sunmao/v1",
   "kind": "Application",

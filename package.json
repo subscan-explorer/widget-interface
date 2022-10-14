@@ -17,7 +17,7 @@
     "dayjs": "^1.11.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
     "styled-components": "5.3.5",
     "styled-system": "^5.1.5",
@@ -25,7 +25,8 @@
     "web-vitals": "^2.1.4",
     "bignumber.js": "9.1.0",
     "graphql-ws": "5.11.2",
-    "echarts": "5.4.0"
+    "echarts": "5.4.0",
+    "use-http": "1.0.27"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
@@ -40,7 +41,7 @@
     "@swc/core": "^1.2.247"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_SUBSCAN_PRO_API=https://platform-staging.subscan.io react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
