@@ -5,7 +5,6 @@
 ## Struct
 
 ```
-scripts  # some useful npm script could help you develop faster
 src
  ┣ components  # react components
  ┣ config
@@ -21,14 +20,14 @@ src
  ┣ sunmao  # subscan sunmao
  ┣ types
  ┣ ui   # theme, styled-components
- ┣ utils 
+ ┣ utils
 ```
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -36,7 +35,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm run build`
+### `yarn run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -48,12 +47,14 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Develop
 ```bash
+# some useful yarn script could help you develop faster
+
 # create a component
-npm run add:component -- --version custom/v1 --name button
+yarn run add:component -- --version custom/v1 --name button
 # create a trait
-npm run add:trait -- --version custom/v1 --name validation
+yarn run add:trait -- --version custom/v1 --name validation
 # create a util method
-npm run add:utilMethod -- --version custom/v1 --name alert
+yarn run add:utilMethod -- --version custom/v1 --name alert
 ```
 
 ## Learn More
