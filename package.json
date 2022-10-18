@@ -3,6 +3,7 @@
   "version": "0.1.13",
   "private": false,
   "main": "./dist/main.js",
+  "homepage": "/lowcode",
   "dependencies": {
     "@sunmao-ui-fork/core": "0.7.5",
     "@sunmao-ui-fork/editor": "0.7.13",
