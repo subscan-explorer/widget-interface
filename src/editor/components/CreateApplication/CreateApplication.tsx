@@ -28,20 +28,20 @@ const CreateApplication: React.FC<Props> = ({ onCreated }) => {
   const [name, SetName] = useState<string>('');
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
-  const { post, loading } = useSaveAppConfigs();
+  const { action, loading } = useSaveAppConfigs();
 
   const nameOnChangeHandler = useCallback((event) => {
     SetName(event.target.value);
   }, []);
 
   const createApplication = useCallback(async () => {
-    await post({
+    await action({
       name: name,
       payload: JSON.stringify(DEFAULT_APP_TEMPLATE)
     });
     onCreated && onCreated();
     onClose();
-  }, [name, onClose, onCreated, post]);
+  }, [name, onClose, onCreated, action]);
 
   return (
     <>

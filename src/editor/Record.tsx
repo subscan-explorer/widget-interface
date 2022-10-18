@@ -20,6 +20,7 @@ import { parseTimeToUtc } from 'utils';
 import { Link } from "react-router-dom";
 import { cx } from '@emotion/css';
 import { CreateApplication } from './components';
+import { ROUTER_BASE_URL } from './router';
 
 export interface Props extends BareProps {
   number?: string;
@@ -31,11 +32,11 @@ const StyledRecord = styled(Container)`
 
 const Record: React.FC<Props> = ({ className }) => {
   const { data, refetch } = useFetchAppConfigs();
-  const { del } = useDeleteAppConfigs();
+  const { action } = useDeleteAppConfigs();
 
   const deleteApplicationHandler = useCallback(async (appId) => {
-    await del([appId]);
-  }, [del]);
+    await action([appId]);
+  }, [action]);
 
   return (<StyledRecord className={cx(className, 'chakraCSSReset')}>
     <VStack
@@ -65,7 +66,7 @@ const Record: React.FC<Props> = ({ className }) => {
                 <Td>{config.name}</Td>
                 <Td>{parseTimeToUtc(config.updated_at, '', false)}</Td>
                 <Td>
-                  <Link to={`/editor/${config.id}`}>
+                  <Link to={`${ROUTER_BASE_URL}/editor/${config.id}`}>
                     <Button colorScheme='teal' size='xs'>
                       Edit
                     </Button>

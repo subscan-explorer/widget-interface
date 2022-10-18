@@ -19,6 +19,7 @@ export interface ProApiConfigItem {
   updated_at: number;
   user_id: number;
   name: string;
+  payload?: string;
 }
 
 export interface ProApiConfig {

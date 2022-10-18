@@ -36,11 +36,11 @@ export const Editor: React.FC<BareProps> = ({ className }) => {
     runtimeProps: runtimeConfig,
     storageHandler: {
       onSaveApp(app) {
-        saveConfig(JSON.stringify({
+        saveConfig({
           name: config.name,
           payload: JSON.stringify(app),
           id: config.id
-        }));
+        });
       },
       onSaveModules(modules) {
         lsManager.saveModulesInLS(modules);

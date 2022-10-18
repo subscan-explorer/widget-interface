@@ -1,81 +1,89 @@
+import { Application } from "@sunmao-ui-fork/core";
+import { DEFAULT_APP_TEMPLATE } from "config/constants";
 import { useCallback, useEffect, useState } from "react";
-import { BaseApiWrapper, ProApiConfig, ProApiConfigItem } from "types";
-import useFetch, { CachePolicies } from "use-http";
-
-const fetchHeaders = (withContentType = true) => {
-  const headers: Record<string, string> = {
-    // TODO
-    authorization: "",
-  };
-  if (withContentType) headers["content-type"] = "application/json";
-  return headers;
-};
+import { ProApiConfig, ProApiConfigItem } from "types";
+import service from "./api";
 
 const PREFIX = process.env.REACT_APP_SUBSCAN_PRO_API;
 
 export const useFetchAppConfigs = () => {
-  const { get, response, loading, error } = useFetch<BaseApiWrapper<ProApiConfigItem[]>>(PREFIX, {
-    headers: fetchHeaders(false),
-    cachePolicy: CachePolicies.NO_CACHE,
-  });
   const [configs, SetConfigs] = useState<ProApiConfigItem[]>([]);
-
-  const fetchData = useCallback(
-    async function fetch() {
-      const data = await get("/open/v2/low-code/configs");
-      if (response.ok) SetConfigs(data.data);
-    },
-    [get, response.ok]
-  );
+  const [loading, SetLoading] = useState(false);
+  const fetchData = useCallback(async () => {
+    SetLoading(true);
+    try {
+      const { data } = await service.get<ProApiConfigItem[]>(`${PREFIX}/open/v2/low-code/configs`);
+      console.log(data);
+      SetConfigs(data.data);
+      SetLoading(false);
+    } catch (error) {
+      SetLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
     fetchData();
-  }, [fetchData, get, response.ok]);
+  }, [fetchData]);
 
-  return { refetch: fetchData, data: configs, response, loading, error };
+  return { refetch: fetchData, data: configs, loading };
 };
 
 export const useSaveAppConfigs = () => {
-  const { post, del, response, loading, error } = useFetch<BaseApiWrapper<ProApiConfigItem[]>>(
-    `${PREFIX}/open/v2/low-code/config`,
-    {
-      headers: fetchHeaders(false),
-      cachePolicy: CachePolicies.NO_CACHE,
-    }
-  );
+  const [loading, SetLoading] = useState(false);
 
-  return { post, del, response, loading, error };
+  const fetchData = useCallback(async (data: { name: string; payload: string }) => {
+    SetLoading(true);
+    try {
+      await service.request({
+        url: `${PREFIX}/open/v2/low-code/config`,
+        method: "POST",
+        headers: {},
+        data,
+      });
+      SetLoading(false);
+    } catch (error) {
+      SetLoading(false);
+    }
+  }, []);
+
+  return { action: fetchData, loading };
 };
 
 export const useDeleteAppConfigs = () => {
-  const { del, response, loading, error } = useFetch<BaseApiWrapper<ProApiConfigItem[]>>(
-    `${PREFIX}/open/v2/low-code/config`,
-    {
-      headers: fetchHeaders(),
-      cachePolicy: CachePolicies.NO_CACHE,
-    }
-  );
+  const [loading, SetLoading] = useState(false);
 
-  return { del, response, loading, error };
+  const fetchData = useCallback(async (data: number[]) => {
+    SetLoading(true);
+    try {
+      await service.request({
+        url: `${PREFIX}/open/v2/low-code/config`,
+        method: "DELETE",
+        headers: {},
+        data,
+      });
+      SetLoading(false);
+    } catch (error) {
+      SetLoading(false);
+    }
+  }, []);
+
+  return { action: fetchData, loading };
 };
 
 export async function fetchConfigById(id: string): Promise<ProApiConfig> {
-  const application = await (
-    await fetch(`${PREFIX}/open/v2/low-code/config?id=${id}`, { headers: fetchHeaders() })
-  ).json();
+  const { data: application } = await service.get<ProApiConfigItem>(`${PREFIX}/open/v2/low-code/config?id=${id}`);
 
   const config = JSON.parse(application?.data?.payload || "{}");
   if (config.kind === "Application") {
     return { id: application?.data?.id, application: config, name: application?.data?.name };
   }
-
-  throw new Error("failed to load schema");
+  return { id: application?.data?.id, application: DEFAULT_APP_TEMPLATE as Application, name: application?.data?.name };
 }
 
-export async function saveConfig(body: string) {
-  await (await fetch(`${PREFIX}/open/v2/low-code/config`, { headers: fetchHeaders(), method: "post", body })).json();
+export async function saveConfig(body: any) {
+  return await service.post(`${PREFIX}/open/v2/low-code/config`, body);
 }
 
-export async function deleteConfig(body: string) {
-  await (await fetch(`${PREFIX}/open/v2/low-code/config`, { headers: fetchHeaders(), method: "delete", body })).json();
+export async function deleteConfig(body: any) {
+  return await service.delete(`${PREFIX}/open/v2/low-code/config`, body);
 }

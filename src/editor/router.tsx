@@ -5,11 +5,11 @@ import { Editor, Record } from 'editor';
 import { createBrowserRouter } from 'react-router-dom';
 import { fetchConfigById } from './services';
 
-const BASE_URL = '/lowcode';
+export const ROUTER_BASE_URL = '/lowcode';
 
 export const router = createBrowserRouter([
   {
-    path: `${BASE_URL}/editor`,
+    path: `${ROUTER_BASE_URL}/editor`,
     element: <Editor />,
 
     children: [
@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
     ]
   },
   {
-    path: `${BASE_URL}`,
+    path: `${ROUTER_BASE_URL}`,
     element: <Record />,
   },
 ]);
