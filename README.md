@@ -57,6 +57,11 @@ yarn run add:trait -- --version custom/v1 --name validation
 yarn run add:utilMethod -- --version custom/v1 --name alert
 ```
 
+## Links
+
+Dev: https://subscan-pro-staging.vercel.app/lowcode
+
+> First log in to https://subscan-pro-staging.vercel.app/apiKey, then open https://subscan-pro-staging.vercel.app/lowcode to use Lowcode, because /lowcode and pro.subscan.io are used together an auth
 ## Learn More
 
 [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

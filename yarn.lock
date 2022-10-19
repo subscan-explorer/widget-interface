@@ -3142,10 +3142,10 @@
     rc-select "^14.1.5"
     react-color "^2.19.3"
 
-"@sunmao-ui-fork/editor@0.7.13":
-  version "0.7.13"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/editor/-/editor-0.7.13.tgz#dac1c58c57adfd94319b211f232442221b5770b1"
-  integrity sha512-7ESyRM+ShN3hipq3A73wEBTD+4aDez5THfswyMU0S9zcJQ/5/e6HCY7PyL/X97+aR0nIHTNUcYvJGjBEEV0y2g==
+"@sunmao-ui-fork/editor@0.7.15":
+  version "0.7.15"
+  resolved "https://registry.npmjs.org/@sunmao-ui-fork/editor/-/editor-0.7.15.tgz#620a8be1cf57a8c7702154135fc0922fbb0e0a6b"
+  integrity sha512-ekCX4QSs4WKrSYzbqX6JZ9PmAf3JQJGR+cOjgGpMjod6ja4Xjj7PftMTf3qrpA1f9JNRXlm/vjlXwRRlY9nxTA==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
