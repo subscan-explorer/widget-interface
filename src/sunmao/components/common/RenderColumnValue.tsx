@@ -90,7 +90,7 @@ export const BaseColumnSpecObject = {
 export const BaseColumnSpec = Type.Object(BaseColumnSpecObject);
 
 export interface BaseColumnValueProps extends Static<typeof BaseColumnSpec> {
-  value: string;
+  value: any;
 };
 
 export const RenderColumnValue: React.FC<BaseColumnValueProps> = ({ type, value, transformer, ...rest }) => {
