@@ -1,6 +1,6 @@
 {
   "name": "testlowcode",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "private": false,
   "main": "./dist/main.js",
   "homepage": "/lowcode",
