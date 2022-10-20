@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Colors } from "./theme/colors";
 
 interface FontProps {
-  bold?: boolean; 
+  bold?: boolean;
   fontColor?: keyof Colors;
   block?: boolean;
   nowrap?: boolean;

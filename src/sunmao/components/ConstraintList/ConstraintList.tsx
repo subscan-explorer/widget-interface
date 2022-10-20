@@ -15,6 +15,9 @@ const StyledColumn = styled.div`
   display: flex;
   border-bottom: 1px solid ${({ theme }) => theme.colors.background04};
   padding: 15px 10px;
+  p, a {
+    word-break: break-all;
+  }
 `;
 
 const StyledColumnHeader = styled.div`

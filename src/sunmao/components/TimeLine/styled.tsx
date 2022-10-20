@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const StyledTable = styled.table`
   width: 100%;
   white-space:nowrap;
+  p, a, span {
+    white-space: nowrap;
+  }
 `;
 
 export const StyledTr = styled.tr`
