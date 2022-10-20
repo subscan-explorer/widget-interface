@@ -100,10 +100,9 @@ export default implementRuntimeComponent({
     <BaseTabs
       defaultIndex={initialSelectedTabIndex}
       onChange={idx => setSelectedTabIndex(idx)}
-      ref={elementRef}
       variant='unstyled'
     >
-      <TabList>
+      <TabList ref={elementRef}>
         {tabNames.map((name, idx) => (
           <Tab
             key={idx}

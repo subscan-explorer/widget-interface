@@ -45,6 +45,8 @@ export const StyledModuleBox = styled.div`
   border: 1px solid ${({theme}) => theme.colors.background04};
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 export const StyledScrollX = styled.div`

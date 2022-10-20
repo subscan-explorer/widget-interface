@@ -13,6 +13,9 @@ export const StyledTr = styled.tr`
   &:hover td{
     background-color: #fbfbfb;
   }
+  &:last-child td {
+    border-bottom: none;
+  }
 `;
 
 export const StyledTh = styled.th`
