@@ -6,7 +6,7 @@
   "homepage": "/lowcode",
   "dependencies": {
     "@sunmao-ui-fork/core": "0.7.5",
-    "@sunmao-ui-fork/editor": "0.7.16",
+    "@sunmao-ui-fork/editor": "0.7.17",
     "@sunmao-ui-fork/runtime": "0.7.11",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
