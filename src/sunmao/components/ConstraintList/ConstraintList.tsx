@@ -14,15 +14,25 @@ const CssBox = css`
 const StyledColumn = styled.div`
   display: flex;
   border-bottom: 1px solid ${({ theme }) => theme.colors.background04};
-  padding: 15px 10px;
+  padding: 10px;
+  flex-direction: column;
   p, a {
     word-break: break-all;
+  }
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    flex-direction: row;
+    padding: 15px 10px;
   }
 `;
 
 const StyledColumnHeader = styled.div`
   width: 180px;
   flex-shrink: 0;
+  margin-bottom: 10px;
+  ${({ theme }) => theme.mediaQueries.md} {
+    margin-bottom: 0;
+  }
 `;
 
 export const ColumnSpec = Type.Object({
