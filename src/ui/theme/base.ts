@@ -1,3 +1,5 @@
+import { ChainColors, MediaQueries } from '../type';
+
 export const breakpointMap: { [key: string]: number } = {
   xs: 370,
   sm: 576,
@@ -7,17 +9,22 @@ export const breakpointMap: { [key: string]: number } = {
   xxl: 1600,
 };
 
+export const mediaQueries: MediaQueries = {
+  xs: `@media screen and (min-width: ${breakpointMap.xs}px)`,
+  sm: `@media screen and (min-width: ${breakpointMap.sm}px)`,
+  md: `@media screen and (min-width: ${breakpointMap.md}px)`,
+  lg: `@media screen and (min-width: ${breakpointMap.lg}px)`,
+  xl: `@media screen and (min-width: ${breakpointMap.xl}px)`,
+  xxl: `@media screen and (min-width: ${breakpointMap.xxl}px)`,
+  nav: `@media screen and (min-width: ${breakpointMap.lg}px)`
+};
+
 export const radii = {
   small: "4px",
   default: "16px",
   card: "24px",
   circle: "50%",
 };
-
-export type ChainColors = {
-  color: string;
-  borderRadius: string;
-}
 
 export const chain: {
   dark: ChainColors;
