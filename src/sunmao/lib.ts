@@ -1,4 +1,4 @@
-import { RegistryInterface } from "@sunmao-ui-fork/runtime";
+import { RegistryInterface, SunmaoLib } from "@sunmao-ui-fork/runtime";
 import {
   Table,
   Pagination,
@@ -33,3 +33,9 @@ export function install (registry: RegistryInterface) {
   traits.forEach(t => registry.registerTrait(t));
   modules.forEach(m => registry.registerModule(m));
 }
+
+export const SubscanLib: SunmaoLib = {
+  components,
+  traits,
+  modules,
+};

@@ -57,6 +57,12 @@ yarn run add:trait -- --version custom/v1 --name validation
 yarn run add:utilMethod -- --version custom/v1 --name alert
 ```
 
+### Subscan Components Storybook
+```bash
+# http://localhost:6006/
+yarn storybook
+```
+
 ## Links
 
 Dev: https://subscan-pro-staging.vercel.app/lowcode
