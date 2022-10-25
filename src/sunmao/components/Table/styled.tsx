@@ -11,7 +11,7 @@ export const StyledTable = styled.table`
 
 export const StyledTr = styled.tr`
   &:hover td{
-    background-color: #fbfbfb;
+    background-color: ${({ theme }) => `${theme.colors.background04}46`};
   }
   &:last-child td {
     border-bottom: none;

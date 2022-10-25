@@ -2,6 +2,7 @@
 
 import styled, { css, keyframes } from 'styled-components';
 import { space } from 'styled-system';
+import { Colors } from 'ui/theme/colors';
 import { SvgProps } from './types';
 
 const rotate = keyframes`
@@ -20,7 +21,7 @@ const spinStyle = css`
 
 const Svg = styled.svg<SvgProps>`
   align-self: center;
-  fill: ${({ color }) => color};
+  fill: ${({ theme, color }) => theme.colors[color as keyof Colors || 'none'] || color};
   flex-shrink: 0;
   ${({ spin }) => spin && spinStyle}
   ${space}

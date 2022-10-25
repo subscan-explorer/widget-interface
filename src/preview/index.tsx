@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { light } from 'ui/theme';
+import { light, dark } from 'ui/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from 'ui/chakraTheme';
 import BigNumber from 'bignumber.js';
@@ -18,11 +18,12 @@ BigNumber.config({
   ROUNDING_MODE: 1
 });
 
-const Preview: React.FC<{ options: Application }> = ({ options }) => {
+const Preview: React.FC<{ options: Application, isDark?: boolean }> = ({ options, isDark }) => {
   const { App } = initSunmaoUI(runtimeConfig);
+  const initTheme = useMemo(() => isDark ? dark : light, [isDark]);
 
   return (<ChakraProvider theme={theme} resetCSS={false}>
-    <ThemeProvider theme={light}>
+    <ThemeProvider theme={initTheme}>
       <div className="chakraCSSReset">
         {options && <App options={options} />}
       </div>

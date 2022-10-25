@@ -42,6 +42,7 @@ export const StyledFont12 = styled.span<FontProps>`
 `;
 
 export const StyledModuleBox = styled.div`
+  background-color: ${({theme}) => theme.colors.contrast};;
   border: 1px solid ${({theme}) => theme.colors.background04};
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
