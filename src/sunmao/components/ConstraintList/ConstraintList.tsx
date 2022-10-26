@@ -3,9 +3,10 @@ import { Type, Static } from '@sinclair/typebox';
 import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
 import { COMPONENTS_CATEGORY, PRESET_PROPERTY_CATEGORY, VERSION } from 'config/constants';
 import { StyledFont14, StyledModuleBox } from 'ui/common';
-import { css } from '@emotion/css';
+import { css, cx } from '@emotion/css';
 import styled from 'styled-components';
 import { RenderColumnValue, BaseColumnSpecObject } from '../common/RenderColumnValue';
+import { FALLBACK_METADATA, getComponentProps } from 'utils/sunmao-helper';
 
 const CssBox = css`
   padding: 10px 20px;
@@ -79,6 +80,7 @@ export interface ColumnValueProps extends Static<typeof ColumnSpec> {
 export default implementRuntimeComponent({
   version: VERSION.Core,
   metadata: {
+    ...FALLBACK_METADATA,
     name: 'constraintlist',
     displayName: 'Constraint List',
     description: 'Constraint List Components',
@@ -158,8 +160,10 @@ export default implementRuntimeComponent({
     styleSlots: ['content'],
     events: [],
   },
-})(({ data, columns, elementRef, mergeState }) => {
-  return (<StyledModuleBox className={CssBox} ref={elementRef} >
+})(props => {
+  const { data, columns } = getComponentProps(props);
+  const { elementRef, customStyle } = props;
+  return (<StyledModuleBox className={cx(css(customStyle?.content), CssBox)} ref={elementRef} >
     {columns?.map((column, index) => {
       return (<StyledColumn key={`${column.title}${index}`}>
         <StyledColumnHeader>

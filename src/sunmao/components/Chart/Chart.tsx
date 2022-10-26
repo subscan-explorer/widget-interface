@@ -43,9 +43,11 @@ export const Chart = implementRuntimeComponent({
     events: ['onClick'],
   },
 })(props => {
-  const { elementRef, customStyle, data, callbackMap } = props;
+  const { data, ...cProps } = getComponentProps(props);
+  const { elementRef, customStyle, callbackMap } = props;
+
   const [chart, SetChart] = useState<echarts.ECharts>();
-  const { ...cProps } = getComponentProps(props);
+
   const theme = useTheme();
 
   const adaptResize = useCallback(() => {
