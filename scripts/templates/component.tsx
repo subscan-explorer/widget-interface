@@ -1,5 +1,6 @@
 import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
 import { PRESET_PROPERTY_CATEGORY } from 'config/constants';
+import { FALLBACK_METADATA, getComponentProps } from 'utils/sunmao-helper';
 import { Type } from '@sinclair/typebox';
 import { css } from '@emotion/css';
 import React from 'react';
@@ -7,6 +8,7 @@ import React from 'react';
 export default implementRuntimeComponent({
   version: 'custom/v1',
   metadata: {
+    ...FALLBACK_METADATA,
     name: 'componentName',
     displayName: 'componentDisplayName',
     description: '',
@@ -26,7 +28,10 @@ export default implementRuntimeComponent({
     styleSlots: ['content'],
     events: [],
   },
-})(({ customStyle }) => {
+})(props => {
+  // const { data } = getComponentProps(props);
+  const { customStyle } = props;
+
   // implement your component here
   return <div className={css(customStyle?.content)} />;
 });
