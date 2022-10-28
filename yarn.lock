@@ -4765,10 +4765,10 @@
     react-color "^2.19.3"
     tern "^0.24.3"
 
-"@sunmao-ui-fork/editor@0.7.17":
-  version "0.7.17"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/editor/-/editor-0.7.17.tgz#8f19db03d973aa07988f12a86d7a16e6d834b589"
-  integrity sha512-FE7aHCk5uTkfa3KaIp4zaGPZo3YZ4MwXceqbN8Rw8Vod3sFyCCPzkczIRVH1tU6AGkkjdTNLNVIdPAKpy7XClA==
+"@sunmao-ui-fork/editor@0.7.19":
+  version "0.7.19"
+  resolved "https://registry.npmjs.org/@sunmao-ui-fork/editor/-/editor-0.7.19.tgz#18379615b3a94b895b083a4be99903c13138403f"
+  integrity sha512-t+IZlugnDOaKIfIZ2dM48c7Xy6VurrYCD/CYxqh2kwT4Asd1VZRfSZyp5iMbF6FfzZunZ8UPG0HQ0jyFuxYj3Q==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
