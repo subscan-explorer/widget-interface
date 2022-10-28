@@ -36,6 +36,10 @@ const TimeLineSymbolBox = styled.div`
   top: 20px;
 `;
 
+const TimeLineTd = styled.td`
+  vertical-align: top;
+`;
+
 export const ColumnSpec = Type.Object({
   title: Type.String({
     title: 'Title',
@@ -145,10 +149,12 @@ export default implementRuntimeComponent({
           {data?.map((trData, trIndex) => {
             return (
               <StyledTr key={`${trIndex}`}>
-                <TimeLineSymbolBox style={{ borderBottom: 0 }}>
-                  <TimeLineSymbolPointer />
-                  {trIndex === data.length - 1 ? null : <TimeLineSymbolLine />}
-                </TimeLineSymbolBox>
+                <TimeLineTd>
+                  <TimeLineSymbolBox style={{ borderBottom: 0 }}>
+                    <TimeLineSymbolPointer />
+                    {trIndex === data.length - 1 ? null : <TimeLineSymbolLine />}
+                  </TimeLineSymbolBox>
+                </TimeLineTd>
                 {columns.map((column, tdIndex) => {
                   return (
                     <StyledTd key={`${trData.title}${tdIndex}`}>
