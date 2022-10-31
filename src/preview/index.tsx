@@ -20,7 +20,7 @@ BigNumber.config({
 
 const Preview: React.FC<{ options: Application, isDark?: boolean }> = ({ options, isDark }) => {
   const { App } = initSunmaoUI(runtimeConfig);
-  const initTheme = useMemo(() => isDark ? dark : light, [isDark]);
+  const initTheme = useMemo(() => true ? dark : light, [isDark]);
 
   return (<ChakraProvider theme={theme} resetCSS={false}>
     <ThemeProvider theme={initTheme}>

@@ -1,30 +1,7 @@
 import { type SunmaoUIRuntimeProps } from "@sunmao-ui-fork/runtime";
-import {
-  Table,
-  Pagination,
-  Title,
-  Icon,
-  CardSummary,
-  ConstraintList,
-  Tabs,
-  TimeLine,
-  Chart,
-} from "sunmao/components";
-
+import { SubscanLib } from 'sunmao/lib';
 const libs = [
-  {
-    components: [
-      Table,
-      Pagination,
-      Title,
-      Icon,
-      CardSummary,
-      ConstraintList,
-      Tabs,
-      TimeLine,
-      Chart,
-    ],
-  },
+  SubscanLib
 ];
 
 export default {

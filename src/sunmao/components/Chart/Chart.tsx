@@ -2,25 +2,77 @@ import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
 import { css } from '@emotion/css';
 import { Type, Static } from '@sinclair/typebox';
 import { FALLBACK_METADATA, getComponentProps } from 'utils/sunmao-helper';
-import { COMPONENTS_CATEGORY, PRESET_PROPERTY_CATEGORY, VERSION } from 'config/constants';
-import { useCallback, useEffect, useState } from 'react';
+import { COMPONENTS_CATEGORY, VERSION } from 'config/constants';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import './Init';
 import * as echarts from 'echarts/core';
-import { getAreaChartOptions } from './options';
 import { useTheme } from 'styled-components';
 import { ElementResizeListener } from 'components';
+import { ChartPropsSpec as BaseChartPropsSpec } from './types/Chart';
+import { filterProperties } from './object';
 
-const ButtonPropsSpec = Type.Object({
-  data: Type.Array(Type.Array(Type.Any()), {
-    title: 'Data',
-    category: PRESET_PROPERTY_CATEGORY.Data,
-    weight: 0,
-    widget: 'core/v1/expression',
-  }),
+// https://github.com/webzard-io/sunmao-ui-echarts-lib
+const ChartPropsSpec = Type.Object({
+  ...BaseChartPropsSpec,
 });
 
-const exampleProperties: Static<typeof ButtonPropsSpec> = {
-  data: [["2000-06-05", 116], ["2000-06-06", 129], ["2000-06-07", 135], ["2000-06-08", 86], ["2000-06-09", 73], ["2000-06-10", 85], ["2000-06-11", 73], ["2000-06-12", 68], ["2000-06-13", 92], ["2000-06-14", 130], ["2000-06-15", 245], ["2000-06-16", 139], ["2000-06-17", 115], ["2000-06-18", 111], ["2000-06-19", 309], ["2000-06-20", 206], ["2000-06-21", 137], ["2000-06-22", 128], ["2000-06-23", 85], ["2000-06-24", 94], ["2000-06-25", 71], ["2000-06-26", 106], ["2000-06-27", 84], ["2000-06-28", 93], ["2000-06-29", 85], ["2000-06-30", 73], ["2000-07-01", 83], ["2000-07-02", 125], ["2000-07-03", 107], ["2000-07-04", 82], ["2000-07-05", 44], ["2000-07-06", 72], ["2000-07-07", 106], ["2000-07-08", 107], ["2000-07-09", 66], ["2000-07-10", 91], ["2000-07-11", 92], ["2000-07-12", 113], ["2000-07-13", 107], ["2000-07-14", 131], ["2000-07-15", 111], ["2000-07-16", 64], ["2000-07-17", 69], ["2000-07-18", 88], ["2000-07-19", 77], ["2000-07-20", 83], ["2000-07-21", 111], ["2000-07-22", 57], ["2000-07-23", 55], ["2000-07-24", 60]]
+const exampleProperties: Static<typeof ChartPropsSpec> = {
+  title: {
+    text: 'Chart',
+    left: '',
+    right: '',
+    top: '',
+    bottom: '',
+  },
+  xAxis: [
+    {
+      name: '',
+      type: 'category',
+      data: ['Dimension 1', 'Dimension 2'],
+      nameLocation: 'center',
+      offset: 0,
+      position: 'bottom',
+    },
+  ],
+  yAxis: [
+    {
+      name: '',
+      type: 'value',
+      data: [],
+      nameLocation: 'center',
+      offset: 0,
+      position: 'left',
+    },
+  ],
+  series: [
+    {
+      type: 'line',
+      name: 'Series 1',
+      label: {
+        show: false,
+        position: 'top',
+      },
+      data: [1, 2],
+      symbol: 'circle',
+      showSymbol: true,
+      smooth: true,
+    },
+    {
+      type: 'bar',
+      name: 'Series 2',
+      label: {
+        show: false,
+        position: 'top',
+      },
+      data: [4, 2],
+      barWidth: '',
+      barGap: '',
+      barCategoryGap: '',
+      stack: '',
+      showBackground: false,
+    },
+  ],
+  color: [],
 };
 
 export const Chart = implementRuntimeComponent({
@@ -35,7 +87,7 @@ export const Chart = implementRuntimeComponent({
     },
   },
   spec: {
-    properties: ButtonPropsSpec,
+    properties: ChartPropsSpec,
     state: {},
     methods: {},
     slots: {},
@@ -43,7 +95,14 @@ export const Chart = implementRuntimeComponent({
     events: ['onClick'],
   },
 })(props => {
-  const { data, ...cProps } = getComponentProps(props);
+  const {
+    title,
+    yAxis,
+    xAxis,
+    series,
+    color,
+    ...cProps
+  } = getComponentProps(props);
   const { elementRef, customStyle, callbackMap } = props;
 
   const [chart, SetChart] = useState<echarts.ECharts>();
@@ -56,19 +115,52 @@ export const Chart = implementRuntimeComponent({
     }
   }, [chart]);
 
+  const option = useMemo(() => {
+    return filterProperties(
+      {
+        title,
+        yAxis,
+        xAxis,
+        series,
+        color,
+      },
+      (option, key, path) => {
+        const value = option[key];
+        if (value !== undefined && (value as unknown as string !== '')) {
+          const strPath = path.join('.');
+          const checkedEmptyArrayProperties = ['color', 'legend.data'];
+          if (checkedEmptyArrayProperties.includes(strPath) && Array.isArray(value)) {
+            return value.length !== 0;
+          } else {
+            return true;
+          }
+        }
+
+        return false;
+      },
+      { deep: true }
+    );
+  }, [title, yAxis, xAxis, series, color]);
+
   useEffect(() => {
     if (!elementRef) return;
     const myChart = echarts.init(elementRef?.current, undefined, { renderer: 'svg' });
-    const dateList = data.map(function (item) {
-      return item[0];
+    // const dateList = data.map(function (item) {
+    //   return item[0];
+    // });
+    // const valueList = data.map(function (item) {
+    //   return item[1];
+    // });
+    // const options = getAreaChartOptions(theme, dateList, valueList);
+    myChart.setOption({
+      ...option,
+      tooltip: {
+        trigger: 'axis',
+        triggerOn: 'mousemove',
+      },
     });
-    const valueList = data.map(function (item) {
-      return item[1];
-    });
-    const options = getAreaChartOptions(theme, dateList, valueList);
-    myChart.setOption(options);
     SetChart(myChart);
-  }, [data, elementRef, theme]);
+  }, [elementRef, option]);
 
   return (
     <>

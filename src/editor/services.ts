@@ -13,7 +13,6 @@ export const useFetchAppConfigs = () => {
     SetLoading(true);
     try {
       const { data } = await service.get<ProApiConfigItem[]>(`${PREFIX}/open/v2/low-code/configs`);
-      console.log(data);
       SetConfigs(data.data);
       SetLoading(false);
     } catch (error) {
