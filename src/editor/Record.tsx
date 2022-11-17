@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { BareProps } from 'types';
-import { useDeleteAppConfigs, useFetchAppConfigs } from './services';
+import { useDeleteAppConfigs, useFetchAppConfigs, useFetchUserInfo } from './services';
 import {
   Table,
   Thead,
@@ -32,6 +32,7 @@ const StyledRecord = styled(Container)`
 
 const Record: React.FC<Props> = ({ className }) => {
   const { data, refetch } = useFetchAppConfigs();
+  const { data: userInfo } = useFetchUserInfo();
   const { action } = useDeleteAppConfigs();
 
   const deleteApplicationHandler = useCallback(async (appId) => {
@@ -82,6 +83,13 @@ const Record: React.FC<Props> = ({ className }) => {
         </Table>
       </TableContainer>
       <CreateApplication onCreated={refetch} />
+
+      <Heading mt={4} as='h3' size='lg' textAlign="center">
+        User Info
+      </Heading>
+      <pre style={{ maxHeight: 300, overflow: 'auto' }}>
+        {JSON.stringify(userInfo, null, 2)}
+      </pre>
     </VStack>
   </StyledRecord>);
 };

@@ -26,6 +26,8 @@ export interface Props extends BareProps {
 const CreateApplication: React.FC<Props> = ({ onCreated }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [name, SetName] = useState<string>('');
+  const [networkId, SetNetworkId] = useState<string>('');
+  const [organizationId, SetOrganizationId] = useState<string>('');
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
   const { action, loading } = useSaveAppConfigs();
@@ -34,14 +36,24 @@ const CreateApplication: React.FC<Props> = ({ onCreated }) => {
     SetName(event.target.value);
   }, []);
 
+  const networkIdOnChangeHandler = useCallback((event) => {
+    SetNetworkId(event.target.value);
+  }, []);
+
+  const organizationIdOnChangeHandler = useCallback((event) => {
+    SetOrganizationId(event.target.value);
+  }, []);
+
   const createApplication = useCallback(async () => {
     await action({
       name: name,
-      payload: JSON.stringify(DEFAULT_APP_TEMPLATE)
+      payload: JSON.stringify(DEFAULT_APP_TEMPLATE),
+      networks: JSON.parse(networkId),
+      organization_id: parseInt(organizationId)
     });
     onCreated && onCreated();
     onClose();
-  }, [name, onClose, onCreated, action]);
+  }, [action, name, networkId, organizationId, onCreated, onClose]);
 
   return (
     <>
@@ -61,6 +73,16 @@ const CreateApplication: React.FC<Props> = ({ onCreated }) => {
             <FormControl>
               <FormLabel>Name</FormLabel>
               <Input ref={initialRef} value={name} onChange={nameOnChangeHandler} placeholder='Application Name' />
+            </FormControl>
+
+            <FormControl>
+              <FormLabel>Network ID</FormLabel>
+              <Input value={networkId} onChange={networkIdOnChangeHandler} placeholder='[1,2,3,4]' />
+            </FormControl>
+
+            <FormControl>
+              <FormLabel>Organization ID</FormLabel>
+              <Input value={organizationId} onChange={organizationIdOnChangeHandler} placeholder='' />
             </FormControl>
 
             <FormControl mt={4}>
