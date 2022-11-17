@@ -1,7 +1,7 @@
 import { Application } from "@sunmao-ui-fork/core";
 import { DEFAULT_APP_TEMPLATE } from "config/constants";
 import { useCallback, useEffect, useState } from "react";
-import { BaseApiWrapper, ProApiConfig, ProApiConfigItem, UserInfo } from "types";
+import { ProApiConfig, ProApiConfigItem, UserInfo } from "types";
 import service from "./api";
 
 const PREFIX = process.env.REACT_APP_SUBSCAN_PRO_API;
