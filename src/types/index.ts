@@ -27,3 +27,21 @@ export interface ProApiConfig {
   id: number;
   application: Application;
 }
+
+export interface UserNetwork {
+  id: string;
+  name: string;
+  role: string;
+}
+
+export interface UserOrganization {
+  name: string;
+  id: number;
+  networks: UserNetwork[];
+}
+export interface UserInfo {
+  id: number;
+  public_key: string;
+  email: string;
+  organizations: UserOrganization[];
+}
