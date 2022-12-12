@@ -5,7 +5,6 @@ import { BareProps, ProApiConfig } from 'types';
 import '@sunmao-ui-fork/editor/dist/index.css';
 import runtimeConfig from 'config/runtime';
 import BigNumber from 'bignumber.js';
-import "@arco-design/web-react/dist/css/arco.css";
 import { LocalStorageManager } from './LocalStorageManager';
 import {
   useRouteLoaderData,

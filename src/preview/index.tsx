@@ -7,7 +7,6 @@ import BigNumber from 'bignumber.js';
 import { initSunmaoUI } from '@sunmao-ui-fork/runtime';
 import runtimeConfig from 'config/runtime';
 import { type Application } from '@sunmao-ui-fork/core';
-import "@arco-design/web-react/dist/css/arco.css";
 import '../chakraCSSReset.css';
 
 // This config is required for number formatting

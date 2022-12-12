@@ -6,8 +6,9 @@
   "homepage": "/lowcode",
   "dependencies": {
     "@sunmao-ui-fork/core": "0.7.5",
-    "@sunmao-ui-fork/editor": "0.7.20",
-    "@sunmao-ui-fork/runtime": "0.7.12",
+    "@sunmao-ui-fork/editor": "0.7.22",
+    "@sunmao-ui-fork/runtime": "0.7.14",
+    "@arco-design/web-react": "^2.34.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -25,6 +26,7 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
+    "source-map-explorer": "^2.5.3",
     "styled-components": "5.3.5",
     "styled-system": "^5.1.5",
     "typescript": "4.6.3",
@@ -68,7 +70,8 @@
     "add:trait": "node ./scripts/trait.js",
     "add:utilMethod": "node ./scripts/utilMethod.js",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "browserslist": {
     "production": [

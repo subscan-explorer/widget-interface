@@ -5,6 +5,7 @@ import { Type, Static } from '@sinclair/typebox';
 import { FALLBACK_METADATA, getComponentProps, StringUnion } from 'utils/sunmao-helper';
 import { useStateValue } from 'hooks/useStateValue';
 import { VERSION, PRESET_PROPERTY_CATEGORY, COMPONENTS_CATEGORY } from 'config/constants';
+import './index.css';
 
 export const BasePaginationPropsSpec = {
   defaultCurrent: Type.Number({
