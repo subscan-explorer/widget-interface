@@ -2,8 +2,8 @@ import { Application, Module } from '@sunmao-ui-fork/core';
 
 export const EmptyAppSchema: Application = {
   kind: 'Application',
-  version: 'example/v1',
-  metadata: { name: 'sunmao application', description: 'sunmao empty application' },
+  version: 'widget/v1',
+  metadata: { name: 'subscan widget', description: 'subscan empty widget' },
   spec: {
     components: [],
   },

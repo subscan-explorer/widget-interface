@@ -27,8 +27,14 @@ export class Request {
     this.instance.interceptors.request.use(
       (config: AxiosRequestConfig) => {
         const token = localStorage.getItem("token") as string;
+        const organizationId = localStorage.getItem("organization:id") as string;
+
         if(token) {
           config.headers!.Authorization = `Bearer ${token}`;
+        }
+
+        if(organizationId) {
+          config.headers!['OPEN-PLATFORM-ORGANIZATION'] = organizationId;
         }
 
         return config;
