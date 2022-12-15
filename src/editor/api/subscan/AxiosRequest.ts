@@ -59,6 +59,7 @@ export class Request {
           default:
             message = `request error (${err.response.status})!`;
         }
+        console.log('axios error:', message);
         /// global error alert
         return Promise.reject(err.response);
       }

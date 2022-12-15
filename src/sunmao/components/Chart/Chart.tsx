@@ -6,7 +6,6 @@ import { COMPONENTS_CATEGORY, VERSION } from 'config/constants';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import './Init';
 import * as echarts from 'echarts/core';
-import { useTheme } from 'styled-components';
 import { ElementResizeListener } from 'components';
 import { ChartPropsSpec as BaseChartPropsSpec } from './types/Chart';
 import { filterProperties } from './object';
@@ -104,11 +103,7 @@ export const Chart = implementRuntimeComponent({
     ...cProps
   } = getComponentProps(props);
   const { elementRef, customStyle, callbackMap } = props;
-
   const [chart, SetChart] = useState<echarts.ECharts>();
-
-  const theme = useTheme();
-
   const adaptResize = useCallback(() => {
     if (chart) {
       chart.resize();

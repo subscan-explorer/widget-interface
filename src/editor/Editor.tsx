@@ -1,16 +1,17 @@
 import { initSunmaoUIEditor } from '@sunmao-ui-fork/editor';
-import React from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { BareProps, ProApiConfig } from 'types';
 import '@sunmao-ui-fork/editor/dist/index.css';
 import runtimeConfig from 'config/runtime';
 import BigNumber from 'bignumber.js';
-import { LocalStorageManager } from './LocalStorageManager';
 import {
   useRouteLoaderData,
 } from "react-router-dom";
-import { saveConfig } from './services';
+import { LocalStorageManager } from './api/localstorage/LocalStorageManager';
+import { saveConfig } from './api/subscan/Services';
 export { default as Record } from './Record';
+export { default as Management } from './Management';
 
 // This config is required for number formatting
 // https://mikemcl.github.io/bignumber.js/#toS
@@ -24,10 +25,11 @@ const StyledContainer = styled.div`
   height: 100%;
 `;
 
-export const Editor: React.FC<BareProps> = ({ className }) => {
-  const lsManager = new LocalStorageManager();
+const Editor: React.FC<BareProps> = ({ className }) => {
+  const lsManager = useMemo(() => new LocalStorageManager(), []);
   const config = useRouteLoaderData('editor') as ProApiConfig;
-  console.log('useRouteLoaderData', config);
+  console.log('widget data:', config);
+  const CHANNEL = process.env.REACT_APP_CHANNEL;
 
   const { Editor } = initSunmaoUIEditor({
     defaultApplication: config.application,
@@ -35,11 +37,15 @@ export const Editor: React.FC<BareProps> = ({ className }) => {
     runtimeProps: runtimeConfig,
     storageHandler: {
       onSaveApp(app) {
-        saveConfig({
-          name: config.name,
-          payload: JSON.stringify(app),
-          id: config.id
-        });
+        if (CHANNEL === 'subscan') {
+          saveConfig({
+            name: config.name,
+            payload: JSON.stringify(app),
+            id: config.id
+          });
+        } else {
+          lsManager.saveWidgetInLs(config.id.toString(), app);
+        }
       },
       onSaveModules(modules) {
         lsManager.saveModulesInLS(modules);
@@ -53,3 +59,4 @@ export const Editor: React.FC<BareProps> = ({ className }) => {
   </StyledContainer>);
 };
 
+export default Editor;

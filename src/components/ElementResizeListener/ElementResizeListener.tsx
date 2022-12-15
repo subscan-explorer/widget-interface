@@ -42,6 +42,7 @@ const ElementResizeListener: React.FC<Props> = ({ onResize }) => {
   }, []);
 
   return (
+    // eslint-disable-next-line jsx-a11y/alt-text
     <object
       onLoad={onLoad}
       ref={objectRef} tabIndex={-1}

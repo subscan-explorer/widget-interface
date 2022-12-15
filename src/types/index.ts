@@ -24,7 +24,7 @@ export interface ProApiConfigItem {
 
 export interface ProApiConfig {
   name: string;
-  id: number;
+  id: number | string;
   application: Application;
 }
 

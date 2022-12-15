@@ -22,8 +22,8 @@ export const enum VERSION {
 
 export const DEFAULT_APP_TEMPLATE = {
   "kind": "Application",
-  "version": "custom/v1",
-  "metadata": { "name": "appName" },
+  "version": "widget/v1",
+  "metadata": { name: 'subscan widget', description: 'subscan widget' },
   "spec": { "components": [] }
 };
 

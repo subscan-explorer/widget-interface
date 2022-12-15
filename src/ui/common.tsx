@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Colors } from "./theme/colors";
+import { Box } from '@chakra-ui/react';
 
 interface FontProps {
   bold?: boolean;
@@ -8,6 +9,22 @@ interface FontProps {
   nowrap?: boolean;
   wordbreak?: string;
 }
+
+export const StyledFont16 = styled.span<FontProps>`
+  /* 14 */
+  font-family: 'Eina 01';
+  font-style: normal;
+  font-weight: ${({ bold }) => bold ? 600 : 400};
+  font-size: 16px;
+  line-height: 22px;
+  display: ${({ block }) => block ? 'block' : 'inline-block'};
+  /* identical to box height, or 143% */
+
+  /* Black */
+  color: ${({ theme, fontColor }) => theme.colors[fontColor || 'primary']};
+  white-space: ${({ nowrap }) => nowrap ? 'nowrap' : 'normal'};
+  word-break: ${({ wordbreak }) => wordbreak || 'normal'};
+`;
 
 export const StyledFont14 = styled.span<FontProps>`
   /* 14 */
@@ -41,7 +58,7 @@ export const StyledFont12 = styled.span<FontProps>`
   word-break: ${({ wordbreak }) => wordbreak || 'normal'};
 `;
 
-export const StyledModuleBox = styled.div`
+export const StyledModuleBox = styled(Box)`
   background-color: ${({theme}) => theme.colors.contrast};;
   border: 1px solid ${({theme}) => theme.colors.background04};
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);

@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { BareProps } from 'types';
-import { useDeleteAppConfigs, useFetchAppConfigs, useFetchUserInfo } from './services';
+import { useDeleteAppConfigs, useFetchAppConfigs, useFetchUserInfo } from './api/subscan/Services';
 import {
   Table,
   Thead,
