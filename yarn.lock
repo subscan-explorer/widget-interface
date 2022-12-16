@@ -4714,10 +4714,10 @@
     "@styled-system/core" "^5.1.2"
     "@styled-system/css" "^5.1.5"
 
-"@subscan/widget-chakra-ui-lib@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@subscan/widget-chakra-ui-lib/-/widget-chakra-ui-lib-1.0.0.tgz#7f0952e5b9dd7c004b3d50c77bc37b49ad9a8c4f"
-  integrity sha512-/Ks563RMjLV/8Z4J4sR3Mr1sLC++ENMx3ZAmNar7qXdx5dRDXKngCE2ZBglhBxGbLTJVDftXKbF9nu/7w0XLtw==
+"@subscan/widget-chakra-ui-lib@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@subscan/widget-chakra-ui-lib/-/widget-chakra-ui-lib-1.0.1.tgz#5246498e56f3a95d0dd22b3efb89b1d2f1618acf"
+  integrity sha512-7YFvlL0oqYT4LM3+cx4a3tkdYg8I5G1E8kYzu8Y4d2NHCq9dkI4koCN6Mr72a1O1yjCypiHWNWQA76Eg8VHEpg==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
@@ -4755,10 +4755,10 @@
     react-color "^2.19.3"
     tern "^0.24.3"
 
-"@subscan/widget-editor@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@subscan/widget-editor/-/widget-editor-1.0.0.tgz#daa6c6f1c63030c8f70bbb4eafddbe76e1e57104"
-  integrity sha512-lkIsbIGCfhjj3c+eP7pC5aM21wltgaJ7gPeNExA1GX9Xh4GkvfdK+VN7e0el2hVPLd72gYXzuSUXapzLuxsXxw==
+"@subscan/widget-editor@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@subscan/widget-editor/-/widget-editor-1.0.1.tgz#973fff20c5ae5c689a15291f306d7a2c4af8f024"
+  integrity sha512-gnIp51MkguboCmIk8j49f1w54ZQ8LN3IOvWd3H85qd4LaAWN4/wOCnf4MaMBPGHpSjAUmkb6ylYL5qkjE4529A==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
@@ -4768,7 +4768,7 @@
     "@graphiql/toolkit" "^0.6.1"
     "@optum/json-schema-editor" "^2.1.0"
     "@sinclair/typebox" "^0.21.2"
-    "@subscan/widget-chakra-ui-lib" "^1.0.0"
+    "@subscan/widget-chakra-ui-lib" "^1.0.1"
     "@subscan/widget-core" "^1.0.0"
     "@subscan/widget-editor-sdk" "^1.0.0"
     "@subscan/widget-runtime" "^1.0.0"
