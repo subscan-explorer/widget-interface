@@ -1,6 +1,6 @@
-# Subscan Lowcode
+# Subscan Widget App
 
-✨ This is a Subscan Lowcode Platform.
+✨ This is a Subscan Widget Platform.
 
 ## Struct
 
@@ -27,7 +27,7 @@ src
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn start:local`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -35,7 +35,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn run build`
+### `yarn run build:local`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -67,7 +67,6 @@ yarn storybook
 
 Dev: https://subscan-pro-staging.vercel.app/lowcode
 
-> First log in https://subscan-pro-staging.vercel.app/apiKey, then visit https://subscan-pro-staging.vercel.app/lowcode to use Lowcode, because /lowcode and pro.subscan.io share the same auth.
 ## Learn More
 
 [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
