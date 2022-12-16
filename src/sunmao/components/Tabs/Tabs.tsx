@@ -9,7 +9,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { Type } from '@sinclair/typebox';
-import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
+import { implementRuntimeComponent } from '@subscan/widget-runtime';
 import { PRESET_PROPERTY_CATEGORY, COMPONENTS_CATEGORY, VERSION } from 'config/constants';
 import { StyledFont14 } from 'ui/common';
 import styled, { useTheme } from 'styled-components';

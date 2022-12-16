@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Type, Static } from '@sinclair/typebox';
-import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
+import { implementRuntimeComponent } from '@subscan/widget-runtime';
 import { COMPONENTS_CATEGORY, PRESET_PROPERTY_CATEGORY, VERSION } from 'config/constants';
 import { StyledFont14, StyledModuleBox, StyledScrollX } from 'ui/common';
 import { StyledSortAsc, StyledSortBox, StyledSortDesc, StyledTable, StyledTd, StyledTh, StyledTr } from './styled';

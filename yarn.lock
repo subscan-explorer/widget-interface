@@ -4714,34 +4714,34 @@
     "@styled-system/core" "^5.1.2"
     "@styled-system/css" "^5.1.5"
 
-"@sunmao-ui-fork/chakra-ui-lib@^0.5.18":
-  version "0.5.18"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/chakra-ui-lib/-/chakra-ui-lib-0.5.18.tgz#80c63c293c88429efb54f2e4b32ca3a587a84519"
-  integrity sha512-0NuaSjzgFRGmi+IgPNumCjrV0RaLQD2Y0BwzbSvx7XOLkqBMMTAArauGEL7m1/ZFJlp8n/bCa+apWUFHkroT1w==
+"@subscan/widget-chakra-ui-lib@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@subscan/widget-chakra-ui-lib/-/widget-chakra-ui-lib-1.0.0.tgz#7f0952e5b9dd7c004b3d50c77bc37b49ad9a8c4f"
+  integrity sha512-/Ks563RMjLV/8Z4J4sR3Mr1sLC++ENMx3ZAmNar7qXdx5dRDXKngCE2ZBglhBxGbLTJVDftXKbF9nu/7w0XLtw==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
-    "@sunmao-ui-fork/editor-sdk" "^0.3.18"
+    "@subscan/widget-editor-sdk" "^1.0.0"
     chakra-react-select "^1.3.2"
     framer-motion "^3.10.6"
 
-"@sunmao-ui-fork/core@0.7.5", "@sunmao-ui-fork/core@^0.7.5":
-  version "0.7.5"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/core/-/core-0.7.5.tgz#1d55e6fbda21b565b303fc3b452816b4e647058b"
-  integrity sha512-YIl13fnFb5fJBF1emAlfinYhdIZLm+wvxqNZEkQTE8cFcC0AIf65WnF8oXaWeHbr/CXRHE43QWedVPqaIkkRIQ==
+"@subscan/widget-core@1.0.0", "@subscan/widget-core@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@subscan/widget-core/-/widget-core-1.0.0.tgz#1b9033c30463b30bd4410e6948fbf2eb49249406"
+  integrity sha512-DV3Wjvj9VLpTtoKI4sJQd2JCXUfSS3dgr+lCehxiKiPCU2HUUpoQmZk+07mVq/4eUpZiUKZlQUPahKfSe2+KMQ==
 
-"@sunmao-ui-fork/editor-sdk@^0.3.18":
-  version "0.3.18"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/editor-sdk/-/editor-sdk-0.3.18.tgz#539bf61cc33dbdd4f12a62f0945bb8e01934d062"
-  integrity sha512-b37ciBgYZsJwzCiypdkFc8J1GGm0SHFUxq5j2s4R745sNDTnKFS/6EGE/Vn4vcL/dUMQLVnNqa0YLaFEPiPrEw==
+"@subscan/widget-editor-sdk@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@subscan/widget-editor-sdk/-/widget-editor-sdk-1.0.0.tgz#93ceb4402f45c538bea44155e235864aab6521d3"
+  integrity sha512-UBTL3OBjOqaHY16Mi3oWpPD4sjJ6w+Cbse1F+b6jnmfeSx6uozRyv+BAdy2A5tfXqV7oWH5qDS6EEjLqyN/Wlw==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
     "@emotion/css" "^11.7.1"
     "@sinclair/typebox" "^0.21.2"
-    "@sunmao-ui-fork/core" "^0.7.5"
-    "@sunmao-ui-fork/runtime" "^0.7.14"
-    "@sunmao-ui-fork/shared" "^0.2.7"
+    "@subscan/widget-core" "^1.0.0"
+    "@subscan/widget-runtime" "^1.0.0"
+    "@subscan/widget-shared" "^1.0.0"
     ajv "^8.8.2"
     codemirror "^5.65.9"
     formik "^2.2.9"
@@ -4755,10 +4755,10 @@
     react-color "^2.19.3"
     tern "^0.24.3"
 
-"@sunmao-ui-fork/editor@0.7.22":
-  version "0.7.22"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/editor/-/editor-0.7.22.tgz#4e93deb827c7a3da77447163f053199cd22d125b"
-  integrity sha512-nIvxi4Q1r1qn+ZU3UBy4u4xb0K3AFp08mjkdg5dHt80K6qcMxvWxAXdzljyenpmcMSZSEWCP723AyghKAHQQNw==
+"@subscan/widget-editor@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@subscan/widget-editor/-/widget-editor-1.0.0.tgz#daa6c6f1c63030c8f70bbb4eafddbe76e1e57104"
+  integrity sha512-lkIsbIGCfhjj3c+eP7pC5aM21wltgaJ7gPeNExA1GX9Xh4GkvfdK+VN7e0el2hVPLd72gYXzuSUXapzLuxsXxw==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
@@ -4768,11 +4768,11 @@
     "@graphiql/toolkit" "^0.6.1"
     "@optum/json-schema-editor" "^2.1.0"
     "@sinclair/typebox" "^0.21.2"
-    "@sunmao-ui-fork/chakra-ui-lib" "^0.5.18"
-    "@sunmao-ui-fork/core" "^0.7.5"
-    "@sunmao-ui-fork/editor-sdk" "^0.3.18"
-    "@sunmao-ui-fork/runtime" "^0.7.14"
-    "@sunmao-ui-fork/shared" "^0.2.7"
+    "@subscan/widget-chakra-ui-lib" "^1.0.0"
+    "@subscan/widget-core" "^1.0.0"
+    "@subscan/widget-editor-sdk" "^1.0.0"
+    "@subscan/widget-runtime" "^1.0.0"
+    "@subscan/widget-shared" "^1.0.0"
     acorn "^8.7.0"
     acorn-loose "^8.3.0"
     acorn-walk "^8.2.0"
@@ -4794,17 +4794,18 @@
     react-codemirror2 "^7.2.1"
     react-dom "^17.0.2"
     react-json-tree "^0.16.1"
+    react-resizable "^3.0.4"
     scroll-into-view "^1.16.2"
 
-"@sunmao-ui-fork/runtime@0.7.14", "@sunmao-ui-fork/runtime@^0.7.14":
-  version "0.7.14"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/runtime/-/runtime-0.7.14.tgz#c81433bd8e7d1705e0b4f728b054b18170283f2d"
-  integrity sha512-b1/o5hZvniFUJq/66puNd3KJgfO88S0fDbudeLY1TDYBFTcfJmGjIOVSstF41QbRlsnseCEEs/H5H3/fVQSDRg==
+"@subscan/widget-runtime@1.0.0", "@subscan/widget-runtime@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@subscan/widget-runtime/-/widget-runtime-1.0.0.tgz#234a26f5c89128847cb7b15ab87f7f54eccb49bd"
+  integrity sha512-ec5qipZSZ9T4LOgtEBg9M9qcvDmdDX9gp/npk2qXRt5/iCHwyCq+HMWFwWzyPdXTwNDzOCESz9eMt/HcQpRkVg==
   dependencies:
     "@emotion/css" "^11.7.1"
     "@sinclair/typebox" "^0.21.2"
-    "@sunmao-ui-fork/core" "^0.7.5"
-    "@sunmao-ui-fork/shared" "^0.2.7"
+    "@subscan/widget-core" "^1.0.0"
+    "@subscan/widget-shared" "^1.0.0"
     "@vue/reactivity" "^3.1.5"
     "@vue/shared" "^3.2.20"
     copy-to-clipboard "^3.3.1"
@@ -4813,15 +4814,16 @@
     lodash "^4.17.21"
     mitt "^3.0.0"
     path-to-regexp "^6.2.0"
+    react-resizable "^3.0.4"
     react-resize-detector "^6.7.6"
     react-simple-code-editor "^0.11.0"
     use-deep-compare "^1.1.0"
     wouter "^2.7.4"
 
-"@sunmao-ui-fork/shared@^0.2.7":
-  version "0.2.7"
-  resolved "https://registry.npmjs.org/@sunmao-ui-fork/shared/-/shared-0.2.7.tgz#9e2d4d3ebc85f28bbbe02184619b8879700fd1c0"
-  integrity sha512-Ic0/jRyNHsxnEEVkbSIhVWI/9x2+6ciCDaDc97g8affioJGr3WzW8iIReuMfSfLQ8wa9UspDuru9O4PauNMjAA==
+"@subscan/widget-shared@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@subscan/widget-shared/-/widget-shared-1.0.0.tgz#f4ce61f24588fdaf37eeb62bf056e3a4125518ac"
+  integrity sha512-LE6oj00oJ/B1mKEZSBH6/oqtd6PDYfudV6Ocs8mxqNaavH//WAZj7+DeCzuIkvLN+8Rr1+4uZSUCqu9wiu/KNQ==
   dependencies:
     "@sinclair/typebox" "^0.21.2"
     ajv "^8.8.2"
@@ -7637,7 +7639,7 @@ clsx@1.1.0:
   resolved "https://registry.npmjs.org/clsx/-/clsx-1.1.0.tgz#62937c6adfea771247c34b54d320fb99624f5702"
   integrity sha512-3avwM37fSK5oP6M5rQ9CNe99lwxhXDOeSWVPAOYF6OazUTgZCMb0yWlJpmdD74REy1gkEaFiub2ULv4fq9GUhA==
 
-clsx@^1.0.4:
+clsx@^1.0.4, clsx@^1.1.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
   integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
@@ -14593,7 +14595,7 @@ prompts@^2.0.1, prompts@^2.4.0, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@15.x, prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -14996,6 +14998,14 @@ react-dom@^17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
+react-draggable@^4.0.3:
+  version "4.4.5"
+  resolved "https://registry.npmjs.org/react-draggable/-/react-draggable-4.4.5.tgz#9e37fe7ce1a4cf843030f521a0a4cc41886d7e7c"
+  integrity sha512-OMHzJdyJbYTZo4uQE393fHcqqPYsEtkjfMgvCHr6rejT+Ezn4OZbNyGH50vv+SunC1RMvwOTSWkEODQLzw1M9g==
+  dependencies:
+    clsx "^1.1.1"
+    prop-types "^15.8.1"
+
 react-element-to-jsx-string@^14.3.4:
   version "14.3.4"
   resolved "https://registry.npmjs.org/react-element-to-jsx-string/-/react-element-to-jsx-string-14.3.4.tgz#709125bc72f06800b68f9f4db485f2c7d31218a8"
@@ -15137,6 +15147,14 @@ react-remove-scroll@2.4.1:
     tslib "^1.0.0"
     use-callback-ref "^1.2.3"
     use-sidecar "^1.0.1"
+
+react-resizable@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.npmjs.org/react-resizable/-/react-resizable-3.0.4.tgz#aa20108eff28c52c6fddaa49abfbef8abf5e581b"
+  integrity sha512-StnwmiESiamNzdRHbSSvA65b0ZQJ7eVQpPusrSmcpyGKzC0gojhtO62xxH6YOBmepk9dQTBi9yxidL3W4s3EBA==
+  dependencies:
+    prop-types "15.x"
+    react-draggable "^4.0.3"
 
 react-resize-detector@^6.7.6:
   version "6.7.8"

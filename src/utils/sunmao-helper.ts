@@ -1,9 +1,9 @@
-// move to @sunmao-ui-fork/runtime in the future?
+// move to @subscan/widget-runtime in the future?
 
-import { ComponentMetadata } from '@sunmao-ui-fork/core/lib/metadata';
-import { ComponentImplProps } from '@sunmao-ui-fork/runtime';
+import { ComponentMetadata } from '@subscan/widget-core/lib/metadata';
+import { ComponentImplProps } from '@subscan/widget-runtime';
 import { TLiteral, Type } from '@sinclair/typebox';
-import { SlotSpec } from '@sunmao-ui-fork/core';
+import { SlotSpec } from '@subscan/widget-core';
 
 export type IntoStringUnion<T> = {
   [K in keyof T]: T[K] extends string ? TLiteral<T[K]> : never;

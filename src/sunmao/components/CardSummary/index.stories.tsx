@@ -1,5 +1,5 @@
 import React from 'react';
-import { Application } from '@sunmao-ui-fork/core';
+import { Application } from '@subscan/widget-core';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Preview from 'preview';
 

@@ -1,4 +1,4 @@
-import { implementRuntimeTrait } from '@sunmao-ui-fork/runtime';
+import { implementRuntimeTrait } from '@subscan/widget-runtime';
 import { Type } from '@sinclair/typebox';
 
 export default implementRuntimeTrait({

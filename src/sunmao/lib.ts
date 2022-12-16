@@ -1,4 +1,4 @@
-import { RegistryInterface, SunmaoLib } from "@sunmao-ui-fork/runtime";
+import { RegistryInterface, SunmaoLib } from "@subscan/widget-runtime";
 import {
   Table,
   Pagination,

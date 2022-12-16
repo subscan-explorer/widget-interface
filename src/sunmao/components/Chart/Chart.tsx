@@ -1,4 +1,4 @@
-import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
+import { implementRuntimeComponent } from '@subscan/widget-runtime';
 import { css } from '@emotion/css';
 import { Type, Static } from '@sinclair/typebox';
 import { FALLBACK_METADATA, getComponentProps } from 'utils/sunmao-helper';

@@ -1,6 +1,6 @@
-import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
+import { implementRuntimeComponent } from '@subscan/widget-runtime';
 import { Type } from '@sinclair/typebox';
-import { PRESET_PROPERTY_CATEGORY } from '@sunmao-ui-fork/shared';
+import { PRESET_PROPERTY_CATEGORY } from '@subscan/widget-shared';
 import { css, cx } from '@emotion/css';
 import { VERSION } from 'config/constants';
 import { StyledFont14 } from 'ui/common';
@@ -10,7 +10,7 @@ const flexStyle = css`
   justify-content: center;
   align-items: center;
   * + span {
-    margin-left: 5px; 
+    margin-left: 5px;
   }
 `;
 

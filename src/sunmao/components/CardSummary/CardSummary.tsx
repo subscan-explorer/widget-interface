@@ -1,6 +1,6 @@
-import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
+import { implementRuntimeComponent } from '@subscan/widget-runtime';
 import { Type } from '@sinclair/typebox';
-import { PRESET_PROPERTY_CATEGORY } from '@sunmao-ui-fork/shared';
+import { PRESET_PROPERTY_CATEGORY } from '@subscan/widget-shared';
 import { css, cx } from '@emotion/css';
 import { COMPONENTS_CATEGORY, VERSION } from 'config/constants';
 import { FALLBACK_METADATA } from 'utils/sunmao-helper';

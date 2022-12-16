@@ -1,4 +1,4 @@
-import { Application, Module } from '@sunmao-ui-fork/core';
+import { Application, Module } from '@subscan/widget-core';
 import { DeleteWidgetIcon } from 'components';
 import dayjs from 'dayjs';
 import { generateUUID } from 'utils';

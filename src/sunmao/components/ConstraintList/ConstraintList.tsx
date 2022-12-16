@@ -1,6 +1,6 @@
 import React from 'react';
 import { Type, Static } from '@sinclair/typebox';
-import { implementRuntimeComponent } from '@sunmao-ui-fork/runtime';
+import { implementRuntimeComponent } from '@subscan/widget-runtime';
 import { COMPONENTS_CATEGORY, PRESET_PROPERTY_CATEGORY, VERSION } from 'config/constants';
 import { StyledFont14, StyledModuleBox } from 'ui/common';
 import { css, cx } from '@emotion/css';

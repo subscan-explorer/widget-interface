@@ -1,6 +1,6 @@
-import { RuntimeFunctions } from '@sunmao-ui-fork/runtime';
+import { RuntimeFunctions } from '@subscan/widget-runtime';
 import React, { useState, useEffect } from 'react';
-import { SlotSpec } from '@sunmao-ui-fork/core';
+import { SlotSpec } from '@subscan/widget-core';
 
 export const useStateValue = <
   T,

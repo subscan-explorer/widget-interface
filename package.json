@@ -1,13 +1,13 @@
 {
-  "name": "testlowcode",
-  "version": "0.1.21",
+  "name": "@subscan/widget-app",
+  "version": "0.1.22",
   "private": false,
   "main": "./dist/main.js",
   "homepage": "/lowcode",
   "dependencies": {
-    "@sunmao-ui-fork/core": "0.7.5",
-    "@sunmao-ui-fork/editor": "0.7.22",
-    "@sunmao-ui-fork/runtime": "0.7.14",
+    "@subscan/widget-core": "1.0.0",
+    "@subscan/widget-editor": "1.0.0",
+    "@subscan/widget-runtime": "1.0.0",
     "@arco-design/web-react": "^2.34.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",

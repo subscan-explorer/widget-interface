@@ -1,4 +1,4 @@
-import { Application } from "@sunmao-ui-fork/core";
+import { Application } from "@subscan/widget-core";
 import { DEFAULT_APP_TEMPLATE } from "config/constants";
 import { useCallback, useEffect, useState } from "react";
 import { ProApiConfig, ProApiConfigItem, UserInfo } from "types";

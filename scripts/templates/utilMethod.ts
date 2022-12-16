@@ -1,4 +1,4 @@
-import { implementUtilMethod } from '@sunmao-ui-fork/runtime';
+import { implementUtilMethod } from '@subscan/widget-runtime';
 import { Type } from '@sinclair/typebox';
 
 export default function i18nUtilMethodFactory() {

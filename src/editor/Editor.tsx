@@ -1,8 +1,8 @@
-import { initSunmaoUIEditor } from '@sunmao-ui-fork/editor';
+import { initSunmaoUIEditor } from '@subscan/widget-editor';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { BareProps, ProApiConfig } from 'types';
-import '@sunmao-ui-fork/editor/dist/index.css';
+import '@subscan/widget-editor/dist/index.css';
 import runtimeConfig from 'config/runtime';
 import BigNumber from 'bignumber.js';
 import {
