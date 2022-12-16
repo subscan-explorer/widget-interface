@@ -14,7 +14,6 @@ const routers: RouteObject[] = [
   {
     path: `${ROUTER_BASE_URL}/editor`,
     element: <Editor />,
-
     children: [
       {
         element: <Editor />,
@@ -52,5 +51,11 @@ if (CHANNEL !== 'subscan') {
     element: <Management />,
   });
 }
+
+// 404
+routers.push({
+  path: '*',
+  element: null,
+});
 
 export const router = createBrowserRouter(routers);
