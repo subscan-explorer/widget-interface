@@ -21,7 +21,7 @@ BigNumber.config({
   ROUNDING_MODE: 1
 });
 
-const Preview: React.FC<{ options: Application, isDark?: boolean, chainStyles: ChainStyles }> = ({ options, isDark, chainStyles }) => {
+const Preview: React.FC<{ options: Application, isDark?: boolean, chainStyles?: ChainStyles }> = ({ options, isDark, chainStyles }) => {
   const { App } = initSunmaoUI(runtimeConfig);
   const initTheme = useMemo(() => {
     const defaultStyles = isDark ? dark : light;
