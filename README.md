@@ -23,6 +23,19 @@ src
  ┣ utils
 ```
 
+## Installation
+
+```
+$ yarn add @subscan/widget-app
+```
+
+```javascript
+import { Preview } from "@subscan/widget-app";
+import '@subscan/widget-app/dist/main.css';
+
+<Preview options={widgetJson} isDark={false} />
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
