@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Preview from 'preview';
 
 const AppOptions: Application = {
-  "version": "sunmao/v1",
+  "version": "widget/v1",
   "kind": "Application",
   "metadata": {
     "name": "some App"

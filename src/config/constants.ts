@@ -28,7 +28,7 @@ export const DEFAULT_APP_TEMPLATE = {
 };
 
 export const DEFAULT_APP: Application = {
-  "version": "sunmao/v1",
+  "version": "widget/v1",
   "kind": "Application",
   "metadata": {
     "name": "some App"
