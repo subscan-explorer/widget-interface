@@ -40,3 +40,4 @@ export const chain: {
   }
 };
 
+export type ChainStyles = typeof chain;

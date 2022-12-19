@@ -5,7 +5,7 @@ import { chain, mediaQueries } from './base';
 const lightTheme: DefaultTheme = {
   isDark: false,
   colors: lightColors,
-  chain: chain.dark,
+  chain: chain.light,
   mediaQueries
 };
 

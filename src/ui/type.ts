@@ -9,6 +9,6 @@ export type MediaQueries = {
 };
 
 export type ChainColors = {
-  color: string;
-  borderRadius: string;
+  color?: string;
+  borderRadius?: string;
 }

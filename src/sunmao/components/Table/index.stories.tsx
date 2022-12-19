@@ -2,12 +2,13 @@ import React from 'react';
 import { Application } from '@subscan/widget-core';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Preview from 'preview';
+import { initChainStyles } from 'config/stylebook';
 
 const AppOptions: Application = {
   "version": "widget/v1",
   "kind": "Application",
   "metadata": {
-    "name": "some App"
+    "name": "subscan widget"
   },
   "spec": {
     "components": [
@@ -118,4 +119,5 @@ export const Index = Template.bind({});
 
 Index.args = {
   options: AppOptions,
+  ...initChainStyles
 };

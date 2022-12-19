@@ -106,7 +106,7 @@ export const getAreaChartOptions = (
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {
               offset: 0,
-              color: theme.chain.color,
+              color: theme.chain.color || theme.colors.primary,
             },
             {
               offset: 1,
@@ -116,7 +116,7 @@ export const getAreaChartOptions = (
         },
         lineStyle: {
           width: 1.5,
-          color: theme.chain.color
+          color: theme.chain.color || theme.colors.primary,
         },
         emphasis: {
           disabled: true,
