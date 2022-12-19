@@ -4,7 +4,7 @@ export const Icons = {
   barchart: IconsList.BarChartIcon,
   finalized: IconsList.FinalizedIcon,
   note: IconsList.NoteIcon,
-  pserson: IconsList.PersonIcon,
+  person: IconsList.PersonIcon,
   points: IconsList.PointsIcon,
   rate: IconsList.RateIcon,
   stake: IconsList.StakeIcon,

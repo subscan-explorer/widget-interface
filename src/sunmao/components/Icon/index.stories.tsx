@@ -12,27 +12,6 @@ const AppOptions: Application = {
   "spec": {
     "components": [
       {
-        "id": "api0",
-        "type": "core/v1/dummy",
-        "traits": [
-          {
-            "type": "core/v1/fetch",
-            "properties": {
-              "url": "",
-              "body": {},
-              "lazy": false,
-              "method": "get",
-              "headers": {},
-              "onError": [],
-              "bodyType": "json",
-              "disabled": false,
-              "onComplete": []
-            }
-          }
-        ],
-        "properties": {}
-      },
-      {
         "id": "icon2",
         "type": "core/v1/icon",
         "properties": {
@@ -46,6 +25,60 @@ const AppOptions: Application = {
         "type": "core/v1/icon",
         "properties": {
           "name": "finalized",
+          "spin": false
+        },
+        "traits": []
+      },
+      {
+        "id": "icon4",
+        "type": "core/v1/icon",
+        "properties": {
+          "name": "note",
+          "spin": false
+        },
+        "traits": []
+      },
+      {
+        "id": "icon5",
+        "type": "core/v1/icon",
+        "properties": {
+          "name": "person",
+          "spin": false
+        },
+        "traits": []
+      },
+      {
+        "id": "icon6",
+        "type": "core/v1/icon",
+        "properties": {
+          "name": "points",
+          "spin": false
+        },
+        "traits": []
+      },
+      {
+        "id": "icon7",
+        "type": "core/v1/icon",
+        "properties": {
+          "name": "rate",
+          "spin": false
+        },
+        "traits": []
+      },
+      {
+        "id": "icon8",
+        "type": "core/v1/icon",
+        "properties": {
+          "name": "stake",
+          "spin": false
+        },
+        "traits": []
+      },
+      {
+        "id": "icon9",
+        "type": "core/v1/icon",
+        "properties": {
+          "name": "swap",
           "spin": false
         },
         "traits": []
