@@ -50,12 +50,23 @@ const WidgetCard: React.FC<WidgetCardProps> = ({ widget, lsManager, callback }) 
     callback && callback();
   }, [callback, lsManager, widget.id]);
 
+  const onExportWidget = useCallback(() => {
+    const json = lsManager.getAppFromLS(widget.id);
+    const file = new Blob([JSON.stringify(json)], { type: 'text/plain' });
+
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(file);
+    a.download = `${widget.name}.json`;
+    a.click();
+  }, [lsManager, widget]);
+
   return (<StyledCard key={widget.id} mr="20px">
     <StyledFont14 block bold>{widget.name}</StyledFont14>
     <Divider my="10px" />
     <StyledFont14 block>{dayjs.unix(widget.updated_at).fromNow(true)}</StyledFont14>
     <HStack spacing="2" mt="10px">
       <CopyWidgetIcon width="15px" pointer onClick={onDuplicateWidgetInLs} />
+      <ShareWidgetIcon width="15px" pointer onClick={onExportWidget} />
       <EditWidgetIcon width="15px" pointer onClick={onOpenUpdateWidget} />
       <DeleteWidgetIcon width="15px" pointer onClick={onDeleteWidget} />
     </HStack>
