@@ -60,7 +60,7 @@ export class LocalStorageManager {
     }
   }
 
-  newWidgetInLs(widget: Pick<WidgetItem, 'name'>) {
+  newWidgetInLs(widget: Pick<WidgetItem, 'name'>, schema?: Application) {
     const widgets = this.getWidgetsFromLS();
     const newWidget: WidgetItem = {
       id: generateUUID(),
@@ -71,7 +71,7 @@ export class LocalStorageManager {
     widgets.push(newWidget);
 
     localStorage.setItem(LocalStorageManager.WidgetsLSKey, JSON.stringify(widgets));
-    this.saveAppInLS(newWidget.id, EmptyAppSchema);
+    this.saveAppInLS(newWidget.id, schema || EmptyAppSchema);
   }
 
   duplicateWidgetInLs(id: string) {
