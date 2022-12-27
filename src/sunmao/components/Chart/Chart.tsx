@@ -9,6 +9,7 @@ import * as echarts from 'echarts/core';
 import { ElementResizeListener } from 'components';
 import { ChartPropsSpec as BaseChartPropsSpec } from './types/Chart';
 import { filterProperties } from './object';
+import { useTheme } from 'styled-components';
 
 // https://github.com/webzard-io/sunmao-ui-echarts-lib
 const ChartPropsSpec = Type.Object({
@@ -110,6 +111,8 @@ export const Chart = implementRuntimeComponent({
     }
   }, [chart]);
 
+  const theme = useTheme();
+
   const option = useMemo(() => {
     return filterProperties(
       {
@@ -117,7 +120,7 @@ export const Chart = implementRuntimeComponent({
         yAxis,
         xAxis,
         series,
-        color,
+        color: theme.chain.color ? [theme.chain.color, ...color] : [...color],
       },
       (option, key, path) => {
         const value = option[key];
@@ -135,7 +138,7 @@ export const Chart = implementRuntimeComponent({
       },
       { deep: true }
     );
-  }, [title, yAxis, xAxis, series, color]);
+  }, [title, yAxis, xAxis, series, color, theme]);
 
   useEffect(() => {
     if (!elementRef) return;
