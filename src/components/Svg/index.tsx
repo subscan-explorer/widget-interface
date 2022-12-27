@@ -12,6 +12,7 @@ export { default as SwapIcon } from './Icons/Swap';
 export { default as AddWidgetIcon } from './Icons/AddWidget';
 export { default as DeleteWidgetIcon } from './Icons/DeleteWidget';
 export { default as ShareWidgetIcon } from './Icons/ShareWidget';
+export { default as ImportWidgetIcon } from './Icons/ImportWidget';
 export { default as EditWidgetIcon } from './Icons/EditWidget';
 export { default as CopyWidgetIcon } from './Icons/CopyWidget';
 
