@@ -96,9 +96,7 @@ export interface BaseColumnValueProps extends Static<typeof BaseColumnSpec> {
 };
 
 export const RenderColumnValue: React.FC<BaseColumnValueProps> = ({ stateManager, type, value, transformer, ...rest }) => {
-  console.log(1112, transformer);
   const transformerValue = transformer ? (stateManager.deepEval(`{{${transformer}}}` || '', { scopeObject: { $value: value } }) as string).toString() : value;
-  console.log(1111, transformerValue);
   // const transformerValue = transformer ? new Function('value', transformer)(value) : value;
   const { ellipsis = true, prePath = '', decimals = 0, symbol, tagstyle } = rest;
 
