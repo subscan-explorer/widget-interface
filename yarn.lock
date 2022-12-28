@@ -1515,6 +1515,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.5.4":
+  version "7.20.7"
+  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.20.7.tgz#fcb41a5a70550e04a7b708037c7c32f7f356d8fd"
+  integrity sha512-UF0tvkUtxwAgZ5W/KrkHf0Rn0fdnLDU9ScxBrEVNUprE/MzirjK4MJUX1/BVDv00Sv8cljtukVK1aky++X1SjQ==
+  dependencies:
+    regenerator-runtime "^0.13.11"
+
 "@babel/runtime@~7.5.4":
   version "7.5.5"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
@@ -4714,14 +4721,14 @@
     "@styled-system/core" "^5.1.2"
     "@styled-system/css" "^5.1.5"
 
-"@subscan/widget-chakra-ui-lib@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/@subscan/widget-chakra-ui-lib/-/widget-chakra-ui-lib-1.0.1.tgz#5246498e56f3a95d0dd22b3efb89b1d2f1618acf"
-  integrity sha512-7YFvlL0oqYT4LM3+cx4a3tkdYg8I5G1E8kYzu8Y4d2NHCq9dkI4koCN6Mr72a1O1yjCypiHWNWQA76Eg8VHEpg==
+"@subscan/widget-chakra-ui-lib@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@subscan/widget-chakra-ui-lib/-/widget-chakra-ui-lib-1.0.2.tgz#569fa23b101c8e145ec0590008fb574ba6458288"
+  integrity sha512-JWqbEWZzrRXL56jmKuYxjJRGLc6PKjlzfwx+P8ZcEgOJHvohh+KocEB9GuWSNsSQ9Jqp2aOmub38vTjrz7+sXw==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
-    "@subscan/widget-editor-sdk" "^1.0.0"
+    "@subscan/widget-editor-sdk" "^1.0.1"
     chakra-react-select "^1.3.2"
     framer-motion "^3.10.6"
 
@@ -4730,17 +4737,17 @@
   resolved "https://registry.npmjs.org/@subscan/widget-core/-/widget-core-1.0.0.tgz#1b9033c30463b30bd4410e6948fbf2eb49249406"
   integrity sha512-DV3Wjvj9VLpTtoKI4sJQd2JCXUfSS3dgr+lCehxiKiPCU2HUUpoQmZk+07mVq/4eUpZiUKZlQUPahKfSe2+KMQ==
 
-"@subscan/widget-editor-sdk@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@subscan/widget-editor-sdk/-/widget-editor-sdk-1.0.0.tgz#93ceb4402f45c538bea44155e235864aab6521d3"
-  integrity sha512-UBTL3OBjOqaHY16Mi3oWpPD4sjJ6w+Cbse1F+b6jnmfeSx6uozRyv+BAdy2A5tfXqV7oWH5qDS6EEjLqyN/Wlw==
+"@subscan/widget-editor-sdk@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@subscan/widget-editor-sdk/-/widget-editor-sdk-1.0.1.tgz#4690ec5414081f9fa803ebedb2865901fdd49bc1"
+  integrity sha512-a+aJYujaLPXG5Qk2bS+1TcRTmJ/hcAq3mfIAMvqtX9bGooYtZ6msMUwDxSa88k/p70x+pqBgiyHCCP+bfAeVow==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
     "@emotion/css" "^11.7.1"
     "@sinclair/typebox" "^0.21.2"
     "@subscan/widget-core" "^1.0.0"
-    "@subscan/widget-runtime" "^1.0.0"
+    "@subscan/widget-runtime" "^1.0.1"
     "@subscan/widget-shared" "^1.0.0"
     ajv "^8.8.2"
     codemirror "^5.65.9"
@@ -4755,10 +4762,10 @@
     react-color "^2.19.3"
     tern "^0.24.3"
 
-"@subscan/widget-editor@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/@subscan/widget-editor/-/widget-editor-1.0.1.tgz#973fff20c5ae5c689a15291f306d7a2c4af8f024"
-  integrity sha512-gnIp51MkguboCmIk8j49f1w54ZQ8LN3IOvWd3H85qd4LaAWN4/wOCnf4MaMBPGHpSjAUmkb6ylYL5qkjE4529A==
+"@subscan/widget-editor@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@subscan/widget-editor/-/widget-editor-1.0.2.tgz#c9024c01b340e4331cd28bcf17a7a6cd1257a199"
+  integrity sha512-1pdoFyw75+8Q+A9DsTIlfpwswqTNJuPkW/h/Txjpen0CkTfKdZu2vDAfud9iQIBThqBvvkPctNfbBg30KFhgyw==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
@@ -4768,10 +4775,10 @@
     "@graphiql/toolkit" "^0.6.1"
     "@optum/json-schema-editor" "^2.1.0"
     "@sinclair/typebox" "^0.21.2"
-    "@subscan/widget-chakra-ui-lib" "^1.0.1"
+    "@subscan/widget-chakra-ui-lib" "^1.0.2"
     "@subscan/widget-core" "^1.0.0"
-    "@subscan/widget-editor-sdk" "^1.0.0"
-    "@subscan/widget-runtime" "^1.0.0"
+    "@subscan/widget-editor-sdk" "^1.0.1"
+    "@subscan/widget-runtime" "^1.0.1"
     "@subscan/widget-shared" "^1.0.0"
     acorn "^8.7.0"
     acorn-loose "^8.3.0"
@@ -4793,14 +4800,15 @@
     react "^17.0.2"
     react-codemirror2 "^7.2.1"
     react-dom "^17.0.2"
+    react-fiber-traverse "^0.0.8"
     react-json-tree "^0.16.1"
     react-resizable "^3.0.4"
     scroll-into-view "^1.16.2"
 
-"@subscan/widget-runtime@1.0.0", "@subscan/widget-runtime@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@subscan/widget-runtime/-/widget-runtime-1.0.0.tgz#234a26f5c89128847cb7b15ab87f7f54eccb49bd"
-  integrity sha512-ec5qipZSZ9T4LOgtEBg9M9qcvDmdDX9gp/npk2qXRt5/iCHwyCq+HMWFwWzyPdXTwNDzOCESz9eMt/HcQpRkVg==
+"@subscan/widget-runtime@1.0.1", "@subscan/widget-runtime@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@subscan/widget-runtime/-/widget-runtime-1.0.1.tgz#d0c5661f42c9ff06c146f502473092963abda63c"
+  integrity sha512-KWgUOu1r0klGq/wp2XGfL17V4ajRLjXp3xlCoHOeH+u4VmYLo9cJgCQoOVeJDGo9ToenSxzTLUu4PqBlr/5iCw==
   dependencies:
     "@emotion/css" "^11.7.1"
     "@sinclair/typebox" "^0.21.2"
@@ -8253,7 +8261,7 @@ css-tree@^1.1.2, css-tree@^1.1.3:
     mdn-data "2.0.14"
     source-map "^0.6.1"
 
-css-what@^3.2.1:
+css-what@^3.2.0, css-what@^3.2.1:
   version "3.4.2"
   resolved "https://registry.npmjs.org/css-what/-/css-what-3.4.2.tgz#ea7026fcb01777edbde52124e21f327e7ae950e4"
   integrity sha512-ACUm3L0/jiZTqfzRM3Hi9Q8eZqd6IK37mMWPLz9PJxkLWllYeRf+EHUSHYEtFop2Eqytaq1FizFVh7XfBnXCDQ==
@@ -15030,6 +15038,15 @@ react-fast-compare@^2.0.1:
   resolved "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
 
+react-fiber-traverse@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/react-fiber-traverse/-/react-fiber-traverse-0.0.8.tgz#08987681bdeaba2c964593468fe22470e01ab486"
+  integrity sha512-UdCfB6inAFmB1/wT1NdMwqbZIuC2hh+i2vo8L9xy9ULKd2UjqTgxJiZBrF4RXmVmbP0XAFJSFWEz9axzXwKgPw==
+  dependencies:
+    "@babel/runtime" "^7.5.4"
+    css-what "^3.2.0"
+    prop-types "^15.7.2"
+
 react-focus-lock@2.5.0:
   version "2.5.0"
   resolved "https://registry.npmjs.org/react-focus-lock/-/react-focus-lock-2.5.0.tgz#12e3a3940e897c26e2c2a0408cd25ea3c99b3709"
@@ -15402,6 +15419,11 @@ regenerate@^1.4.2:
   version "1.4.2"
   resolved "https://registry.npmjs.org/regenerate/-/regenerate-1.4.2.tgz#b9346d8827e8f5a32f7ba29637d398b69014848a"
   integrity sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==
+
+regenerator-runtime@^0.13.11:
+  version "0.13.11"
+  resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
+  integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
 
 regenerator-runtime@^0.13.2, regenerator-runtime@^0.13.7:
   version "0.13.10"
