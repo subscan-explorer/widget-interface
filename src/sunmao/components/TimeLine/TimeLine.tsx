@@ -128,7 +128,7 @@ export default implementRuntimeComponent({
     styleSlots: ['content'],
     events: [],
   },
-})(({ data, columns, elementRef, mergeState }) => {
+})(({ data, columns, elementRef, services }) => {
   return (<StyledModuleBox className={CssBox} ref={elementRef} >
     <StyledScrollX>
       <StyledTable ref={elementRef}>
@@ -158,7 +158,7 @@ export default implementRuntimeComponent({
                 {columns.map((column, tdIndex) => {
                   return (
                     <StyledTd key={`${trData.title}${tdIndex}`}>
-                      <RenderColumnValue value={trData[column.dataKey]} {...column} />
+                      <RenderColumnValue stateManager={services.stateManager} value={trData[column.dataKey]} {...column} />
                     </StyledTd>
                   );
                 })}

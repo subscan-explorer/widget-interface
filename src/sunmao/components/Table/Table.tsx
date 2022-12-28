@@ -165,7 +165,7 @@ export default implementRuntimeComponent({
     styleSlots: ['content'],
     events: [],
   },
-})(({ data, columns, elementRef, mergeState }) => {
+})(({ data, columns, elementRef, mergeState, services }) => {
   const [currentSortKey, setCurrentSortKey] = useStateValue(
     '' as string,
     mergeState,
@@ -207,7 +207,7 @@ export default implementRuntimeComponent({
                 {columns.map((column, tdIndex) => {
                   return (
                     <StyledTd key={`${trData.title}${tdIndex}`}>
-                      <RenderColumnValue value={trData[column.dataKey]} {...column} />
+                      <RenderColumnValue stateManager={services.stateManager} value={trData[column.dataKey]} {...column} />
                     </StyledTd>
                   );
                 })}

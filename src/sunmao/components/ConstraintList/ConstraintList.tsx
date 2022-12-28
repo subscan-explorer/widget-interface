@@ -162,7 +162,7 @@ export default implementRuntimeComponent({
   },
 })(props => {
   const { data, columns } = getComponentProps(props);
-  const { elementRef, customStyle } = props;
+  const { elementRef, customStyle, services } = props;
   return (<StyledModuleBox className={cx(css(customStyle?.content), CssBox)} ref={elementRef} >
     {columns?.map((column, index) => {
       return (<StyledColumn key={`${column.title}${index}`}>
@@ -170,7 +170,7 @@ export default implementRuntimeComponent({
           <StyledFont14 bold>{column.title}</StyledFont14>
         </StyledColumnHeader>
         <div>
-          <RenderColumnValue value={data[column.dataKey]} {...column} />
+          <RenderColumnValue stateManager={services.stateManager} value={data[column.dataKey]} {...column} />
         </div>
       </StyledColumn>);
     })}

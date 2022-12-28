@@ -7,12 +7,13 @@ import { StyledFont12 } from 'ui/common';
 import { StatusType } from 'components/Status/Status';
 import { toShortString } from 'utils';
 import { Tooltip, Box } from '@chakra-ui/react';
+import { StateManagerInterface } from '@subscan/widget-runtime';
 
 export const BaseColumnSpecObject = {
   transformer: Type.Optional(Type.String({
     title: 'Transformer',
     description:
-      'return value + \'test\'',
+      '$value + \'test\'',
   })),
   type: Type.KeyOf(
     Type.Object({
@@ -67,7 +68,7 @@ export const BaseColumnSpecObject = {
   tagstyle: Type.Optional(Type.KeyOf(Type.Object({
     primary: Type.String(),
     secondary: Type.String(),
-  }),{
+  }), {
     title: 'Tag Style',
     conditions: [
       {
@@ -91,11 +92,14 @@ export const BaseColumnSpec = Type.Object(BaseColumnSpecObject);
 
 export interface BaseColumnValueProps extends Static<typeof BaseColumnSpec> {
   value: any;
+  stateManager: StateManagerInterface;
 };
 
-export const RenderColumnValue: React.FC<BaseColumnValueProps> = ({ type, value, transformer, ...rest }) => {
-  // eslint-disable-next-line no-new-func
-  const transformerValue = transformer ? new Function('value', transformer)(value) : value;
+export const RenderColumnValue: React.FC<BaseColumnValueProps> = ({ stateManager, type, value, transformer, ...rest }) => {
+  console.log(1112, transformer);
+  const transformerValue = transformer ? (stateManager.deepEval(`{{${transformer}}}` || '', { scopeObject: { $value: value } }) as string).toString() : value;
+  console.log(1111, transformerValue);
+  // const transformerValue = transformer ? new Function('value', transformer)(value) : value;
   const { ellipsis = true, prePath = '', decimals = 0, symbol, tagstyle } = rest;
 
   switch (type) {
