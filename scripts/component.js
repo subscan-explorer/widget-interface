@@ -5,12 +5,12 @@ const { changeLibFile } = require('./utils/code');
 const { toFirstLetterUppercase } = require('./utils/string');
 const { isNotEmpty, assert } = require('./utils/assert');
 
-const libPath = path.resolve(__dirname, '../src/sunmao/lib.ts');
+const libPath = path.resolve(__dirname, '../src/widgets/lib.ts');
 
 function createFile(version, name) {
   const targetPath = path.resolve(
     __dirname,
-    `../src/sunmao/components/${toFirstLetterUppercase(name)}.tsx`
+    `../src/widgets/components/${toFirstLetterUppercase(name)}.tsx`
   );
   let template = fs.readFileSync(path.resolve(__dirname, './templates/component.tsx'), {
     encoding: 'utf-8',

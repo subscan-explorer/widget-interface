@@ -4,10 +4,10 @@ const argv = require('minimist')(process.argv.slice(2));
 const { changeLibFile } = require('./utils/code');
 const { isNotEmpty, assert } = require('./utils/assert');
 
-const libPath = path.resolve(__dirname, '../src/sunmao/lib.ts');
+const libPath = path.resolve(__dirname, '../src/widgets/lib.ts');
 
 function createFile(version, name) {
-  const targetPath = path.resolve(__dirname, `../src/sunmao/utilMethods/${name}.ts`);
+  const targetPath = path.resolve(__dirname, `../src/widgets/utilMethods/${name}.ts`);
   let template = fs.readFileSync(path.resolve(__dirname, './templates/utilMethod.ts'), {
     encoding: 'utf-8',
   });

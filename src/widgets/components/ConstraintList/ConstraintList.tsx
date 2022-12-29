@@ -6,7 +6,7 @@ import { StyledFont14, StyledModuleBox } from 'ui/common';
 import { css, cx } from '@emotion/css';
 import styled from 'styled-components';
 import { RenderColumnValue, BaseColumnSpecObject } from '../common/RenderColumnValue';
-import { FALLBACK_METADATA, getComponentProps } from 'utils/sunmao-helper';
+import { FALLBACK_METADATA, getComponentProps } from 'utils/widget-helper';
 
 const CssBox = css`
   padding: 10px 20px;

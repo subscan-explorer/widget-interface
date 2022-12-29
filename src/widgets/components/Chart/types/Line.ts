@@ -1,5 +1,5 @@
 import { Type } from "@sinclair/typebox";
-import { StringUnion } from "utils/sunmao-helper";
+import { StringUnion } from "utils/widget-helper";
 
 export const LineSpecObject = {
   symbol: StringUnion(

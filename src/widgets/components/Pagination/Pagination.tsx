@@ -2,7 +2,7 @@ import { Pagination as BasePagination } from '@arco-design/web-react';
 import { implementRuntimeComponent } from '@subscan/widget-runtime';
 import { css, cx } from '@emotion/css';
 import { Type, Static } from '@sinclair/typebox';
-import { FALLBACK_METADATA, getComponentProps, StringUnion } from 'utils/sunmao-helper';
+import { FALLBACK_METADATA, getComponentProps, StringUnion } from 'utils/widget-helper';
 import { useStateValue } from 'hooks/useStateValue';
 import { VERSION, PRESET_PROPERTY_CATEGORY, COMPONENTS_CATEGORY } from 'config/constants';
 import './index.css';

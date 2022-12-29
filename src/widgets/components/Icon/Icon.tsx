@@ -3,7 +3,7 @@ import { Type } from '@sinclair/typebox';
 import { PRESET_PROPERTY_CATEGORY } from '@subscan/widget-shared';
 import { css } from '@emotion/css';
 import { VERSION } from 'config/constants';
-import { FALLBACK_METADATA } from 'utils/sunmao-helper';
+import { FALLBACK_METADATA } from 'utils/widget-helper';
 import { Icons, IconName } from 'components/Svg/Icons';
 
 type ObjectIconName = {

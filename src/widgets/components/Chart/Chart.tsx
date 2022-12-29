@@ -1,7 +1,7 @@
 import { implementRuntimeComponent } from '@subscan/widget-runtime';
 import { css } from '@emotion/css';
 import { Type, Static } from '@sinclair/typebox';
-import { FALLBACK_METADATA, getComponentProps } from 'utils/sunmao-helper';
+import { FALLBACK_METADATA, getComponentProps } from 'utils/widget-helper';
 import { COMPONENTS_CATEGORY, VERSION } from 'config/constants';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import './Init';

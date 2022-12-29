@@ -1,5 +1,5 @@
 import { type SunmaoUIRuntimeProps } from "@subscan/widget-runtime";
-import { SubscanLib } from 'sunmao/lib';
+import { SubscanLib } from 'widgets/lib';
 const libs = [
   SubscanLib
 ];

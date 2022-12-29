@@ -1,5 +1,5 @@
 import { Type, TOptional, TSchema } from "@sinclair/typebox";
-import { StringUnion } from "utils/sunmao-helper";
+import { StringUnion } from "utils/widget-helper";
 import { LineSpecObject, LineConditions } from "./Line";
 import { BarSpecObject, BarConditions } from "./Bar";
 
