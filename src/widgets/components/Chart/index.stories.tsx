@@ -13,42 +13,31 @@ const AppOptions: Application = {
   "spec": {
     "components": [
       {
-        "id": "chart3",
+        "id": "chart0",
         "type": "core/v1/chart",
         "properties": {
-          "title": {
-            "text": "Chart",
-            "left": "",
-            "right": "",
-            "top": "",
-            "bottom": ""
-          },
           "xAxis": [
             {
-              "name": "",
-              "type": "category",
               "data": [
                 "Dimension 1",
-                "Dimension 2"
+                "Dimension 2",
+                "Dimension 3"
               ],
-              "nameLocation": "center",
-              "offset": 0,
               "position": "bottom"
             }
           ],
           "yAxis": [
             {
-              "name": "",
-              "type": "value",
-              "data": [],
-              "nameLocation": "center",
-              "offset": 0,
-              "position": "left"
+              "data": [
+                "12341234",
+                "2345"
+              ],
+              "position": "left",
+              "type": "value"
             }
           ],
           "series": [
             {
-              "type": "line",
               "name": "Series 1",
               "label": {
                 "show": false,
@@ -56,28 +45,29 @@ const AppOptions: Application = {
               },
               "data": [
                 1,
-                2
+                2,
+                10
               ],
               "symbol": "circle",
               "showSymbol": true,
-              "smooth": true
+              "smooth": true,
+              "areaStyle": true
             },
             {
-              "type": "bar",
               "name": "Series 2",
               "label": {
                 "show": false,
                 "position": "top"
               },
               "data": [
-                4,
-                2
+                10,
+                20,
+                15
               ],
-              "barWidth": "",
-              "barGap": "",
-              "barCategoryGap": "",
-              "stack": "",
-              "showBackground": false
+              "symbol": "circle",
+              "showSymbol": true,
+              "smooth": true,
+              "areaStyle": true
             }
           ],
           "color": []
