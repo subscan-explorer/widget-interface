@@ -1,13 +1,28 @@
-
-
-import React from 'react';
-import Svg from '../Svg';
-import { SvgProps } from '../types';
+import React from "react";
+import Svg from "../Svg";
+import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => (
-  <Svg viewBox='0 0 1024 1024' {...props}>
-    <path fillRule="evenodd" clipRule="evenodd" d="M905.309091 628.363636c-27.927273 0-46.545455 18.618182-46.545455 46.545455v223.418182H165.236364V125.672727h200.145454c27.927273 0 46.545455-18.618182 46.545455-46.545454s-18.618182-46.545455-46.545455-46.545455H118.690909c-27.927273 0-46.545455 18.618182-46.545454 46.545455v865.745454c0 27.927273 18.618182 46.545455 46.545454 46.545455h786.618182c27.927273 0 46.545455-18.618182 46.545454-46.545455v-269.963636c0-27.927273-18.618182-46.545455-46.545454-46.545455z" p-id="2688" />
-    <path fillRule="evenodd" clipRule="evenodd" d="M556.218182 558.545455h349.090909v-93.09091h-269.963636l293.236363-269.963636-65.163636-65.163636-307.2 283.927272V116.363636h-93.090909V558.545455h4.654545z" p-id="2689" />
+  <Svg viewBox='0 0 16 16' {...props}>
+    <path
+      d="M1.5 6.11226V14.0714H14.5V6.11226M7.99984 10.7551V2M7.99984 2L3.52581 5.71429M7.99984 2L12.4739 5.71429"
+      stroke="url(#paint0_linear_10149_634)"
+      strokeWidth="1.3"
+      fill="none"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_10149_634"
+        x1="10.253"
+        y1="14.0714"
+        x2="6.30943"
+        y2="1.81897"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#FE3876" stopOpacity="0.519832" />
+        <stop offset="1" stopColor="#D030DD" />
+      </linearGradient>
+    </defs>
   </Svg>
 );
 
