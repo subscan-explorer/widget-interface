@@ -93,7 +93,7 @@ const CreateApplication: React.FC<Props> = ({ onCreated, isOpen, onClose }) => {
           <FormControl mt={4}>
             <Flex marginBottom={'2'}>
               <FormLabel marginBottom={0} marginRight={"1.5"}>Code</FormLabel>
-              <ImportWidgetIcon width="15px" pointer color='var(--chakra-colors-blue-600)' onClick={importWidget} />
+              <ImportWidgetIcon pointer onClick={importWidget} />
             </Flex>
             <Textarea disabled={isByImport} placeholder={JSON.stringify(DEFAULT_APP_TEMPLATE)} value={widgetCode} onChange={(e) => setWidgetCode(e.target.value)} />
           </FormControl>
