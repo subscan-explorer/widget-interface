@@ -9,6 +9,7 @@ import {
   Tabs,
   TimeLine,
   Chart,
+  PieChart,
 } from "./components";
 
 import Traits from './traits';
@@ -23,6 +24,7 @@ export const components = [
   Tabs,
   TimeLine,
   Chart,
+  PieChart,
 ];
 
 export const traits = Traits;
