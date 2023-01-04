@@ -60,7 +60,10 @@
     "prop-types": "^15.8.1",
     "serve": "^14.0.1",
     "tsup": "6.2.3",
-    "webpack": "^5.74.0"
+    "webpack": "^5.74.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.1"
   },
   "scripts": {
     "start": "REACT_APP_CHANNEL=subscan REACT_APP_SUBSCAN_PRO_API=https://platform-staging.subscan.io react-scripts start",
@@ -76,7 +79,22 @@
     "add:utilMethod": "node ./scripts/utilMethod.js",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "analyze": "source-map-explorer 'build/static/js/*.js'"
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "lint": "eslint src --ext .ts --ext .tsx",
+    "fix-lint": "eslint --fix src --ext .ts --ext .tsx",
+    "format": "prettier 'src/**/*.{js,jsx,ts,tsx,json}' --write",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "browserslist": {
     "production": [
