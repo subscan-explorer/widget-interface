@@ -11,9 +11,7 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Textarea,
 } from '@chakra-ui/react';
-import { DEFAULT_APP_TEMPLATE } from 'config/constants';
 import { LocalStorageManager, WidgetItem } from '../../api/localstorage/LocalStorageManager';
 import { ColorButton } from '../ColorButton';
 

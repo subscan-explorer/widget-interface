@@ -1,5 +1,4 @@
 import { Application, Module } from '@subscan/widget-core';
-import { DeleteWidgetIcon } from 'components';
 import dayjs from 'dayjs';
 import { generateUUID } from 'utils';
 export interface WidgetItem {

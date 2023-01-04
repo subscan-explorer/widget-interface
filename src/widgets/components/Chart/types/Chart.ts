@@ -1,7 +1,5 @@
-import { Type, TOptional, TSchema } from "@sinclair/typebox";
+import { Type } from "@sinclair/typebox";
 import { StringUnion } from "utils/widget-helper";
-import { LineSpecObject, LineConditions } from "./Line";
-import { BarSpecObject, BarConditions } from "./Bar";
 
 // https://echarts.apache.org/zh/option.html#title
 export const TitleSpec = {
@@ -114,9 +112,9 @@ export const SeriesSpec = {
   // })
 };
 
-type Optional<T extends Record<string, TSchema>> = {
-  [P in keyof T]: TOptional<T[P]>;
-};
+// type Optional<T extends Record<string, TSchema>> = {
+//   [P in keyof T]: TOptional<T[P]>;
+// };
 
 // export const ChartPropsSpec = {
 //   ...BaseChartSpec,

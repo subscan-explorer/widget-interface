@@ -30,15 +30,18 @@ const ElementResizeListener: React.FC<Props> = ({ onResize }) => {
     if (obj && obj.contentDocument && obj.contentDocument.defaultView) {
       obj.contentDocument.defaultView.addEventListener('resize', _onResize);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       const obj = objectRef.current;
       if (obj && obj.contentDocument && obj.contentDocument.defaultView) {
         obj.contentDocument.defaultView.removeEventListener('resize', _onResize);
       }
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

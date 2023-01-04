@@ -1,5 +1,3 @@
-import { type Application } from '@subscan/widget-core';
-
 export const enum PRESET_PROPERTY_CATEGORY {
   Data = 'Data',
   Columns = 'Columns',

@@ -1,5 +1,4 @@
 import { Type } from "@sinclair/typebox";
-import { SeriesSpec } from "./Chart";
 
 export const PieSpecObject = {
   data: Type.Array(
