@@ -23,27 +23,24 @@ export const TitleSpec = {
 };
 
 export const AxisSpec = {
-  name: Type.String({
-    title: "Name",
-  }),
-  nameLocation: StringUnion(["end", "start", "center"], {
-    title: "Name Location",
-  }),
+  // name: Type.String({
+  //   title: "Name",
+  // }),
+  // nameLocation: StringUnion(["end", "start", "center"], {
+  //   title: "Name Location",
+  // }),
   type: StringUnion(["value", "category"], {
     title: "Type",
   }),
-  offset: Type.Number({
-    title: "Offset",
-  }),
+  // offset: Type.Number({
+  //   title: "Offset",
+  // }),
   data: Type.Array(Type.String(), {
     title: "Data",
   }),
 };
 
 export const BaseChartSpec = {
-  title: Type.Object(TitleSpec, {
-    category: "Title",
-  }),
   xAxis: Type.Array(
     Type.Object({
       ...AxisSpec,
@@ -125,9 +122,9 @@ export const ChartPropsSpec = {
   ...BaseChartSpec,
   series: Type.Array(
     Type.Object({
-      type: StringUnion(["line", "bar"], {
-        title: "Type",
-      }),
+      // type: StringUnion(["line", "bar"], {
+      //   title: "Type",
+      // }),
       ...SeriesSpec,
       // line
       ...(Object.keys(LineSpecObject).reduce((result, key) => {
@@ -158,3 +155,4 @@ export const ChartPropsSpec = {
     }
   ),
 };
+

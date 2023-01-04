@@ -6,5 +6,5 @@ export { Title } from './Title';
 export { Icon } from './Icon';
 export { Tabs } from './Tabs';
 export { TimeLine } from './TimeLine';
-export { Chart } from './Chart';
 export { PieChart } from './PieChart';
+export { ChartLine } from './Chart';

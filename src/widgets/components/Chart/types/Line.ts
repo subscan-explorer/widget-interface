@@ -14,6 +14,9 @@ export const LineSpecObject = {
   smooth: Type.Boolean({
     title: 'Smooth',
   }),
+  areaStyle: Type.Boolean({
+    title: 'Area Style',
+  }),
 };
 
 export const LineConditions = [

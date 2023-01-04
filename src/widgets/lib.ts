@@ -8,7 +8,7 @@ import {
   ConstraintList,
   Tabs,
   TimeLine,
-  Chart,
+  ChartLine,
   PieChart,
 } from "./components";
 
@@ -23,8 +23,8 @@ export const components = [
   ConstraintList,
   Tabs,
   TimeLine,
-  Chart,
   PieChart,
+  ChartLine,
 ];
 
 export const traits = Traits;
