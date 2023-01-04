@@ -2,6 +2,7 @@
 
 ✨ This is a Subscan Widget Platform.
 
+![npm](https://img.shields.io/npm/v/@subscan/widget-app?style=flat-square)
 ## Struct
 
 ```
@@ -157,6 +158,8 @@ Services are instances of Widget Editor's various services, including state mana
 Dev: https://subscan-pro-staging.vercel.app/lowcode
 
 ## Learn More
+
+[Widget Editor](https://github.com/subscan-explorer/widget-editor).
 
 [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
