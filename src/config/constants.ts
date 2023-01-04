@@ -12,7 +12,8 @@ export const enum PRESET_PROPERTY_CATEGORY {
 
 export const enum COMPONENTS_CATEGORY {
   General = 'General',
-  Display = 'Display'
+  Display = 'Display',
+  Chart = 'Chart',
 }
 
 export const enum VERSION {

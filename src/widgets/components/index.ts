@@ -6,4 +6,4 @@ export { Title } from './Title';
 export { Icon } from './Icon';
 export { Tabs } from './Tabs';
 export { TimeLine } from './TimeLine';
-export { ChartLine } from './Chart';
+export { ChartLine, ChartPie } from './Chart';
