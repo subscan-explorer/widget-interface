@@ -1,26 +1,26 @@
-import { Type } from "@sinclair/typebox";
-import { StringUnion } from "utils/widget-helper";
-import { BaseChartSpec, SeriesSpec } from "./Chart";
+import { Type } from '@sinclair/typebox';
+import { StringUnion } from 'utils/widget-helper';
+import { BaseChartSpec, SeriesSpec } from './Chart';
 
 export const LineSpecObject = {
-  symbol: StringUnion(["circle", "rect", "roundRect", "triangle", "diamond", "pin", "arrow", "none"], {
-    title: "Symbol",
+  symbol: StringUnion(['circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'], {
+    title: 'Symbol',
   }),
   showSymbol: Type.Boolean({
-    title: "Show Symbol",
+    title: 'Show Symbol',
   }),
   smooth: Type.Boolean({
-    title: "Smooth",
+    title: 'Smooth',
   }),
   activeAreaStyle: Type.Boolean({
-    title: "Active Area Style",
+    title: 'Active Area Style',
   }),
 };
 
 export const LineConditions = [
   {
-    key: "type",
-    value: "line",
+    key: 'type',
+    value: 'line',
   },
 ];
 
@@ -33,11 +33,11 @@ export const LineChartPropsSpec = {
       ...LineSpecObject,
     }),
     {
-      title: "Series",
-      category: "Series",
-      widget: "core/v1/array",
+      title: 'Series',
+      category: 'Series',
+      widget: 'core/v1/array',
       widgetOptions: {
-        displayedKeys: ["name"],
+        displayedKeys: ['name'],
       },
     }
   ),

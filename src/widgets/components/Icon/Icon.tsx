@@ -7,8 +7,8 @@ import { FALLBACK_METADATA } from 'utils/widget-helper';
 import { Icons, IconName } from 'components/Svg/Icons';
 
 type ObjectIconName = {
-  [k in IconName]: any
-}
+  [k in IconName]: any;
+};
 
 const IconPropsSpec = Type.Object({
   name: Type.KeyOf(Type.Object(Icons as ObjectIconName), {
@@ -40,8 +40,7 @@ export default implementRuntimeComponent({
       isHover: Type.Boolean(),
     }),
     methods: {},
-    slots: {
-    },
+    slots: {},
     styleSlots: ['content'],
     events: ['onClick'],
   },
@@ -66,6 +65,12 @@ export default implementRuntimeComponent({
   }
 
   return (
-    <Component className={css(customStyle?.content)} onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} spin={spin} />
+    <Component
+      className={css(customStyle?.content)}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      spin={spin}
+    />
   );
 });

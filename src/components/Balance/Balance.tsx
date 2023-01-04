@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import styled from 'styled-components';
 import { BareProps } from 'types';
@@ -22,10 +20,13 @@ const Balance: React.FC<Props> = ({ className, value, decimals = 0, symbol = '' 
   const displayValue = balanceAmount.toFormat(3);
   const splitValue = displayValue.split('.');
 
-  return (<StyledContainer className={className}>
-    <StyledFont14>{splitValue[0]}</StyledFont14>
-    {splitValue[1] ? <StyledFont14 fontColor='background02'>.{splitValue[1]}</StyledFont14> : null} {symbol && <StyledFont14> {symbol}</StyledFont14>}
-  </StyledContainer>);
+  return (
+    <StyledContainer className={className}>
+      <StyledFont14>{splitValue[0]}</StyledFont14>
+      {splitValue[1] ? <StyledFont14 fontColor="background02">.{splitValue[1]}</StyledFont14> : null}{' '}
+      {symbol && <StyledFont14> {symbol}</StyledFont14>}
+    </StyledContainer>
+  );
 };
 
 export default Balance;

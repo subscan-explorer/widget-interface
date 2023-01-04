@@ -17,7 +17,8 @@ const StyledColumn = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.background04};
   padding: 10px;
   flex-direction: column;
-  p, a {
+  p,
+  a {
     word-break: break-all;
   }
 
@@ -47,10 +48,9 @@ export const ColumnSpec = Type.Object({
   dataKey: Type.String({
     title: 'Key',
     category: PRESET_PROPERTY_CATEGORY.Basic,
-    description:
-      'The key corresponding to the column data in the data item is used to display the value',
+    description: 'The key corresponding to the column data in the data item is used to display the value',
   }),
-  ...BaseColumnSpecObject
+  ...BaseColumnSpecObject,
 });
 
 const PropsSpec = Type.Object({
@@ -74,8 +74,7 @@ const PropsSpec = Type.Object({
 
 export interface ColumnValueProps extends Static<typeof ColumnSpec> {
   value: string;
-};
-
+}
 
 export default implementRuntimeComponent({
   version: VERSION.Core,
@@ -85,68 +84,89 @@ export default implementRuntimeComponent({
     displayName: 'Constraint List',
     description: 'Constraint List Components',
     exampleProperties: {
-      data: { "from": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f", "to": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N", "extrinsic_index": "10426613-1", "success": false, "hash": "0x4b786c3d4740fcb90bfa593c1335a65fc2ff425114b3060ae377b6981c50e3d8", "block_num": 10426613, "block_timestamp": 1664176458, "module": "balances", "amount": "86.13245", "amount_v2": "86132450000", "fee": "114600000", "nonce": 7, "asset_symbol": "", "asset_type": "", "from_account_display": { "address": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f" }, "to_account_display": { "address": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N", "display": "0x245b4775082c144c22a4874b0fba8c70c510c5ae" }, "event_idx": 1 },
+      data: {
+        from: '2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f',
+        to: '2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N',
+        extrinsic_index: '10426613-1',
+        success: false,
+        hash: '0x4b786c3d4740fcb90bfa593c1335a65fc2ff425114b3060ae377b6981c50e3d8',
+        block_num: 10426613,
+        block_timestamp: 1664176458,
+        module: 'balances',
+        amount: '86.13245',
+        amount_v2: '86132450000',
+        fee: '114600000',
+        nonce: 7,
+        asset_symbol: '',
+        asset_type: '',
+        from_account_display: { address: '2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f' },
+        to_account_display: {
+          address: '2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N',
+          display: '0x245b4775082c144c22a4874b0fba8c70c510c5ae',
+        },
+        event_idx: 1,
+      },
       columns: [
         {
-          "title": "Extrinsic ID",
-          "type": "link",
-          "width": "",
-          "dataKey": "extrinsic_index",
-          "prePath": "/extrinsic",
-          "ellipsis": false,
+          title: 'Extrinsic ID',
+          type: 'link',
+          width: '',
+          dataKey: 'extrinsic_index',
+          prePath: '/extrinsic',
+          ellipsis: false,
         },
         {
-          "title": "Block",
-          "type": "link",
-          "width": "",
-          "dataKey": "block_num",
-          "prePath": "/block",
-          "ellipsis": false
+          title: 'Block',
+          type: 'link',
+          width: '',
+          dataKey: 'block_num',
+          prePath: '/block',
+          ellipsis: false,
         },
         {
-          "title": "Time",
-          "type": "time",
-          "width": "",
-          "dataKey": "block_timestamp"
+          title: 'Time',
+          type: 'time',
+          width: '',
+          dataKey: 'block_timestamp',
         },
         {
-          "title": "From",
-          "type": "link",
-          "width": "",
-          "dataKey": "from",
-          "prePath": "/account"
+          title: 'From',
+          type: 'link',
+          width: '',
+          dataKey: 'from',
+          prePath: '/account',
         },
         {
-          "title": "To",
-          "type": "link",
-          "width": "",
-          "dataKey": "to",
-          "prePath": "/account"
+          title: 'To',
+          type: 'link',
+          width: '',
+          dataKey: 'to',
+          prePath: '/account',
         },
         {
-          "title": "Value",
-          "type": "balance",
-          "width": "",
-          "dataKey": "amount_v2",
-          "decimals": 9,
-          "symbol": "RING"
+          title: 'Value',
+          type: 'balance',
+          width: '',
+          dataKey: 'amount_v2',
+          decimals: 9,
+          symbol: 'RING',
         },
         {
-          "title": "Result",
-          "type": "transactionStatus",
-          "width": "",
-          "dataKey": "success",
-          "transformer": "return value == 'true' ? 'normal' : 'error'",
+          title: 'Result',
+          type: 'transactionStatus',
+          width: '',
+          dataKey: 'success',
+          transformer: "return value == 'true' ? 'normal' : 'error'",
         },
         {
-          "title": "Hash",
-          "type": "link",
-          "width": "",
-          "dataKey": "hash",
-          "prePath": "/extrinsic",
-          "ellipsis": true,
+          title: 'Hash',
+          type: 'link',
+          width: '',
+          dataKey: 'hash',
+          prePath: '/extrinsic',
+          ellipsis: true,
         },
-      ]
+      ],
     },
     annotations: {
       category: COMPONENTS_CATEGORY.Display,
@@ -163,17 +183,20 @@ export default implementRuntimeComponent({
 })(props => {
   const { data, columns } = getComponentProps(props);
   const { elementRef, customStyle, services } = props;
-  return (<StyledModuleBox className={cx(css(customStyle?.content), CssBox)} ref={elementRef} >
-    {columns?.map((column, index) => {
-      return (<StyledColumn key={`${column.title}${index}`}>
-        <StyledColumnHeader>
-          <StyledFont14 bold>{column.title}</StyledFont14>
-        </StyledColumnHeader>
-        <div>
-          <RenderColumnValue stateManager={services.stateManager} value={data[column.dataKey]} {...column} />
-        </div>
-      </StyledColumn>);
-    })}
-  </StyledModuleBox>);
+  return (
+    <StyledModuleBox className={cx(css(customStyle?.content), CssBox)} ref={elementRef}>
+      {columns?.map((column, index) => {
+        return (
+          <StyledColumn key={`${column.title}${index}`}>
+            <StyledColumnHeader>
+              <StyledFont14 bold>{column.title}</StyledFont14>
+            </StyledColumnHeader>
+            <div>
+              <RenderColumnValue stateManager={services.stateManager} value={data[column.dataKey]} {...column} />
+            </div>
+          </StyledColumn>
+        );
+      })}
+    </StyledModuleBox>
+  );
 });
-

@@ -1,5 +1,3 @@
-
-
 import styled, { css, keyframes } from 'styled-components';
 import { space } from 'styled-system';
 import { Colors } from 'ui/theme/colors';
@@ -21,9 +19,9 @@ const spinStyle = css`
 
 const Svg = styled.svg<SvgProps>`
   align-self: center;
-  fill: ${({ theme, color }) => theme.colors[color as keyof Colors || 'none'] || color};
+  fill: ${({ theme, color }) => theme.colors[(color as keyof Colors) || 'none'] || color};
   flex-shrink: 0;
-  cursor: ${({ pointer }) => pointer ? 'pointer' : 'normal'};
+  cursor: ${({ pointer }) => (pointer ? 'pointer' : 'normal')};
   ${({ spin }) => spin && spinStyle}
   ${space}
 `;

@@ -1,22 +1,22 @@
-import { Type } from "@sinclair/typebox";
-import { StringUnion } from "utils/widget-helper";
+import { Type } from '@sinclair/typebox';
+import { StringUnion } from 'utils/widget-helper';
 
 // https://echarts.apache.org/zh/option.html#title
 export const TitleSpec = {
   text: Type.String({
-    title: "Text",
+    title: 'Text',
   }),
   left: Type.String({
-    title: "Left",
+    title: 'Left',
   }),
   right: Type.String({
-    title: "Right",
+    title: 'Right',
   }),
   top: Type.String({
-    title: "Top",
+    title: 'Top',
   }),
   bottom: Type.String({
-    title: "Bottom",
+    title: 'Bottom',
   }),
 };
 
@@ -27,14 +27,14 @@ export const AxisSpec = {
   // nameLocation: StringUnion(["end", "start", "center"], {
   //   title: "Name Location",
   // }),
-  type: StringUnion(["value", "category"], {
-    title: "Type",
+  type: StringUnion(['value', 'category'], {
+    title: 'Type',
   }),
   // offset: Type.Number({
   //   title: "Offset",
   // }),
   data: Type.Array(Type.String(), {
-    title: "Data",
+    title: 'Data',
   }),
 };
 
@@ -42,23 +42,23 @@ export const BaseChartSpec = {
   xAxis: Type.Array(
     Type.Object({
       ...AxisSpec,
-      position: StringUnion(["bottom", "top"], {
-        title: "Position",
+      position: StringUnion(['bottom', 'top'], {
+        title: 'Position',
       }),
     }),
     {
-      category: "XAxis",
+      category: 'XAxis',
     }
   ),
   yAxis: Type.Array(
     Type.Object({
       ...AxisSpec,
-      position: StringUnion(["left", "right"], {
-        title: "Position",
+      position: StringUnion(['left', 'right'], {
+        title: 'Position',
       }),
     }),
     {
-      category: "YAxis",
+      category: 'YAxis',
     }
   ),
   color: Type.Array(Type.String(), {
@@ -70,42 +70,42 @@ export const SeriesLabelSpec = {
   show: Type.Boolean(),
   position: StringUnion(
     [
-      "top",
-      "left",
-      "right",
-      "bottom",
-      "inside",
-      "insideLeft",
-      "insideRight",
-      "insideTop",
-      "insideBottom",
-      "insideTopLeft",
-      "insideBottomLeft",
-      "insideTopRight",
-      "insideBottomRight",
+      'top',
+      'left',
+      'right',
+      'bottom',
+      'inside',
+      'insideLeft',
+      'insideRight',
+      'insideTop',
+      'insideBottom',
+      'insideTopLeft',
+      'insideBottomLeft',
+      'insideTopRight',
+      'insideBottomRight',
     ],
     {
-      title: "Position",
+      title: 'Position',
     }
   ),
 };
 
 export const SeriesItemStyle = {
   color: Type.String({
-    title: "Color",
-    widget: 'core/v1/color'
-  })
+    title: 'Color',
+    widget: 'core/v1/color',
+  }),
 };
 
 export const SeriesSpec = {
   name: Type.String({
-    title: "Name",
+    title: 'Name',
   }),
   label: Type.Object(SeriesLabelSpec, {
-    title: "Label",
+    title: 'Label',
   }),
   data: Type.Array(Type.Number(), {
-    title: "Data",
+    title: 'Data',
   }),
   // itemStyle: Type.Object(SeriesItemStyle, {
   //   title: "Line Style",
@@ -153,4 +153,3 @@ export const SeriesSpec = {
 //     }
 //   ),
 // };
-

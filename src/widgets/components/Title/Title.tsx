@@ -59,15 +59,15 @@ export default implementRuntimeComponent({
   };
 
   return (
-    <div className={cx(css(customStyle?.content), flexStyle)}
+    <div
+      className={cx(css(customStyle?.content), flexStyle)}
       ref={elementRef}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      onClick={onClick}>
+      onClick={onClick}
+    >
       {slotsElements.prefix ? slotsElements.prefix({}) : null}
-      <StyledFont14 bold >
-        {text}
-      </StyledFont14>
+      <StyledFont14 bold>{text}</StyledFont14>
     </div>
   );
 });

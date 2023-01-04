@@ -1,19 +1,19 @@
-import { Type } from "@sinclair/typebox";
+import { Type } from '@sinclair/typebox';
 
 export const PieSpecObject = {
   data: Type.Array(
     Type.Object({
-      value: Type.Number({ title: "Value" }),
-      name: Type.String({ title: "Name" }),
+      value: Type.Number({ title: 'Value' }),
+      name: Type.String({ title: 'Name' }),
     }),
-    { title: "Data" }
+    { title: 'Data' }
   ),
 };
 
 export const PieConditions = [
   {
-    key: "type",
-    value: "pie",
+    key: 'type',
+    value: 'pie',
   },
 ];
 

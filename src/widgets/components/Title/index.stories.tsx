@@ -5,23 +5,23 @@ import Preview from 'preview';
 import { initChainStyles } from 'config/stylebook';
 
 const AppOptions: Application = {
-  "version": "widget/v1",
-  "kind": "Application",
-  "metadata": {
-    "name": "subscan widget"
+  version: 'widget/v1',
+  kind: 'Application',
+  metadata: {
+    name: 'subscan widget',
   },
-  "spec": {
-    "components": [
+  spec: {
+    components: [
       {
-        "id": "title0",
-        "type": "core/v1/title",
-        "properties": {
-          "text": "Subscan Title"
+        id: 'title0',
+        type: 'core/v1/title',
+        properties: {
+          text: 'Subscan Title',
         },
-        "traits": []
-      }
-    ]
-  }
+        traits: [],
+      },
+    ],
+  },
 };
 
 export default {
@@ -29,11 +29,11 @@ export default {
   component: Preview,
 } as ComponentMeta<typeof Preview>;
 
-const Template: ComponentStory<typeof Preview> = (args) => <Preview {...args} />;
+const Template: ComponentStory<typeof Preview> = args => <Preview {...args} />;
 
 export const Index = Template.bind({});
 
 Index.args = {
   options: AppOptions,
-  ...initChainStyles
+  ...initChainStyles,
 };

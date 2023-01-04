@@ -51,10 +51,9 @@ export const ColumnSpec = Type.Object({
   dataKey: Type.String({
     title: 'Key',
     category: PRESET_PROPERTY_CATEGORY.Basic,
-    description:
-      'The key corresponding to the column data in the data item is used to display the value',
+    description: 'The key corresponding to the column data in the data item is used to display the value',
   }),
-  ...BaseColumnSpecObject
+  ...BaseColumnSpecObject,
 });
 
 const PropsSpec = Type.Object({
@@ -78,7 +77,7 @@ const PropsSpec = Type.Object({
 
 export interface ColumnValueProps extends Static<typeof ColumnSpec> {
   value: string;
-};
+}
 
 export default implementRuntimeComponent({
   version: VERSION.Core,
@@ -87,34 +86,48 @@ export default implementRuntimeComponent({
     displayName: 'TimeLine',
     description: 'TimeLine Components',
     exampleProperties: {
-      data: [{ "from": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f", "to": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N", "extrinsic_index": "10426613-1" },
-      { "from": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f", "to": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N", "extrinsic_index": "10426613-2" },
-      { "from": "2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f", "to": "2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N", "extrinsic_index": "10426613-3" }],
+      data: [
+        {
+          from: '2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f',
+          to: '2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N',
+          extrinsic_index: '10426613-1',
+        },
+        {
+          from: '2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f',
+          to: '2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N',
+          extrinsic_index: '10426613-2',
+        },
+        {
+          from: '2rGH1BB1E6fvTqiVrHMwNw8r5VrFYznvafn2Uf7amvYdCZ9f',
+          to: '2qSbd2umtD4KmV2X4zZk5QkCvmYKyiR2ysAeM1Eca6vcvg7N',
+          extrinsic_index: '10426613-3',
+        },
+      ],
       columns: [
         {
-          "title": "From",
-          "type": "text",
-          "width": "",
-          "dataKey": "from",
-          "prePath": "/account",
-          "ellipsis": true,
+          title: 'From',
+          type: 'text',
+          width: '',
+          dataKey: 'from',
+          prePath: '/account',
+          ellipsis: true,
         },
         {
-          "title": "To",
-          "type": "text",
-          "width": "",
-          "dataKey": "to",
-          "prePath": "/account",
-          "ellipsis": true,
+          title: 'To',
+          type: 'text',
+          width: '',
+          dataKey: 'to',
+          prePath: '/account',
+          ellipsis: true,
         },
         {
-          "title": "Extrinsic Index",
-          "type": "link",
-          "width": "",
-          "dataKey": "extrinsic_index",
-          "prePath": "/extrinsic",
+          title: 'Extrinsic Index',
+          type: 'link',
+          width: '',
+          dataKey: 'extrinsic_index',
+          prePath: '/extrinsic',
         },
-      ]
+      ],
     },
     annotations: {
       category: COMPONENTS_CATEGORY.Display,
@@ -129,44 +142,52 @@ export default implementRuntimeComponent({
     events: [],
   },
 })(({ data, columns, elementRef, services }) => {
-  return (<StyledModuleBox className={CssBox} ref={elementRef} >
-    <StyledScrollX>
-      <StyledTable ref={elementRef}>
-        <thead>
-          <tr>
-            <StyledTh> </StyledTh>
+  return (
+    <StyledModuleBox className={CssBox} ref={elementRef}>
+      <StyledScrollX>
+        <StyledTable ref={elementRef}>
+          <thead>
+            <tr>
+              <StyledTh> </StyledTh>
 
-            {columns?.map((thData, tdIndex) => {
+              {columns?.map((thData, tdIndex) => {
+                return (
+                  <StyledTh key={`${thData.title}${tdIndex}`}>
+                    <StyledFont14 nowrap bold>
+                      {thData.title}
+                    </StyledFont14>
+                  </StyledTh>
+                );
+              })}
+            </tr>
+          </thead>
+          <tbody>
+            {data?.map((trData, trIndex) => {
               return (
-                <StyledTh key={`${thData.title}${tdIndex}`}>
-                  <StyledFont14 nowrap bold>{thData.title}</StyledFont14>
-                </StyledTh>
+                <StyledTr key={`${trIndex}`}>
+                  <TimeLineTd>
+                    <TimeLineSymbolBox style={{ borderBottom: 0 }}>
+                      <TimeLineSymbolPointer />
+                      {trIndex === data.length - 1 ? null : <TimeLineSymbolLine />}
+                    </TimeLineSymbolBox>
+                  </TimeLineTd>
+                  {columns.map((column, tdIndex) => {
+                    return (
+                      <StyledTd key={`${trData.title}${tdIndex}`}>
+                        <RenderColumnValue
+                          stateManager={services.stateManager}
+                          value={trData[column.dataKey]}
+                          {...column}
+                        />
+                      </StyledTd>
+                    );
+                  })}
+                </StyledTr>
               );
             })}
-          </tr>
-        </thead>
-        <tbody>
-          {data?.map((trData, trIndex) => {
-            return (
-              <StyledTr key={`${trIndex}`}>
-                <TimeLineTd>
-                  <TimeLineSymbolBox style={{ borderBottom: 0 }}>
-                    <TimeLineSymbolPointer />
-                    {trIndex === data.length - 1 ? null : <TimeLineSymbolLine />}
-                  </TimeLineSymbolBox>
-                </TimeLineTd>
-                {columns.map((column, tdIndex) => {
-                  return (
-                    <StyledTd key={`${trData.title}${tdIndex}`}>
-                      <RenderColumnValue stateManager={services.stateManager} value={trData[column.dataKey]} {...column} />
-                    </StyledTd>
-                  );
-                })}
-
-              </StyledTr>);
-          })}
-        </tbody>
-      </StyledTable>
-    </StyledScrollX>
-  </StyledModuleBox>);
+          </tbody>
+        </StyledTable>
+      </StyledScrollX>
+    </StyledModuleBox>
+  );
 });

@@ -1,12 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledTable = styled.table`
   width: 100%;
-  white-space:nowrap;
+  white-space: nowrap;
 `;
 
 export const StyledTr = styled.tr`
-  &:hover td{
+  &:hover td {
     background-color: #fbfbfb;
   }
 `;
@@ -24,21 +24,21 @@ export const StyledTd = styled.td`
 
 export const StyledSortBox = styled.span`
   display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    height: 34px;
-    width: 24px;
-    vertical-align: middle;
-    cursor: pointer;
-    overflow: initial;
-    position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 34px;
+  width: 24px;
+  vertical-align: middle;
+  cursor: pointer;
+  overflow: initial;
+  position: relative;
 `;
 
 export const StyledSortAsc = styled.i`

@@ -5,7 +5,7 @@ import { LinkProps } from './types';
 
 const getExternalLinkProps = (): { target: string; rel: string } => ({
   target: '_blank',
-  rel: 'noreferrer noopener'
+  rel: 'noreferrer noopener',
 });
 
 const StyledLink = styled(StyledFont14)<LinkProps>`
@@ -21,11 +21,15 @@ const StyledLink = styled(StyledFont14)<LinkProps>`
 
 const Link: React.FC<LinkProps> = ({ external, children, ...props }) => {
   const internalProps = external ? getExternalLinkProps() : {};
-  return <StyledLink as='a' {...internalProps} {...props}>{children}</StyledLink>;
+  return (
+    <StyledLink as="a" {...internalProps} {...props}>
+      {children}
+    </StyledLink>
+  );
 };
 
 Link.defaultProps = {
-  color: 'primary'
+  color: 'primary',
 };
 
 export default Link;

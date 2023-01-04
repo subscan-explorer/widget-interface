@@ -11,10 +11,27 @@ export interface Props extends BareProps {
 
 const EllipsisText: React.FC<Props> = ({ className, text, ellipsis }) => {
   const displayName = ellipsis ? toShortString(text) : text;
-  return (<>
-    {ellipsis ? <Tooltip className={className} hasArrow bg='#fff' placement="top" label={<Box p="2"><StyledFont12>{text}</StyledFont12></Box>}>
-      <StyledFont14>{displayName}</StyledFont14>
-    </Tooltip> : <StyledFont14 className={className}>{displayName}</StyledFont14>}</>);
+  return (
+    <>
+      {ellipsis ? (
+        <Tooltip
+          className={className}
+          hasArrow
+          bg="#fff"
+          placement="top"
+          label={
+            <Box p="2">
+              <StyledFont12>{text}</StyledFont12>
+            </Box>
+          }
+        >
+          <StyledFont14>{displayName}</StyledFont14>
+        </Tooltip>
+      ) : (
+        <StyledFont14 className={className}>{displayName}</StyledFont14>
+      )}
+    </>
+  );
 };
 
 export default EllipsisText;

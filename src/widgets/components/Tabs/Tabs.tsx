@@ -1,13 +1,6 @@
 import { useEffect, useState } from 'react';
 import { css, cx } from '@emotion/css';
-import {
-  Tabs as BaseTabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-  Text,
-} from '@chakra-ui/react';
+import { Tabs as BaseTabs, TabList, Tab, TabPanels, TabPanel, Text } from '@chakra-ui/react';
 import { Type } from '@sinclair/typebox';
 import { implementRuntimeComponent } from '@subscan/widget-runtime';
 import { PRESET_PROPERTY_CATEGORY, COMPONENTS_CATEGORY, VERSION } from 'config/constants';
@@ -34,7 +27,6 @@ const StyledTabsLine = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.colors.background04};
 `;
-
 
 export default implementRuntimeComponent({
   version: VERSION.Core,
@@ -66,14 +58,7 @@ export default implementRuntimeComponent({
     events: [],
   },
 })(props => {
-  const {
-    tabNames,
-    mergeState,
-    initialSelectedTabIndex,
-    customStyle,
-    slotsElements,
-    elementRef,
-  } = props;
+  const { tabNames, mergeState, initialSelectedTabIndex, customStyle, slotsElements, elementRef } = props;
   const [selectedTabIndex, setSelectedTabIndex] = useState(initialSelectedTabIndex ?? 0);
   const theme = useTheme();
 
@@ -93,25 +78,24 @@ export default implementRuntimeComponent({
     border-style: solid;
   `;
 
-  const placeholder = (
-    <Text color="gray">Slot content is empty.Please drag component to this slot.</Text>
-  );
+  const placeholder = <Text color="gray">Slot content is empty.Please drag component to this slot.</Text>;
   return (
-    <BaseTabs
-      defaultIndex={initialSelectedTabIndex}
-      onChange={idx => setSelectedTabIndex(idx)}
-      variant='unstyled'
-    >
+    <BaseTabs defaultIndex={initialSelectedTabIndex} onChange={idx => setSelectedTabIndex(idx)} variant="unstyled">
       <TabList ref={elementRef}>
         {tabNames.map((name, idx) => (
           <Tab
             key={idx}
             _selected={{ bg: theme.colors.contrast }}
-            className={cx(css`
-              ${customStyle?.tabItem}
-            `, selectedTabIndex === idx ? CSSTabBorderActive : CSSTabBorderNormal)}
+            className={cx(
+              css`
+                ${customStyle?.tabItem}
+              `,
+              selectedTabIndex === idx ? CSSTabBorderActive : CSSTabBorderNormal
+            )}
           >
-            <StyledFont14 style={{ color: selectedTabIndex === idx ? theme.chain.color : theme.colors.primary }} bold>{name}</StyledFont14>
+            <StyledFont14 style={{ color: selectedTabIndex === idx ? theme.chain.color : theme.colors.primary }} bold>
+              {name}
+            </StyledFont14>
           </Tab>
         ))}
       </TabList>

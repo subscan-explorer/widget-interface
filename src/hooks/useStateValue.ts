@@ -2,11 +2,7 @@ import { RuntimeFunctions } from '@subscan/widget-runtime';
 import React, { useState, useEffect } from 'react';
 import { SlotSpec } from '@subscan/widget-core';
 
-export const useStateValue = <
-  T,
-  TMethods = any,
-  TSlots extends Record<string, SlotSpec> = Record<string, SlotSpec>
->(
+export const useStateValue = <T, TMethods = any, TSlots extends Record<string, SlotSpec> = Record<string, SlotSpec>>(
   defaultValue: T,
   mergeState?: RuntimeFunctions<Record<string, T>, TMethods, TSlots>['mergeState'],
   updateWhenDefaultValueChanges?: boolean,

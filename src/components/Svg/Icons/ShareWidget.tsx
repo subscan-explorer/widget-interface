@@ -1,12 +1,9 @@
-import React from "react";
-import Svg from "../Svg";
-import { SvgProps } from "../types";
+import React from 'react';
+import Svg from '../Svg';
+import { SvgProps } from '../types';
 
-const Icon: React.FC<SvgProps> = (props) => (
-  <Svg
-    viewBox="0 0 16 16"
-    {...props}
-  >
+const Icon: React.FC<SvgProps> = props => (
+  <Svg viewBox="0 0 16 16" {...props}>
     <path d="M1.5 6.7002V14.6594H14.5V6.7002" stroke="url(#paint0_linear_10149_4728)" fill="none" strokeWidth="1.3" />
     <path
       d="M8 2V9.77784M8 9.77784L4 5.5012M8 9.77784L12 5.5012"

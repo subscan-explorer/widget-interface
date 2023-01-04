@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import * as IconModule from '.';
 import { SvgProps } from './types';

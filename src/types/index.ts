@@ -1,5 +1,5 @@
-import { Application } from "@subscan/widget-core";
-import React from "react";
+import { Application } from '@subscan/widget-core';
+import React from 'react';
 
 export interface BareProps {
   children?: React.ReactNode;

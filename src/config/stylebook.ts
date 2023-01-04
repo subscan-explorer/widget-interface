@@ -8,6 +8,6 @@ export const initChainStyles = {
     light: {
       color: '#FF0083',
       borderRadius: '4px',
-    }
-  }
+    },
+  },
 };

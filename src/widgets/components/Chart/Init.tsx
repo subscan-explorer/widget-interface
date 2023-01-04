@@ -52,5 +52,5 @@ echarts.use([
   CanvasRenderer,
   VisualMapComponent,
   DataZoomComponent,
-  LegendComponent
+  LegendComponent,
 ]);

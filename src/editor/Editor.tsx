@@ -5,9 +5,7 @@ import { BareProps, ProApiConfig } from 'types';
 import '@subscan/widget-editor/dist/index.css';
 import runtimeConfig from 'config/runtime';
 import BigNumber from 'bignumber.js';
-import {
-  useRouteLoaderData,
-} from "react-router-dom";
+import { useRouteLoaderData } from 'react-router-dom';
 import { LocalStorageManager } from './api/localstorage/LocalStorageManager';
 import { saveConfig } from './api/subscan/Services';
 export { default as Record } from './Record';
@@ -18,7 +16,7 @@ export { default as Management } from './Management';
 BigNumber.config({
   EXPONENTIAL_AT: 1000,
   DECIMAL_PLACES: 80,
-  ROUNDING_MODE: 1
+  ROUNDING_MODE: 1,
 });
 
 const StyledContainer = styled.div`
@@ -41,7 +39,7 @@ const Editor: React.FC<BareProps> = ({ className }) => {
           saveConfig({
             name: config.name,
             payload: JSON.stringify(app),
-            id: config.id
+            id: config.id,
           });
         } else {
           lsManager.saveWidgetInLs(config.id.toString(), app);
@@ -51,12 +49,14 @@ const Editor: React.FC<BareProps> = ({ className }) => {
         lsManager.saveModulesInLS(modules);
       },
     },
-    registerCoreComponent: false
+    registerCoreComponent: false,
   });
 
-  return (<StyledContainer className="chakraCSSReset">
-    <Editor />
-  </StyledContainer>);
+  return (
+    <StyledContainer className="chakraCSSReset">
+      <Editor />
+    </StyledContainer>
+  );
 };
 
 export default Editor;

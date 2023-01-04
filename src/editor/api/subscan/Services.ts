@@ -1,8 +1,8 @@
-import { Application } from "@subscan/widget-core";
-import { DEFAULT_APP_TEMPLATE } from "config/constants";
-import { useCallback, useEffect, useState } from "react";
-import { ProApiConfig, ProApiConfigItem, UserInfo } from "types";
-import axiosRequest from "./AxiosRequest";
+import { Application } from '@subscan/widget-core';
+import { DEFAULT_APP_TEMPLATE } from 'config/constants';
+import { useCallback, useEffect, useState } from 'react';
+import { ProApiConfig, ProApiConfigItem, UserInfo } from 'types';
+import axiosRequest from './AxiosRequest';
 
 const PREFIX = process.env.REACT_APP_SUBSCAN_PRO_API;
 
@@ -51,12 +51,12 @@ export const useFetchUserInfo = () => {
 export const useSaveAppConfigs = () => {
   const [loading, SetLoading] = useState(false);
 
-  const fetchData = useCallback(async (data: { name: string; payload: string, networks: number[] }) => {
+  const fetchData = useCallback(async (data: { name: string; payload: string; networks: number[] }) => {
     SetLoading(true);
     try {
       await axiosRequest.request({
         url: `${PREFIX}/open/v2/widget`,
-        method: "POST",
+        method: 'POST',
         headers: {},
         data,
       });
@@ -77,7 +77,7 @@ export const useDeleteAppConfigs = () => {
     try {
       await axiosRequest.request({
         url: `${PREFIX}/open/v2/widget`,
-        method: "DELETE",
+        method: 'DELETE',
         headers: {},
         data,
       });
@@ -93,8 +93,8 @@ export const useDeleteAppConfigs = () => {
 export async function fetchConfigById(id: string): Promise<ProApiConfig> {
   const { data: application } = await axiosRequest.get<ProApiConfigItem>(`${PREFIX}/open/v2/widget?id=${id}`);
 
-  const config = JSON.parse(application?.data?.payload || "{}");
-  if (config.kind === "Application") {
+  const config = JSON.parse(application?.data?.payload || '{}');
+  if (config.kind === 'Application') {
     return { id: application?.data?.id, application: config, name: application?.data?.name };
   }
   return { id: application?.data?.id, application: DEFAULT_APP_TEMPLATE as Application, name: application?.data?.name };

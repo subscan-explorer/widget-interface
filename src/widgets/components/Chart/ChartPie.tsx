@@ -18,11 +18,11 @@ const ChartPropsSpec = Type.Object({
 const exampleProperties: Static<typeof ChartPropsSpec> = {
   series: {
     data: [
-      { value: 30, name: "Validator" },
-      { value: 60, name: "Nominator" },
+      { value: 30, name: 'Validator' },
+      { value: 60, name: 'Nominator' },
     ],
   },
-  color: ["#E90979", "#F081B9", "#d7d7d7"],
+  color: ['#E90979', '#F081B9', '#d7d7d7'],
 };
 
 export const ChartPie = implementRuntimeComponent({
@@ -45,11 +45,7 @@ export const ChartPie = implementRuntimeComponent({
     events: ['onClick'],
   },
 })(props => {
-  const {
-    series,
-    color,
-    ...cProps
-  } = getComponentProps(props);
+  const { series, color, ...cProps } = getComponentProps(props);
   const { elementRef, customStyle, callbackMap } = props;
   const theme = useTheme();
   const [chart, SetChart] = useState<echarts.ECharts>();
@@ -67,7 +63,7 @@ export const ChartPie = implementRuntimeComponent({
       },
       (option, key, path) => {
         const value = option[key];
-        if (value !== undefined && (value as unknown as string !== '')) {
+        if (value !== undefined && (value as unknown as string) !== '') {
           const strPath = path.join('.');
           const checkedEmptyArrayProperties = ['color', 'legend.data'];
           if (checkedEmptyArrayProperties.includes(strPath) && Array.isArray(value)) {
@@ -85,9 +81,9 @@ export const ChartPie = implementRuntimeComponent({
     return {
       tooltip: {
         show: true,
-        trigger: "item",
-        backgroundColor: "#ffffff",
-        borderColor: "#e7eaf3",
+        trigger: 'item',
+        backgroundColor: '#ffffff',
+        borderColor: '#e7eaf3',
         borderWidth: 1,
         padding: [5, 20],
         textStyle: {
@@ -96,20 +92,20 @@ export const ChartPie = implementRuntimeComponent({
         formatter: `{b}`,
       },
       legend: {
-        type: "scroll",
-        orient: "vertical",
-        left: "50%",
-        top: "center",
+        type: 'scroll',
+        orient: 'vertical',
+        left: '50%',
+        top: 'center',
         bottom: 20,
         textStyle: {
           color: theme.colors.primary,
-        }
+        },
       },
       series: [
         {
-          type: "pie",
-          radius: ["65%", "85%"],
-          center: ["25%", "50%"],
+          type: 'pie',
+          radius: ['65%', '85%'],
+          center: ['25%', '50%'],
           avoidLabelOverlap: false,
           legendHoverLink: false,
           emphasis: {
@@ -119,17 +115,16 @@ export const ChartPie = implementRuntimeComponent({
             },
           },
           label: {
-            show: false
+            show: false,
           },
           labelLine: {
             show: false,
           },
-          ...filterOption.series
+          ...filterOption.series,
         },
       ],
-      color: filterOption.color
+      color: filterOption.color,
     };
-
   }, [series, color, theme]);
 
   useEffect(() => {
@@ -148,7 +143,7 @@ export const ChartPie = implementRuntimeComponent({
     <>
       <ElementResizeListener onResize={adaptResize} />
       <div
-        style={{ width: "100%", height: "156px" }}
+        style={{ width: '100%', height: '156px' }}
         ref={elementRef}
         className={css(customStyle?.content)}
         onClick={callbackMap?.onClick}

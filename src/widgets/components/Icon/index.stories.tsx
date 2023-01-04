@@ -5,87 +5,87 @@ import Preview from 'preview';
 import { initChainStyles } from 'config/stylebook';
 
 const AppOptions: Application = {
-  "version": "widget/v1",
-  "kind": "Application",
-  "metadata": {
-    "name": "subscan widget"
+  version: 'widget/v1',
+  kind: 'Application',
+  metadata: {
+    name: 'subscan widget',
   },
-  "spec": {
-    "components": [
+  spec: {
+    components: [
       {
-        "id": "icon2",
-        "type": "core/v1/icon",
-        "properties": {
-          "name": "barchart",
-          "spin": false
+        id: 'icon2',
+        type: 'core/v1/icon',
+        properties: {
+          name: 'barchart',
+          spin: false,
         },
-        "traits": []
+        traits: [],
       },
       {
-        "id": "icon3",
-        "type": "core/v1/icon",
-        "properties": {
-          "name": "finalized",
-          "spin": false
+        id: 'icon3',
+        type: 'core/v1/icon',
+        properties: {
+          name: 'finalized',
+          spin: false,
         },
-        "traits": []
+        traits: [],
       },
       {
-        "id": "icon4",
-        "type": "core/v1/icon",
-        "properties": {
-          "name": "note",
-          "spin": false
+        id: 'icon4',
+        type: 'core/v1/icon',
+        properties: {
+          name: 'note',
+          spin: false,
         },
-        "traits": []
+        traits: [],
       },
       {
-        "id": "icon5",
-        "type": "core/v1/icon",
-        "properties": {
-          "name": "person",
-          "spin": false
+        id: 'icon5',
+        type: 'core/v1/icon',
+        properties: {
+          name: 'person',
+          spin: false,
         },
-        "traits": []
+        traits: [],
       },
       {
-        "id": "icon6",
-        "type": "core/v1/icon",
-        "properties": {
-          "name": "points",
-          "spin": false
+        id: 'icon6',
+        type: 'core/v1/icon',
+        properties: {
+          name: 'points',
+          spin: false,
         },
-        "traits": []
+        traits: [],
       },
       {
-        "id": "icon7",
-        "type": "core/v1/icon",
-        "properties": {
-          "name": "rate",
-          "spin": false
+        id: 'icon7',
+        type: 'core/v1/icon',
+        properties: {
+          name: 'rate',
+          spin: false,
         },
-        "traits": []
+        traits: [],
       },
       {
-        "id": "icon8",
-        "type": "core/v1/icon",
-        "properties": {
-          "name": "stake",
-          "spin": false
+        id: 'icon8',
+        type: 'core/v1/icon',
+        properties: {
+          name: 'stake',
+          spin: false,
         },
-        "traits": []
+        traits: [],
       },
       {
-        "id": "icon9",
-        "type": "core/v1/icon",
-        "properties": {
-          "name": "swap",
-          "spin": false
+        id: 'icon9',
+        type: 'core/v1/icon',
+        properties: {
+          name: 'swap',
+          spin: false,
         },
-        "traits": []
-      }
-    ]
-  }
+        traits: [],
+      },
+    ],
+  },
 };
 
 export default {
@@ -93,11 +93,11 @@ export default {
   component: Preview,
 } as ComponentMeta<typeof Preview>;
 
-const Template: ComponentStory<typeof Preview> = (args) => <Preview {...args} />;
+const Template: ComponentStory<typeof Preview> = args => <Preview {...args} />;
 
 export const Index = Template.bind({});
 
 Index.args = {
   options: AppOptions,
-  ...initChainStyles
+  ...initChainStyles,
 };

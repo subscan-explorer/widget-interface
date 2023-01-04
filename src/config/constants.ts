@@ -5,7 +5,7 @@ export const enum PRESET_PROPERTY_CATEGORY {
   Behavior = 'Behavior',
   Layout = 'Layout',
   Style = 'Style',
-  Display = 'Display'
+  Display = 'Display',
 }
 
 export const enum COMPONENTS_CATEGORY {
@@ -15,13 +15,12 @@ export const enum COMPONENTS_CATEGORY {
 }
 
 export const enum VERSION {
-  Core = 'core/v1'
+  Core = 'core/v1',
 }
 
-
 export const DEFAULT_APP_TEMPLATE = {
-  "kind": "Application",
-  "version": "widget/v1",
-  "metadata": { name: 'subscan widget', description: 'subscan widget' },
-  "spec": { "components": [] }
+  kind: 'Application',
+  version: 'widget/v1',
+  metadata: { name: 'subscan widget', description: 'subscan widget' },
+  spec: { components: [] },
 };

@@ -1,5 +1,3 @@
-
-
 import { ErrorIcon, NormalIcon, WaitingIcon } from 'components/Svg';
 import React from 'react';
 import { BareProps } from 'types';
@@ -9,7 +7,11 @@ export interface Props extends BareProps {
   type: StatusType;
 }
 
-export enum StatusType { normal = 'normal', waiting = 'waiting', error = 'error' };
+export enum StatusType {
+  normal = 'normal',
+  waiting = 'waiting',
+  error = 'error',
+}
 
 const Status: React.FC<Props> = ({ type }) => {
   switch (type) {

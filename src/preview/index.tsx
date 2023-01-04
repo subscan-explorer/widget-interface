@@ -18,10 +18,14 @@ export type { ChainColors } from 'ui/type';
 BigNumber.config({
   EXPONENTIAL_AT: 1000,
   DECIMAL_PLACES: 80,
-  ROUNDING_MODE: 1
+  ROUNDING_MODE: 1,
 });
 
-const Preview: React.FC<{ options: Application, isDark?: boolean, chainStyles?: ChainStyles }> = ({ options, isDark, chainStyles }) => {
+const Preview: React.FC<{ options: Application; isDark?: boolean; chainStyles?: ChainStyles }> = ({
+  options,
+  isDark,
+  chainStyles,
+}) => {
   const { App } = initSunmaoUI(runtimeConfig);
   const initTheme = useMemo(() => {
     const defaultStyles = isDark ? dark : light;
@@ -34,13 +38,13 @@ const Preview: React.FC<{ options: Application, isDark?: boolean, chainStyles?: 
     return isDark ? dark : light;
   }, [chainStyles, isDark]);
 
-  return (<ChakraProvider theme={theme} resetCSS={false}>
-    <ThemeProvider theme={initTheme}>
-      <div className="chakraCSSReset">
-        {options && <App options={options} />}
-      </div>
-    </ThemeProvider>
-  </ChakraProvider>);
+  return (
+    <ChakraProvider theme={theme} resetCSS={false}>
+      <ThemeProvider theme={initTheme}>
+        <div className="chakraCSSReset">{options && <App options={options} />}</div>
+      </ThemeProvider>
+    </ChakraProvider>
+  );
 };
 
 export default Preview;

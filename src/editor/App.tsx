@@ -13,11 +13,13 @@ dayjs.locale('en');
 dayjs.extend(relativeTime);
 
 function App() {
-  return (<ChakraProvider resetCSS={false} theme={theme}>
-    <ThemeProvider theme={light}>
-      <RouterProvider router={router} />
-    </ThemeProvider>
-  </ChakraProvider>);
+  return (
+    <ChakraProvider resetCSS={false} theme={theme}>
+      <ThemeProvider theme={light}>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </ChakraProvider>
+  );
 }
 
 export default App;

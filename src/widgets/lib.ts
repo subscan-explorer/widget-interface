@@ -1,4 +1,4 @@
-import { RegistryInterface, SunmaoLib } from "@subscan/widget-runtime";
+import { RegistryInterface, SunmaoLib } from '@subscan/widget-runtime';
 import {
   Table,
   Pagination,
@@ -10,7 +10,7 @@ import {
   TimeLine,
   ChartLine,
   ChartPie,
-} from "./components";
+} from './components';
 
 import Traits from './traits';
 
@@ -30,7 +30,7 @@ export const components = [
 export const traits = Traits;
 export const modules = [];
 
-export function install (registry: RegistryInterface) {
+export function install(registry: RegistryInterface) {
   components.forEach(c => registry.registerComponent(c));
   traits.forEach(t => registry.registerTrait(t));
   modules.forEach(m => registry.registerModule(m));

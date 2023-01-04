@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Colors } from "./theme/colors";
+import styled from 'styled-components';
+import { Colors } from './theme/colors';
 import { Box } from '@chakra-ui/react';
 
 interface FontProps {
@@ -14,15 +14,15 @@ export const StyledFont16 = styled.span<FontProps>`
   /* 14 */
   font-family: 'Eina 01';
   font-style: normal;
-  font-weight: ${({ bold }) => bold ? 600 : 400};
+  font-weight: ${({ bold }) => (bold ? 600 : 400)};
   font-size: 16px;
   line-height: 22px;
-  display: ${({ block }) => block ? 'block' : 'inline-block'};
+  display: ${({ block }) => (block ? 'block' : 'inline-block')};
   /* identical to box height, or 143% */
 
   /* Black */
   color: ${({ theme, fontColor }) => theme.colors[fontColor || 'primary']};
-  white-space: ${({ nowrap }) => nowrap ? 'nowrap' : 'normal'};
+  white-space: ${({ nowrap }) => (nowrap ? 'nowrap' : 'normal')};
   word-break: ${({ wordbreak }) => wordbreak || 'normal'};
 `;
 
@@ -30,15 +30,15 @@ export const StyledFont14 = styled.span<FontProps>`
   /* 14 */
   font-family: 'Eina 01';
   font-style: normal;
-  font-weight: ${({ bold }) => bold ? 600 : 400};
+  font-weight: ${({ bold }) => (bold ? 600 : 400)};
   font-size: 14px;
   line-height: 20px;
-  display: ${({ block }) => block ? 'block' : 'inline-block'};
+  display: ${({ block }) => (block ? 'block' : 'inline-block')};
   /* identical to box height, or 143% */
 
   /* Black */
   color: ${({ theme, fontColor }) => theme.colors[fontColor || 'primary']};
-  white-space: ${({ nowrap }) => nowrap ? 'nowrap' : 'normal'};
+  white-space: ${({ nowrap }) => (nowrap ? 'nowrap' : 'normal')};
   word-break: ${({ wordbreak }) => wordbreak || 'normal'};
 `;
 
@@ -49,18 +49,18 @@ export const StyledFont12 = styled.span<FontProps>`
   font-weight: 400;
   font-size: 12px;
   line-height: 13px;
-  display: ${({ block }) => block ? 'block' : 'inline-block'};
+  display: ${({ block }) => (block ? 'block' : 'inline-block')};
   /* identical to box height, or 143% */
 
   /* Black */
   color: ${({ theme, fontColor }) => theme.colors[fontColor || 'primary']};
-  white-space: ${({ nowrap }) => nowrap ? 'nowrap' : 'normal'};
+  white-space: ${({ nowrap }) => (nowrap ? 'nowrap' : 'normal')};
   word-break: ${({ wordbreak }) => wordbreak || 'normal'};
 `;
 
 export const StyledModuleBox = styled(Box)`
-  background-color: ${({theme}) => theme.colors.contrast};;
-  border: 1px solid ${({theme}) => theme.colors.background04};
+  background-color: ${({ theme }) => theme.colors.contrast};
+  border: 1px solid ${({ theme }) => theme.colors.background04};
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   margin-top: 10px;

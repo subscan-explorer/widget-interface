@@ -1,6 +1,6 @@
-import { darkColors } from "./colors";
-import { DefaultTheme } from "styled-components";
-import { chain, mediaQueries } from "./base";
+import { darkColors } from './colors';
+import { DefaultTheme } from 'styled-components';
+import { chain, mediaQueries } from './base';
 
 const darkTheme: DefaultTheme = {
   isDark: true,

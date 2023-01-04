@@ -9,8 +9,8 @@ import { Icons, IconName } from 'components/Svg/Icons';
 import styled from 'styled-components';
 
 type ObjectIconName = {
-  [k in IconName]: any
-}
+  [k in IconName]: any;
+};
 
 const StyledGrid = styled.div`
   display: grid;
@@ -54,31 +54,31 @@ export default implementRuntimeComponent({
     exampleProperties: {
       columns: [
         {
-          "title": "Finalized Block",
-          "value": "145,431",
-          "icon": "barchart"
+          title: 'Finalized Block',
+          value: '145,431',
+          icon: 'barchart',
         },
         {
-          "title": "Signed Extrinsics",
-          "value": "54,541,324",
-          "icon": "barchart"
+          title: 'Signed Extrinsics',
+          value: '54,541,324',
+          icon: 'barchart',
         },
         {
-          "title": "Signed Extrinsics",
-          "value": "54,541,324",
-          "icon": "barchart"
+          title: 'Signed Extrinsics',
+          value: '54,541,324',
+          icon: 'barchart',
         },
         {
-          "title": "Signed Extrinsics",
-          "value": "54,541,324",
-          "icon": "barchart"
+          title: 'Signed Extrinsics',
+          value: '54,541,324',
+          icon: 'barchart',
         },
         {
-          "title": "Signed Extrinsics",
-          "value": "54,541,324",
-          "icon": "barchart"
-        }
-      ]
+          title: 'Signed Extrinsics',
+          value: '54,541,324',
+          icon: 'barchart',
+        },
+      ],
     },
     annotations: {
       category: COMPONENTS_CATEGORY.Display,
@@ -95,14 +95,13 @@ export default implementRuntimeComponent({
           displayedKeys: ['title'],
         },
         weight: 0,
-      })
+      }),
     }),
     state: Type.Object({
       isHover: Type.Boolean(),
     }),
     methods: {},
-    slots: {
-    },
+    slots: {},
     styleSlots: ['content'],
     events: ['onClick'],
   },
@@ -112,13 +111,19 @@ export default implementRuntimeComponent({
       <StyledGrid>
         {columns.map((column, index) => {
           const IconComponent = Icons[column.icon];
-          return (<StyledColumn key={`${column.title}${index}`}>
-            <IconComponent width="20" />
-            <StyledValue>
-              <StyledFont12 block fontColor="background02">{column.title}</StyledFont12>
-              <StyledFont14 block bold>{column.value}</StyledFont14>
-            </StyledValue>
-          </StyledColumn>);
+          return (
+            <StyledColumn key={`${column.title}${index}`}>
+              <IconComponent width="20" />
+              <StyledValue>
+                <StyledFont12 block fontColor="background02">
+                  {column.title}
+                </StyledFont12>
+                <StyledFont14 block bold>
+                  {column.value}
+                </StyledFont14>
+              </StyledValue>
+            </StyledColumn>
+          );
         })}
       </StyledGrid>
     </StyledModuleBox>

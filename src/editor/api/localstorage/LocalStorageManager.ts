@@ -65,7 +65,7 @@ export class LocalStorageManager {
       id: generateUUID(),
       created_at: dayjs().unix(),
       updated_at: dayjs().unix(),
-      ...widget
+      ...widget,
     };
     widgets.push(newWidget);
 
@@ -75,7 +75,7 @@ export class LocalStorageManager {
 
   duplicateWidgetInLs(id: string) {
     const widgets = this.getWidgetsFromLS();
-    const index = widgets.findIndex((widget) => widget.id === id);
+    const index = widgets.findIndex(widget => widget.id === id);
     const newWidget: WidgetItem = {
       id: generateUUID(),
       created_at: dayjs().unix(),
@@ -90,7 +90,7 @@ export class LocalStorageManager {
 
   saveWidgetInLs(id: string, app: Application) {
     const widgets = this.getWidgetsFromLS();
-    const index = widgets.findIndex((widget) => widget.id === id);
+    const index = widgets.findIndex(widget => widget.id === id);
     widgets[index].updated_at = dayjs().unix();
 
     localStorage.setItem(LocalStorageManager.WidgetsLSKey, JSON.stringify(widgets));
@@ -99,7 +99,7 @@ export class LocalStorageManager {
 
   updateWidgetNameInLs(id: string, name: string) {
     const widgets = this.getWidgetsFromLS();
-    const index = widgets.findIndex((widget) => widget.id === id);
+    const index = widgets.findIndex(widget => widget.id === id);
     widgets[index].name = name;
 
     localStorage.setItem(LocalStorageManager.WidgetsLSKey, JSON.stringify(widgets));
@@ -107,7 +107,7 @@ export class LocalStorageManager {
 
   deleteWidget(id: string) {
     const widgets = this.getWidgetsFromLS();
-    const rest = widgets.filter((widget) => id !== widget.id);
+    const rest = widgets.filter(widget => id !== widget.id);
     localStorage.setItem(LocalStorageManager.WidgetsLSKey, JSON.stringify(rest));
     localStorage.removeItem(id);
   }

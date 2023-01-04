@@ -49,7 +49,7 @@ const exampleProperties: Static<typeof ChartPropsSpec> = {
       symbol: 'circle',
       showSymbol: true,
       smooth: true,
-      activeAreaStyle: true
+      activeAreaStyle: true,
     },
     {
       name: 'Series 2',
@@ -61,7 +61,7 @@ const exampleProperties: Static<typeof ChartPropsSpec> = {
       symbol: 'circle',
       showSymbol: true,
       smooth: true,
-      activeAreaStyle: true
+      activeAreaStyle: true,
     },
   ],
   color: [],
@@ -87,13 +87,7 @@ export const ChartLine = implementRuntimeComponent({
     events: ['onClick'],
   },
 })(props => {
-  const {
-    yAxis,
-    xAxis,
-    series,
-    color,
-    ...cProps
-  } = getComponentProps(props);
+  const { yAxis, xAxis, series, color, ...cProps } = getComponentProps(props);
   const { elementRef, customStyle, callbackMap } = props;
   const theme = useTheme();
   const [chart, SetChart] = useState<echarts.ECharts>();
@@ -113,7 +107,7 @@ export const ChartLine = implementRuntimeComponent({
       },
       (option, key, path) => {
         const value = option[key];
-        if (value !== undefined && (value as unknown as string !== '')) {
+        if (value !== undefined && (value as unknown as string) !== '') {
           const strPath = path.join('.');
           const checkedEmptyArrayProperties = ['color', 'legend.data'];
           if (checkedEmptyArrayProperties.includes(strPath) && Array.isArray(value)) {
@@ -130,10 +124,10 @@ export const ChartLine = implementRuntimeComponent({
 
     return {
       grid: {
-        top: "30",
-        left: "50",
-        right: "20",
-        bottom: "80",
+        top: '30',
+        left: '50',
+        right: '20',
+        bottom: '80',
         containLabel: false,
       },
       // https://echarts.apache.org/en/option.html#dataZoom
@@ -147,16 +141,16 @@ export const ChartLine = implementRuntimeComponent({
         },
       ],
       tooltip: {
-        trigger: "axis",
+        trigger: 'axis',
         triggerOn: 'mousemove',
         textStyle: {
           color: theme.colors.primary,
         },
         padding: 10,
         backgroundColor: theme.colors.contrast,
-        extraCssText: "box-shadow: rgb(0 0 0 / 20%) 1px 2px 10px;",
+        extraCssText: 'box-shadow: rgb(0 0 0 / 20%) 1px 2px 10px;',
       },
-      xAxis: filterOption.xAxis.map((item) => {
+      xAxis: filterOption.xAxis.map(item => {
         return {
           // type: "category",
           show: true,
@@ -177,17 +171,17 @@ export const ChartLine = implementRuntimeComponent({
           axisTick: {
             show: false,
           },
-          ...item
+          ...item,
         };
       }),
-      yAxis: filterOption.yAxis.map((item) => {
+      yAxis: filterOption.yAxis.map(item => {
         return {
           show: true,
           splitLine: {
             show: true,
             lineStyle: {
               width: 1,
-              color: "#E7EAF3",
+              color: '#E7EAF3',
             },
           },
           axisLine: {
@@ -198,12 +192,11 @@ export const ChartLine = implementRuntimeComponent({
               width: 3,
             },
           },
-          axisLabel: {
-          },
+          axisLabel: {},
           axisTick: {
             show: false,
           },
-          ...item
+          ...item,
         };
       }),
       series: filterOption.series.map((item, index) => {
@@ -220,21 +213,25 @@ export const ChartLine = implementRuntimeComponent({
             disabled: true,
           },
           ...item,
-          areaStyle: item.activeAreaStyle ? {
-            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-              {
-                offset: 0,
-                color: (filterOption.color || [])[index] || theme.chain.color || theme.colors.primary,
-              },
-              {
-                offset: 1,
-                color: '#ffffff'
-              },
-            ]),
-          } : null,
+          areaStyle: item.activeAreaStyle
+            ? {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  {
+                    offset: 0,
+                    color: (filterOption.color || [])[index] || theme.chain.color || theme.colors.primary,
+                  },
+                  {
+                    offset: 1,
+                    color: '#ffffff',
+                  },
+                ]),
+              }
+            : null,
         };
       }),
-      color: filterOption.color ? filterOption.color : filterOption.series.map(() => theme.chain.color || theme.colors.primary)
+      color: filterOption.color
+        ? filterOption.color
+        : filterOption.series.map(() => theme.chain.color || theme.colors.primary),
     };
 
     // const uiOptions = getAreaChartOptions(theme);

@@ -2,7 +2,7 @@ import React, { useCallback, useRef, useEffect, RefObject } from 'react';
 
 interface Props {
   onResize: (event: Event) => void;
-};
+}
 
 //
 // I used this as reference
@@ -30,7 +30,7 @@ const ElementResizeListener: React.FC<Props> = ({ onResize }) => {
     if (obj && obj.contentDocument && obj.contentDocument.defaultView) {
       obj.contentDocument.defaultView.addEventListener('resize', _onResize);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -41,14 +41,15 @@ const ElementResizeListener: React.FC<Props> = ({ onResize }) => {
         obj.contentDocument.defaultView.removeEventListener('resize', _onResize);
       }
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     // eslint-disable-next-line jsx-a11y/alt-text
     <object
       onLoad={onLoad}
-      ref={objectRef} tabIndex={-1}
+      ref={objectRef}
+      tabIndex={-1}
       type={'text/html'}
       data={'about:blank'}
       title={''}

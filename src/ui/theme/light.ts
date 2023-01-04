@@ -6,7 +6,7 @@ const lightTheme: DefaultTheme = {
   isDark: false,
   colors: lightColors,
   chain: chain.light,
-  mediaQueries
+  mediaQueries,
 };
 
 export default lightTheme;

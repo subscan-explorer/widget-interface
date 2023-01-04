@@ -15,12 +15,11 @@ import {
 import { LocalStorageManager, WidgetItem } from '../../api/localstorage/LocalStorageManager';
 import { ColorButton } from '../ColorButton';
 
-
 interface Props extends BareProps {
   widget: WidgetItem;
-  onUpdated?: () => void
-  isOpen: boolean
-  onClose(): void
+  onUpdated?: () => void;
+  isOpen: boolean;
+  onClose(): void;
 }
 
 const CreateApplication: React.FC<Props> = ({ widget, onUpdated, isOpen, onClose }) => {
@@ -29,7 +28,7 @@ const CreateApplication: React.FC<Props> = ({ widget, onUpdated, isOpen, onClose
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
 
-  const nameOnChangeHandler = useCallback((event) => {
+  const nameOnChangeHandler = useCallback(event => {
     SetName(event.target.value);
   }, []);
 
@@ -40,12 +39,7 @@ const CreateApplication: React.FC<Props> = ({ widget, onUpdated, isOpen, onClose
   }, [lsManager, widget.id, name, onUpdated, onClose]);
 
   return (
-    <Modal
-      initialFocusRef={initialRef}
-      finalFocusRef={finalRef}
-      isOpen={isOpen}
-      onClose={onClose}
-    >
+    <Modal initialFocusRef={initialRef} finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Update your widget</ModalHeader>
@@ -53,7 +47,7 @@ const CreateApplication: React.FC<Props> = ({ widget, onUpdated, isOpen, onClose
         <ModalBody pb={6}>
           <FormControl>
             <FormLabel>Name</FormLabel>
-            <Input ref={initialRef} value={name} onChange={nameOnChangeHandler} placeholder='Widget Name' />
+            <Input ref={initialRef} value={name} onChange={nameOnChangeHandler} placeholder="Widget Name" />
           </FormControl>
         </ModalBody>
 

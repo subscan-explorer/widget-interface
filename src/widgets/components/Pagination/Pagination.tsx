@@ -83,7 +83,7 @@ export default implementRuntimeComponent({
     displayName: 'Pagination',
     exampleProperties,
     annotations: {
-      category: COMPONENTS_CATEGORY.Display
+      category: COMPONENTS_CATEGORY.Display,
     },
   },
   spec: {
@@ -95,8 +95,7 @@ export default implementRuntimeComponent({
     events: ['onChange'],
   },
 })(props => {
-  const { defaultCurrent, updateWhenDefaultValueChanges, ...cProps } =
-    getComponentProps(props);
+  const { defaultCurrent, updateWhenDefaultValueChanges, ...cProps } = getComponentProps(props);
   const { elementRef, customStyle, mergeState, callbackMap } = props;
 
   const [current, setCurrent] = useStateValue(

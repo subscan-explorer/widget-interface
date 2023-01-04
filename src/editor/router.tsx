@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import Editor from './Editor';
@@ -17,8 +16,8 @@ const routers: RouteObject[] = [
     children: [
       {
         element: <Editor />,
-        path: ":appId",
-        id: "editor",
+        path: ':appId',
+        id: 'editor',
         loader: async ({ params }) => {
           const lsManager = new LocalStorageManager();
 
@@ -30,7 +29,7 @@ const routers: RouteObject[] = [
                 return {
                   application: lsManager.getAppFromLS(params.appId),
                   id: params.appId,
-                  name: ''
+                  name: '',
                 };
               }
             }
@@ -38,11 +37,10 @@ const routers: RouteObject[] = [
             console.log('/editor loader', error);
             return {};
           }
-        }
-      }
-    ]
+        },
+      },
+    ],
   },
-
 ];
 
 if (CHANNEL !== 'subscan') {

@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { BareProps } from 'types';
@@ -36,11 +34,15 @@ const StyledContainer = styled.div<{ variant?: Props['variant'] }>`
   align-items: center;
   padding: 5px 20px;
   border-radius: ${({ theme }) => theme.chain.borderRadius};
-  ${({variant}) => styleVariants[variant || 'primary']}
+  ${({ variant }) => styleVariants[variant || 'primary']}
 `;
 
 const Tag: React.FC<Props> = ({ className, text, variant }) => {
-  return <StyledContainer className={className} variant={variant} >{text}</StyledContainer>;
+  return (
+    <StyledContainer className={className} variant={variant}>
+      {text}
+    </StyledContainer>
+  );
 };
 
 export default Tag;

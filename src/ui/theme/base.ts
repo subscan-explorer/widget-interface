@@ -16,14 +16,14 @@ export const mediaQueries: MediaQueries = {
   lg: `@media screen and (min-width: ${breakpointMap.lg}px)`,
   xl: `@media screen and (min-width: ${breakpointMap.xl}px)`,
   xxl: `@media screen and (min-width: ${breakpointMap.xxl}px)`,
-  nav: `@media screen and (min-width: ${breakpointMap.lg}px)`
+  nav: `@media screen and (min-width: ${breakpointMap.lg}px)`,
 };
 
 export const radii = {
-  small: "4px",
-  default: "16px",
-  card: "24px",
-  circle: "50%",
+  small: '4px',
+  default: '16px',
+  card: '24px',
+  circle: '50%',
 };
 
 export const chain: {
@@ -37,7 +37,7 @@ export const chain: {
   light: {
     color: '#FF0083',
     borderRadius: '4px',
-  }
+  },
 };
 
 export type ChainStyles = typeof chain;

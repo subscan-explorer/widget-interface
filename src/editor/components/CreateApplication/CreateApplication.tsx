@@ -18,7 +18,6 @@ import {
 import { DEFAULT_APP_TEMPLATE } from 'config/constants';
 import { useSaveAppConfigs } from '../../api/subscan/Services';
 
-
 export interface Props extends BareProps {
   onCreated?: () => void;
 }
@@ -31,11 +30,11 @@ const CreateApplication: React.FC<Props> = ({ onCreated }) => {
   const finalRef = React.useRef(null);
   const { action, loading } = useSaveAppConfigs();
 
-  const nameOnChangeHandler = useCallback((event) => {
+  const nameOnChangeHandler = useCallback(event => {
     SetName(event.target.value);
   }, []);
 
-  const networkIdOnChangeHandler = useCallback((event) => {
+  const networkIdOnChangeHandler = useCallback(event => {
     SetNetworkId(event.target.value);
   }, []);
 
@@ -51,14 +50,11 @@ const CreateApplication: React.FC<Props> = ({ onCreated }) => {
 
   return (
     <>
-      <Button onClick={onOpen} colorScheme='teal' size='sm'>Create Empty Application</Button>
+      <Button onClick={onOpen} colorScheme="teal" size="sm">
+        Create Empty Application
+      </Button>
 
-      <Modal
-        initialFocusRef={initialRef}
-        finalFocusRef={finalRef}
-        isOpen={isOpen}
-        onClose={onClose}
-      >
+      <Modal initialFocusRef={initialRef} finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Create your application</ModalHeader>
@@ -66,12 +62,12 @@ const CreateApplication: React.FC<Props> = ({ onCreated }) => {
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>Name</FormLabel>
-              <Input ref={initialRef} value={name} onChange={nameOnChangeHandler} placeholder='Application Name' />
+              <Input ref={initialRef} value={name} onChange={nameOnChangeHandler} placeholder="Application Name" />
             </FormControl>
 
             <FormControl>
               <FormLabel>Network ID</FormLabel>
-              <Input value={networkId} onChange={networkIdOnChangeHandler} placeholder='[1,2,3,4]' />
+              <Input value={networkId} onChange={networkIdOnChangeHandler} placeholder="[1,2,3,4]" />
             </FormControl>
 
             <FormControl mt={4}>
@@ -81,7 +77,7 @@ const CreateApplication: React.FC<Props> = ({ onCreated }) => {
           </ModalBody>
 
           <ModalFooter>
-            <Button isLoading={loading} colorScheme='teal' mr={3} onClick={createApplication}>
+            <Button isLoading={loading} colorScheme="teal" mr={3} onClick={createApplication}>
               Create
             </Button>
             <Button onClick={onClose}>Cancel</Button>
