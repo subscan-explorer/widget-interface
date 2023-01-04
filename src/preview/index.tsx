@@ -4,7 +4,7 @@ import { light, dark } from 'ui/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from 'ui/chakraTheme';
 import BigNumber from 'bignumber.js';
-import { initSunmaoUI } from '@subscan/widget-runtime';
+import { initWidgetUI } from '@subscan/widget-runtime';
 import runtimeConfig from 'config/runtime';
 import { type Application } from '@subscan/widget-core';
 import '../chakraCSSReset.css';
@@ -26,7 +26,7 @@ const Preview: React.FC<{ options: Application; isDark?: boolean; chainStyles?: 
   isDark,
   chainStyles,
 }) => {
-  const { App } = initSunmaoUI(runtimeConfig);
+  const { App } = initWidgetUI(runtimeConfig);
   const initTheme = useMemo(() => {
     const defaultStyles = isDark ? dark : light;
     if (chainStyles && chainStyles?.dark && chainStyles?.light) {

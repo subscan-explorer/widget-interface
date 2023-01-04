@@ -12,7 +12,6 @@ import { filterProperties } from './object';
 import { useTheme } from 'styled-components';
 import { LineChartPropsSpec } from './types/Line';
 
-// https://github.com/webzard-io/sunmao-ui-echarts-lib
 const ChartPropsSpec = Type.Object({
   ...LineChartPropsSpec,
 });

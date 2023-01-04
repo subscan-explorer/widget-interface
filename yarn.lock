@@ -4721,14 +4721,14 @@
     "@styled-system/core" "^5.1.2"
     "@styled-system/css" "^5.1.5"
 
-"@subscan/widget-chakra-ui-lib@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@subscan/widget-chakra-ui-lib/-/widget-chakra-ui-lib-1.0.2.tgz#569fa23b101c8e145ec0590008fb574ba6458288"
-  integrity sha512-JWqbEWZzrRXL56jmKuYxjJRGLc6PKjlzfwx+P8ZcEgOJHvohh+KocEB9GuWSNsSQ9Jqp2aOmub38vTjrz7+sXw==
+"@subscan/widget-chakra-ui-lib@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@subscan/widget-chakra-ui-lib/-/widget-chakra-ui-lib-1.0.3.tgz#808827212bf5691a11b4ade6e1ea2dcd12d2c98a"
+  integrity sha512-1yLFTXTt9c+3eTua2kPS+hw1HfyIrzN31ZJPRxZD8UlSHqwWiJ04Ml3y4zD29dkquqbBDAZdvid55Jrc8QgTzA==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
-    "@subscan/widget-editor-sdk" "^1.0.1"
+    "@subscan/widget-editor-sdk" "^1.0.2"
     chakra-react-select "^1.3.2"
     framer-motion "^3.10.6"
 
@@ -4737,17 +4737,17 @@
   resolved "https://registry.npmjs.org/@subscan/widget-core/-/widget-core-1.0.0.tgz#1b9033c30463b30bd4410e6948fbf2eb49249406"
   integrity sha512-DV3Wjvj9VLpTtoKI4sJQd2JCXUfSS3dgr+lCehxiKiPCU2HUUpoQmZk+07mVq/4eUpZiUKZlQUPahKfSe2+KMQ==
 
-"@subscan/widget-editor-sdk@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/@subscan/widget-editor-sdk/-/widget-editor-sdk-1.0.1.tgz#4690ec5414081f9fa803ebedb2865901fdd49bc1"
-  integrity sha512-a+aJYujaLPXG5Qk2bS+1TcRTmJ/hcAq3mfIAMvqtX9bGooYtZ6msMUwDxSa88k/p70x+pqBgiyHCCP+bfAeVow==
+"@subscan/widget-editor-sdk@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@subscan/widget-editor-sdk/-/widget-editor-sdk-1.0.2.tgz#0ba5664f930dc6200655aacd5e3c1f52c029a86b"
+  integrity sha512-oObGMumcl3Hbsfk0XZBr2s4RgVCG/C0aqUbtWGSr17pdjZvrYScR0XnCK6UDhAwfZmraJ/gipIblCcPd9SKDBg==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
     "@emotion/css" "^11.7.1"
     "@sinclair/typebox" "^0.21.2"
     "@subscan/widget-core" "^1.0.0"
-    "@subscan/widget-runtime" "^1.0.1"
+    "@subscan/widget-runtime" "^1.0.2"
     "@subscan/widget-shared" "^1.0.0"
     ajv "^8.8.2"
     codemirror "^5.65.9"
@@ -4762,10 +4762,10 @@
     react-color "^2.19.3"
     tern "^0.24.3"
 
-"@subscan/widget-editor@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@subscan/widget-editor/-/widget-editor-1.0.2.tgz#c9024c01b340e4331cd28bcf17a7a6cd1257a199"
-  integrity sha512-1pdoFyw75+8Q+A9DsTIlfpwswqTNJuPkW/h/Txjpen0CkTfKdZu2vDAfud9iQIBThqBvvkPctNfbBg30KFhgyw==
+"@subscan/widget-editor@1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@subscan/widget-editor/-/widget-editor-1.0.3.tgz#a7aeaf57d88b7ba4316852b905446c82a6dfa112"
+  integrity sha512-ihn3SBb6vFubp33+8YgzRYvUST11Z8gKMbDwitmVxpid139Y+Px0S1SLAvh8AuUo7/IGm7krPvg7u29MSQEUFw==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
@@ -4775,10 +4775,10 @@
     "@graphiql/toolkit" "^0.6.1"
     "@optum/json-schema-editor" "^2.1.0"
     "@sinclair/typebox" "^0.21.2"
-    "@subscan/widget-chakra-ui-lib" "^1.0.2"
+    "@subscan/widget-chakra-ui-lib" "^1.0.3"
     "@subscan/widget-core" "^1.0.0"
-    "@subscan/widget-editor-sdk" "^1.0.1"
-    "@subscan/widget-runtime" "^1.0.1"
+    "@subscan/widget-editor-sdk" "^1.0.2"
+    "@subscan/widget-runtime" "^1.0.2"
     "@subscan/widget-shared" "^1.0.0"
     acorn "^8.7.0"
     acorn-loose "^8.3.0"
@@ -4805,10 +4805,10 @@
     react-resizable "^3.0.4"
     scroll-into-view "^1.16.2"
 
-"@subscan/widget-runtime@1.0.1", "@subscan/widget-runtime@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/@subscan/widget-runtime/-/widget-runtime-1.0.1.tgz#d0c5661f42c9ff06c146f502473092963abda63c"
-  integrity sha512-KWgUOu1r0klGq/wp2XGfL17V4ajRLjXp3xlCoHOeH+u4VmYLo9cJgCQoOVeJDGo9ToenSxzTLUu4PqBlr/5iCw==
+"@subscan/widget-runtime@1.0.2", "@subscan/widget-runtime@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@subscan/widget-runtime/-/widget-runtime-1.0.2.tgz#430d8348469254e9a92776747654e8ad98dd08b9"
+  integrity sha512-OyR2Yww8KEqmDjKT3XmkHfMQFPaCyE996K3CsUgnsHJ8aqaEH+jHCeSOilGyw2RFQNb+lf+4Ycs1COVldmt8Tw==
   dependencies:
     "@emotion/css" "^11.7.1"
     "@sinclair/typebox" "^0.21.2"

@@ -1,4 +1,4 @@
-import { initSunmaoUIEditor } from '@subscan/widget-editor';
+import { initWidgetUIEditor } from '@subscan/widget-editor';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { BareProps, ProApiConfig } from 'types';
@@ -8,6 +8,7 @@ import BigNumber from 'bignumber.js';
 import { useRouteLoaderData } from 'react-router-dom';
 import { LocalStorageManager } from './api/localstorage/LocalStorageManager';
 import { saveConfig } from './api/subscan/Services';
+import { Application, Module } from '@subscan/widget-core';
 export { default as Record } from './Record';
 export { default as Management } from './Management';
 
@@ -29,12 +30,12 @@ const Editor: React.FC<BareProps> = ({ className }) => {
   console.log('widget data:', config);
   const CHANNEL = process.env.REACT_APP_CHANNEL;
 
-  const { Editor } = initSunmaoUIEditor({
+  const { Editor } = initWidgetUIEditor({
     defaultApplication: config.application,
     defaultModules: lsManager.getModulesFromLS(),
     runtimeProps: runtimeConfig,
     storageHandler: {
-      onSaveApp(app) {
+      onSaveApp(app: Application) {
         if (CHANNEL === 'subscan') {
           saveConfig({
             name: config.name,
@@ -45,7 +46,7 @@ const Editor: React.FC<BareProps> = ({ className }) => {
           lsManager.saveWidgetInLs(config.id.toString(), app);
         }
       },
-      onSaveModules(modules) {
+      onSaveModules(modules: Module[]) {
         lsManager.saveModulesInLS(modules);
       },
     },
