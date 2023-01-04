@@ -118,41 +118,41 @@ type Optional<T extends Record<string, TSchema>> = {
   [P in keyof T]: TOptional<T[P]>;
 };
 
-export const ChartPropsSpec = {
-  ...BaseChartSpec,
-  series: Type.Array(
-    Type.Object({
-      // type: StringUnion(["line", "bar"], {
-      //   title: "Type",
-      // }),
-      ...SeriesSpec,
-      // line
-      ...(Object.keys(LineSpecObject).reduce((result, key) => {
-        result[key] = Type.Optional({
-          ...LineSpecObject[key as keyof typeof LineSpecObject],
-          conditions: LineConditions,
-        });
+// export const ChartPropsSpec = {
+//   ...BaseChartSpec,
+//   series: Type.Array(
+//     Type.Object({
+//       // type: StringUnion(["line", "bar"], {
+//       //   title: "Type",
+//       // }),
+//       ...SeriesSpec,
+//       // line
+//       ...(Object.keys(LineSpecObject).reduce((result, key) => {
+//         result[key] = Type.Optional({
+//           ...LineSpecObject[key as keyof typeof LineSpecObject],
+//           conditions: LineConditions,
+//         });
 
-        return result;
-      }, {} as Record<string, any>) as Optional<typeof LineSpecObject>),
-      // bar
-      ...(Object.keys(BarSpecObject).reduce((result, key) => {
-        result[key] = Type.Optional({
-          ...BarSpecObject[key as keyof typeof BarSpecObject],
-          conditions: BarConditions,
-        });
+//         return result;
+//       }, {} as Record<string, any>) as Optional<typeof LineSpecObject>),
+//       // bar
+//       ...(Object.keys(BarSpecObject).reduce((result, key) => {
+//         result[key] = Type.Optional({
+//           ...BarSpecObject[key as keyof typeof BarSpecObject],
+//           conditions: BarConditions,
+//         });
 
-        return result;
-      }, {} as Record<string, any>) as Optional<typeof BarSpecObject>),
-    }),
-    {
-      title: "Series",
-      category: "Series",
-      widget: "core/v1/array",
-      widgetOptions: {
-        displayedKeys: ["name"],
-      },
-    }
-  ),
-};
+//         return result;
+//       }, {} as Record<string, any>) as Optional<typeof BarSpecObject>),
+//     }),
+//     {
+//       title: "Series",
+//       category: "Series",
+//       widget: "core/v1/array",
+//       widgetOptions: {
+//         displayedKeys: ["name"],
+//       },
+//     }
+//   ),
+// };
 

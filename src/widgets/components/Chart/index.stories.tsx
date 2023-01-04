@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Preview from 'preview';
 import { initChainStyles } from 'config/stylebook';
 
-const AppOptions: Application = {
+const LineAppOptions: Application = {
   "version": "widget/v1",
   "kind": "Application",
   "metadata": {
@@ -18,6 +18,7 @@ const AppOptions: Application = {
         "properties": {
           "xAxis": [
             {
+              "type": "category",
               "data": [
                 "Dimension 1",
                 "Dimension 2",
@@ -28,12 +29,9 @@ const AppOptions: Application = {
           ],
           "yAxis": [
             {
-              "data": [
-                "12341234",
-                "2345"
-              ],
-              "position": "left",
-              "type": "value"
+              "type": "value",
+              "data": [],
+              "position": "left"
             }
           ],
           "series": [
@@ -51,7 +49,7 @@ const AppOptions: Application = {
               "symbol": "circle",
               "showSymbol": true,
               "smooth": true,
-              "areaStyle": true
+              "activeAreaStyle": true
             },
             {
               "name": "Series 2",
@@ -67,10 +65,47 @@ const AppOptions: Application = {
               "symbol": "circle",
               "showSymbol": true,
               "smooth": true,
-              "areaStyle": true
+              "activeAreaStyle": true
             }
           ],
           "color": []
+        },
+        "traits": []
+      }
+    ]
+  }
+};
+
+
+const PieAppOptions: Application = {
+  "version": "widget/v1",
+  "kind": "Application",
+  "metadata": {
+    "name": "subscan widget"
+  },
+  "spec": {
+    "components": [
+      {
+        "id": "chartpie1",
+        "type": "core/v1/chartpie",
+        "properties": {
+          "series": {
+            "data": [
+              {
+                "value": 30,
+                "name": "Validator"
+              },
+              {
+                "value": 60,
+                "name": "Nominator"
+              }
+            ]
+          },
+          "color": [
+            "#E90979",
+            "#F081B9",
+            "#d7d7d7"
+          ]
         },
         "traits": []
       }
@@ -85,9 +120,17 @@ export default {
 
 const Template: ComponentStory<typeof Preview> = (args) => <Preview {...args} />;
 
-export const Index = Template.bind({});
+export const LineChart = Template.bind({});
 
-Index.args = {
-  options: AppOptions,
+LineChart.args = {
+  options: LineAppOptions,
+  ...initChainStyles
+};
+
+
+export const PieChart = Template.bind({});
+
+PieChart.args = {
+  options: PieAppOptions,
   ...initChainStyles
 };

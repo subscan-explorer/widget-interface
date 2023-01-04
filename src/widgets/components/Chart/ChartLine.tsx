@@ -7,13 +7,14 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import './Init';
 import * as echarts from 'echarts/core';
 import { ElementResizeListener } from 'components';
-import { ChartPropsSpec as BaseChartPropsSpec } from './types/Chart';
-import { filterProperties, isArray } from './object';
+// import { ChartPropsSpec as BaseChartPropsSpec } from './types/Chart';
+import { filterProperties } from './object';
 import { useTheme } from 'styled-components';
+import { LineChartPropsSpec } from './types/Line';
 
 // https://github.com/webzard-io/sunmao-ui-echarts-lib
 const ChartPropsSpec = Type.Object({
-  ...BaseChartPropsSpec,
+  ...LineChartPropsSpec,
 });
 
 const exampleProperties: Static<typeof ChartPropsSpec> = {
@@ -48,7 +49,7 @@ const exampleProperties: Static<typeof ChartPropsSpec> = {
       symbol: 'circle',
       showSymbol: true,
       smooth: true,
-      areaStyle: true
+      activeAreaStyle: true
     },
     {
       name: 'Series 2',
@@ -60,7 +61,7 @@ const exampleProperties: Static<typeof ChartPropsSpec> = {
       symbol: 'circle',
       showSymbol: true,
       smooth: true,
-      areaStyle: true
+      activeAreaStyle: true
     },
   ],
   color: [],
@@ -71,10 +72,10 @@ export const ChartLine = implementRuntimeComponent({
   metadata: {
     ...FALLBACK_METADATA,
     name: 'chart',
-    displayName: 'Chart Line',
+    displayName: 'Line Chart',
     exampleProperties,
     annotations: {
-      category: COMPONENTS_CATEGORY.Display,
+      category: COMPONENTS_CATEGORY.Chart,
     },
   },
   spec: {
@@ -219,7 +220,7 @@ export const ChartLine = implementRuntimeComponent({
             disabled: true,
           },
           ...item,
-          areaStyle: item.areaStyle ? {
+          areaStyle: item.activeAreaStyle ? {
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
               {
                 offset: 0,

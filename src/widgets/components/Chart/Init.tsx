@@ -5,7 +5,7 @@ import {
   BarSeriesOption,
   LineChart,
   LineSeriesOption,
-  
+  PieChart,
 } from 'echarts/charts';
 import {
   TitleComponent,
@@ -22,6 +22,7 @@ import {
   TransformComponent,
   VisualMapComponent,
   DataZoomComponent,
+  LegendComponent,
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
@@ -45,9 +46,11 @@ echarts.use([
   TransformComponent,
   BarChart,
   LineChart,
+  PieChart,
   LabelLayout,
   UniversalTransition,
   CanvasRenderer,
   VisualMapComponent,
-  DataZoomComponent
+  DataZoomComponent,
+  LegendComponent
 ]);
