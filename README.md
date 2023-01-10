@@ -1,8 +1,25 @@
 # Subscan Widget App
 
-✨ This is a Subscan Widget Platform.
+✨ Subscan Widget App is a platform to generate and configure data views by widgets. It has rich built-in widgets and support commonly used data sources, such as HTTP API, GraphQL, State, LocalStorage, etc.
 
 ![npm](https://img.shields.io/npm/v/@subscan/widget-app?style=flat-square)
+## Show Case
+
+Take the Table component as an example:
+
+#### 1.Drag the Table component into the editing canvas
+
+<p>
+  <img src="./docs/1_add.gif" style="width:800px";>
+</p>
+
+#### 2.Configure the Table in inspect tab
+
+<p>
+  <img src="./docs/2_configure.png" style="width:800px";>
+  <img src="./docs/2_column.png" style="width:800px";>
+</p>
+
 ## Struct
 
 ```
