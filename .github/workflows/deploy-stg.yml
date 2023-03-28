@@ -34,7 +34,7 @@ jobs:
           project_name: subscan-pro-lowcode
           dist_path: build
           script_build: yarn build
-          node_cache: yarn
+          enable_cache: true
           alias_domain: subscan-pro-lowcode-staging
 
       - uses: marocchino/sticky-pull-request-comment@v2

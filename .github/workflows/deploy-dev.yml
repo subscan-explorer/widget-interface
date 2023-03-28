@@ -33,7 +33,7 @@ jobs:
           project_name: subscan-pro-lowcode
           dist_path: build
           script_build: yarn build:local
-          node_cache: yarn
+          enable_cache: true
 
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
