@@ -17,6 +17,8 @@ jobs:
           persist-credentials: false
           ssh-key: "${{ secrets.ITERING_ACTIONS_DEPLOY_KEY }}"
 
+      - run: rm -rf vercel.json && mv vercel-local.json vercel.json
+
       - name: Cache multiple paths
         uses: actions/cache@v3
         with:
@@ -34,6 +36,7 @@ jobs:
           dist_path: build
           script_build: yarn build:local
           enable_cache: true
+          cache_type: yarn
 
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
