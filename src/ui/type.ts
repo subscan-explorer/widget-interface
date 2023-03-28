@@ -12,3 +12,10 @@ export type ChainColors = {
   color?: string;
   borderRadius?: string;
 };
+
+export type Radii = {
+  small: string;
+  default: string;
+  card: string;
+  circle: string;
+};

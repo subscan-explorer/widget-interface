@@ -7,3 +7,4 @@ export { Icon } from './Icon';
 export { Tabs } from './Tabs';
 export { TimeLine } from './TimeLine';
 export { ChartLine, ChartPie } from './Chart';
+export { NftAlbum } from './NftAlbum';

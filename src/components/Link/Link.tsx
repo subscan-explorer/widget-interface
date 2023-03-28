@@ -12,6 +12,7 @@ const StyledLink = styled(StyledFont14)<LinkProps>`
   color: ${({ theme }) => theme.colors.link};
   align-items: center;
   display: flex;
+  display: initial;
   width: fit-content;
   cursor: pointer;
   &:hover {
