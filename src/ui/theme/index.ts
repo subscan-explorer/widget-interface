@@ -1,5 +1,5 @@
 import { Colors } from './colors';
-import { MediaQueries, ChainColors } from '../type';
+import { MediaQueries, ChainColors, Radii } from '../type';
 export { default as dark } from './dark';
 export { default as light } from './light';
 
@@ -8,6 +8,7 @@ interface SubscanTheme {
   colors: Colors;
   chain: ChainColors;
   mediaQueries: MediaQueries;
+  radii: Radii;
 }
 
 declare module 'styled-components' {

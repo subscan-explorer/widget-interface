@@ -4721,34 +4721,34 @@
     "@styled-system/core" "^5.1.2"
     "@styled-system/css" "^5.1.5"
 
-"@subscan/widget-chakra-ui-lib@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/@subscan/widget-chakra-ui-lib/-/widget-chakra-ui-lib-1.0.3.tgz#808827212bf5691a11b4ade6e1ea2dcd12d2c98a"
-  integrity sha512-1yLFTXTt9c+3eTua2kPS+hw1HfyIrzN31ZJPRxZD8UlSHqwWiJ04Ml3y4zD29dkquqbBDAZdvid55Jrc8QgTzA==
+"@subscan/widget-chakra-ui-lib@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.npmjs.org/@subscan/widget-chakra-ui-lib/-/widget-chakra-ui-lib-1.0.6.tgz#c453b2667adb38546898662d363e5738b3317508"
+  integrity sha512-2IHsbyepz0bSJzJXf1X+k1H0E9ECGgp93QXRYccoXuH0NYxthxmTRWIkO8lgg2/OAv5j3/8oOHymSaiHT+rFxQ==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
-    "@subscan/widget-editor-sdk" "^1.0.2"
+    "@subscan/widget-editor-sdk" "^1.0.5"
     chakra-react-select "^1.3.2"
     framer-motion "^3.10.6"
 
-"@subscan/widget-core@1.0.0", "@subscan/widget-core@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@subscan/widget-core/-/widget-core-1.0.0.tgz#1b9033c30463b30bd4410e6948fbf2eb49249406"
-  integrity sha512-DV3Wjvj9VLpTtoKI4sJQd2JCXUfSS3dgr+lCehxiKiPCU2HUUpoQmZk+07mVq/4eUpZiUKZlQUPahKfSe2+KMQ==
+"@subscan/widget-core@1.0.3", "@subscan/widget-core@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@subscan/widget-core/-/widget-core-1.0.3.tgz#6d003fa3f398a1bd9c50468dc21cf6d0867d8e68"
+  integrity sha512-d8LAoDTOb1VLy0r+8FJsvBGIeZKU3moKH0Al5eszIT3xep5nAJ7LY0aPUecpdF7yPTFqZGSNuJYWv4Bk+3rvwA==
 
-"@subscan/widget-editor-sdk@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@subscan/widget-editor-sdk/-/widget-editor-sdk-1.0.2.tgz#0ba5664f930dc6200655aacd5e3c1f52c029a86b"
-  integrity sha512-oObGMumcl3Hbsfk0XZBr2s4RgVCG/C0aqUbtWGSr17pdjZvrYScR0XnCK6UDhAwfZmraJ/gipIblCcPd9SKDBg==
+"@subscan/widget-editor-sdk@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/@subscan/widget-editor-sdk/-/widget-editor-sdk-1.0.5.tgz#c0e393dbdba19b1dd3cbba8acba65da26d892d69"
+  integrity sha512-ZD15/JrfZSRpk2qdBVhuoUOpml/iLOllH1TBEG1KFkWDL5qAWh9G1fhmPDza+v3dsKzPT6oKbq1ARWcZuvKGsQ==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
     "@emotion/css" "^11.7.1"
     "@sinclair/typebox" "^0.21.2"
-    "@subscan/widget-core" "^1.0.0"
-    "@subscan/widget-runtime" "^1.0.2"
-    "@subscan/widget-shared" "^1.0.0"
+    "@subscan/widget-core" "^1.0.3"
+    "@subscan/widget-runtime" "^1.0.5"
+    "@subscan/widget-shared" "^1.0.3"
     ajv "^8.8.2"
     codemirror "^5.65.9"
     formik "^2.2.9"
@@ -4762,10 +4762,10 @@
     react-color "^2.19.3"
     tern "^0.24.3"
 
-"@subscan/widget-editor@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/@subscan/widget-editor/-/widget-editor-1.0.4.tgz#2e5b5234db5e44179fb7873e6d24f39477552867"
-  integrity sha512-PqwWZPUmTIfEWBmiyN9J+th8Z6AAlZi/Tc0BH+cPoh3tz2e+Zp0fSUqtdV8GpUtqCRnMFdubET5GP3Q88lnCZg==
+"@subscan/widget-editor@1.0.7":
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/@subscan/widget-editor/-/widget-editor-1.0.7.tgz#1f34800edda00b5a9278bd8c66b3ae140b2503d3"
+  integrity sha512-2LrDUShc7qkya+8CryOPENjPmKvkXVYhzSvKaZiiwIk6HNdTaLgBrMo81sNzXDOcBltuLqFZWLDUTZxAoqdWFA==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.7.1"
@@ -4775,11 +4775,11 @@
     "@graphiql/toolkit" "^0.6.1"
     "@optum/json-schema-editor" "^2.1.0"
     "@sinclair/typebox" "^0.21.2"
-    "@subscan/widget-chakra-ui-lib" "^1.0.3"
-    "@subscan/widget-core" "^1.0.0"
-    "@subscan/widget-editor-sdk" "^1.0.2"
-    "@subscan/widget-runtime" "^1.0.2"
-    "@subscan/widget-shared" "^1.0.0"
+    "@subscan/widget-chakra-ui-lib" "^1.0.6"
+    "@subscan/widget-core" "^1.0.3"
+    "@subscan/widget-editor-sdk" "^1.0.5"
+    "@subscan/widget-runtime" "^1.0.5"
+    "@subscan/widget-shared" "^1.0.3"
     acorn "^8.7.0"
     acorn-loose "^8.3.0"
     acorn-walk "^8.2.0"
@@ -4805,15 +4805,15 @@
     react-resizable "^3.0.4"
     scroll-into-view "^1.16.2"
 
-"@subscan/widget-runtime@1.0.2", "@subscan/widget-runtime@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@subscan/widget-runtime/-/widget-runtime-1.0.2.tgz#430d8348469254e9a92776747654e8ad98dd08b9"
-  integrity sha512-OyR2Yww8KEqmDjKT3XmkHfMQFPaCyE996K3CsUgnsHJ8aqaEH+jHCeSOilGyw2RFQNb+lf+4Ycs1COVldmt8Tw==
+"@subscan/widget-runtime@1.0.5", "@subscan/widget-runtime@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/@subscan/widget-runtime/-/widget-runtime-1.0.5.tgz#86982c22bfd31e00d89ee5ff50935ef6d0a8f1e1"
+  integrity sha512-pIRk5UNwyla1qe82lLSdrMlNEsPXo/h07/XdFS1QfxKdG188uThCDHLubCPXYvCrVHCf+75ChjdEXoD5ghFolw==
   dependencies:
     "@emotion/css" "^11.7.1"
     "@sinclair/typebox" "^0.21.2"
-    "@subscan/widget-core" "^1.0.0"
-    "@subscan/widget-shared" "^1.0.0"
+    "@subscan/widget-core" "^1.0.3"
+    "@subscan/widget-shared" "^1.0.3"
     "@vue/reactivity" "^3.1.5"
     "@vue/shared" "^3.2.20"
     copy-to-clipboard "^3.3.1"
@@ -4828,10 +4828,10 @@
     use-deep-compare "^1.1.0"
     wouter "^2.7.4"
 
-"@subscan/widget-shared@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@subscan/widget-shared/-/widget-shared-1.0.0.tgz#f4ce61f24588fdaf37eeb62bf056e3a4125518ac"
-  integrity sha512-LE6oj00oJ/B1mKEZSBH6/oqtd6PDYfudV6Ocs8mxqNaavH//WAZj7+DeCzuIkvLN+8Rr1+4uZSUCqu9wiu/KNQ==
+"@subscan/widget-shared@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@subscan/widget-shared/-/widget-shared-1.0.3.tgz#f75690e7417d9dbd7e3c25235b018c63981bb6da"
+  integrity sha512-fJMk4jvhw3MgIhoKgTi7RGaETkjLTU1Koj6Uf0Uvm8rews5TL9gtdvy621+PvtjLxxkzdDesH9ALkhaCkpBI+w==
   dependencies:
     "@sinclair/typebox" "^0.21.2"
     ajv "^8.8.2"
