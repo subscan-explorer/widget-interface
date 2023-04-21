@@ -173,7 +173,7 @@ export default implementRuntimeComponent({
       <StyledNftBox>
         {data?.map(item => {
           return (
-            <StyledNft key={item.tokenId}>
+            <StyledNft key={`${item[image.value]}${item[label01.value]}${item[label02.value]}`}>
               <StyledImg src={item[image.value]} alt={item[image.value]} />
               <StyledLabel block>
                 <span>{label01.title}</span>
