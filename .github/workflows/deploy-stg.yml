@@ -33,7 +33,7 @@ jobs:
           preview_output: true
           project_name: subscan-pro-lowcode
           dist_path: build
-          script_build: yarn build
+          script_build: yarn build:stg
           enable_cache: true
           cache_type: yarn
           alias_domain: subscan-pro-lowcode-staging
