@@ -31,7 +31,28 @@ jobs:
         with:
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_group: itering
-          project_name: subscan-pro-lowcode
           preview_output: true
-          prod_mode: true
+          project_name: subscan-pro-lowcode
+          dist_path: build
           script_build: yarn build
+          enable_cache: true
+          cache_type: yarn
+          alias_domain: subscan-pro-lowcode
+
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          append: true
+          message: ${{ steps.smart-vercel.outputs.PREVIEW_OUTPUT }}
+
+      - name: Slack Notification
+        if: failure()
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL_ID }}
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_ICON: https://avatars.githubusercontent.com/u/14985020?s=48&v=4
+          SLACK_MESSAGE: "${{ steps.smart-vercel.outputs.PREVIEW_LINK }}"
+          SLACK_TITLE: Preview
+          SLACK_USERNAME: Vercel
+          SLACK_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK_URL }}
+
