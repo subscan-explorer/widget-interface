@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { Colors } from './theme/colors';
 import { Box } from '@chakra-ui/react';
 
-interface FontProps {
+type FontProps = {
   bold?: boolean;
   fontColor?: keyof Colors;
   block?: boolean;
   nowrap?: boolean;
   wordbreak?: string;
-}
+};
 
 export const StyledFont16 = styled.span<FontProps>`
   /* 14 */
