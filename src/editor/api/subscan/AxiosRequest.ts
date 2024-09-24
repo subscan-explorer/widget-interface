@@ -1,14 +1,16 @@
 import axios from 'axios';
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import { docCookies } from 'utils/cookies';
 
-export const STORAGE_KEY_TOKEN = 'token';
+export const PLATFORM_AUTH_KEY = 'sub_token';
 
 export function getLocalToken() {
-  return localStorage.getItem(STORAGE_KEY_TOKEN);
+  const token = docCookies.getItem(typeof document !== 'undefined' ? document.cookie : '', PLATFORM_AUTH_KEY);
+  return token;
 }
 
 export function removeLocalToken() {
-  localStorage.removeItem(STORAGE_KEY_TOKEN);
+  docCookies.removeItem(document.cookie, PLATFORM_AUTH_KEY, '/', 'subscan.io');
 }
 
 type Result<T> = {
@@ -26,7 +28,7 @@ export class Request {
 
     this.instance.interceptors.request.use(
       (config: AxiosRequestConfig) => {
-        const token = localStorage.getItem('token') as string;
+        const token = getLocalToken() as string;
         const organizationId = localStorage.getItem('organization:id') as string;
 
         if (token) {
