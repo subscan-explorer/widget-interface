@@ -1,6 +1,6 @@
 {
   "name": "@subscan/widget-app",
-  "version": "0.1.28",
+  "version": "0.1.29-alpha.7",
   "private": false,
   "main": "./dist/main.js",
   "homepage": "/lowcode",
@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@subscan/widget-core": "1.0.3",
-    "@subscan/widget-editor": "1.0.8",
-    "@subscan/widget-runtime": "1.0.6",
+    "@subscan/widget-editor": "1.0.10",
+    "@subscan/widget-runtime": "1.0.8",
     "@arco-design/web-react": "^2.34.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -26,8 +26,6 @@
     "echarts": "5.4.0",
     "global": "^4.4.0",
     "graphql-ws": "5.11.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
     "source-map-explorer": "^2.5.3",
@@ -74,8 +72,8 @@
     "build:local": "REACT_APP_SUBSCAN_PRO_API=https://platform-staging.subscan.io react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:sdk": "npx tsup src/main.ts --target es5 --env.NODE_ENV production --clean",
-    "prepublish": "npx tsup src/main.ts --target es5 --env.NODE_ENV production --clean",
+    "build:sdk": "npx tsup src/main.ts --target es5 --dts --env.NODE_ENV production --clean",
+    "prepublish": "npx tsup src/main.ts --target es5 --dts --env.NODE_ENV production --clean",
     "add:component": "node ./scripts/component.js",
     "add:trait": "node ./scripts/trait.js",
     "add:utilMethod": "node ./scripts/utilMethod.js",
@@ -121,5 +119,9 @@
         }
       }
     ]
+  },
+  "peerDependencies": {
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
   }
 }
